@@ -45,7 +45,6 @@ public class CharacterCamera : MonoBehaviour
         }
         
         _camera.transform.Rotate(Vector3.left * mouseY);
-        head.transform.Rotate(Vector3.left * mouseY);
         transform.Rotate(Vector3.up * mouseX);
     }
 
@@ -54,6 +53,5 @@ public class CharacterCamera : MonoBehaviour
         Vector3 eulerRotation = _camera.transform.eulerAngles;
         eulerRotation.x = value;
         _camera.transform.eulerAngles = eulerRotation;
-        head.transform.eulerAngles = eulerRotation;
     }
 }

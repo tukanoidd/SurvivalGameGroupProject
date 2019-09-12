@@ -18,6 +18,7 @@ public class CharacterPickupItems : MonoBehaviour
 
     private GameObject hitGameObject;
     private GameObject pickedObject;
+    private Vector3 scale;
     
     // Start is called before the first frame update
     void Start()
@@ -42,19 +43,52 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = true;
                     showPickup = true;
                     pickedObject = hitGameObject;
-                    pickedObject.transform.SetParent(palm.transform);
-                    pickedObject.transform.position = hitGameObject.transform.parent.position;
+                    scale = pickedObject.transform.localScale;
+                    pickedObject.GetComponent<Rigidbody>().isKinematic = true;
+                    pickedObject.transform.parent = _camera.transform;
                 }
                 else
                 {
                     pickedUp = false;
                     showPickup = false;
+
+                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickedObject.transform.parent = null;
+                    
+                    pickedObject.transform.localScale = scale;
+                    
+                    pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
+                }
+            }
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                if (pickedUp)
+                {
+                    pickedUp = false;
+                    showPickup = false;
+
+                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    pickedObject.transform.parent = null;
+                    
+                    pickedObject.transform.localScale = scale;
                 }
             }
         }
-        
-        Debug.Log(pickedUp);
+
+        if (pickedUp)
+        {
+            if (pickedObject.GetComponent<CheckPickedCollision>().collided)
+            {
+                pickedUp = false;
+                showPickup = false;
+
+                pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                pickedObject.transform.parent = null;   
+            }
+
+            pickedObject.transform.localScale = scale;
+        }
     }
     
     private void OnGUI()
