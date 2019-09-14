@@ -8,12 +8,26 @@
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
           <e p="ChangeColors.cs" t="Include" />
-          <e p="CharacterCamera.cs" t="Include" />
-          <e p="CharacterInventory.cs" t="Include" />
-          <e p="CharacterMovement.cs" t="Include" />
-          <e p="CharacterPickupItems.cs" t="Include" />
+          <e p="Character" t="Include">
+            <e p="CharacterCamera.cs" t="Include" />
+            <e p="CharacterInventory.cs" t="Include" />
+            <e p="CharacterMovement.cs" t="Include" />
+            <e p="CharacterPickupItems.cs" t="Include" />
+          </e>
           <e p="CheckPickedCollision.cs" t="Include" />
-          <e p="PortalsManager.cs" t="Include" />
+          <e p="Flock" t="Include">
+            <e p="Behaviour Scripts" t="Include">
+              <e p="AlignmentBehaviour.cs" t="Include" />
+              <e p="AvoidenceBehaviour.cs" t="Include" />
+              <e p="CohesionBehaviour.cs" t="Include" />
+              <e p="CompositeBehaviour.cs" t="Include" />
+              <e p="StayInRadiusBehaviour.cs" t="Include" />
+              <e p="SteeredCohesionBehaviour.cs" t="Include" />
+            </e>
+            <e p="Flock.cs" t="Include" />
+            <e p="FlockAgent.cs" t="Include" />
+            <e p="FlockBehaviour.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

@@ -13,17 +13,16 @@ public class CharacterPickupItems : MonoBehaviour
     private bool pickedUp = false;
     private string pickupName;
 
-    [SerializeField] private float showPickupRayLength;
+    [SerializeField] private float rayLength;
     [SerializeField] private float throwForce;
 
     private GameObject hitGameObject;
     private GameObject pickedObject;
     private Vector3 scale;
-    
+
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -41,7 +40,7 @@ public class CharacterPickupItems : MonoBehaviour
                 if (!pickedUp)
                 {
                     pickedUp = true;
-                    showPickup = true;
+                    showPickup = false;
                     pickedObject = hitGameObject;
                     scale = pickedObject.transform.localScale;
                     pickedObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -50,13 +49,12 @@ public class CharacterPickupItems : MonoBehaviour
                 else
                 {
                     pickedUp = false;
-                    showPickup = false;
 
                     pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickedObject.transform.parent = null;
-                    
+
                     pickedObject.transform.localScale = scale;
-                    
+
                     pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
                 }
             }
@@ -70,7 +68,7 @@ public class CharacterPickupItems : MonoBehaviour
 
                     pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickedObject.transform.parent = null;
-                    
+
                     pickedObject.transform.localScale = scale;
                 }
             }
@@ -84,23 +82,30 @@ public class CharacterPickupItems : MonoBehaviour
                 showPickup = false;
 
                 pickedObject.GetComponent<Rigidbody>().isKinematic = false;
-                pickedObject.transform.parent = null;   
+                pickedObject.transform.parent = null;
             }
 
             pickedObject.transform.localScale = scale;
         }
     }
-    
+
     private void OnGUI()
     {
         var interactionStyle = new GUIStyle();
-        interactionStyle.fontSize = 40;
+        interactionStyle.fontSize = 20;
         interactionStyle.normal.textColor = Color.white;
-        
+
         if (showPickup)
         {
-            GUI.Label(new Rect(Screen.width/2, Screen.height*7/8, 50, 50),
-                "E",
+            GUI.Label(new Rect(Screen.width / 20, Screen.height * 9 / 10, 50, 50),
+                "E: Pickup Item",
+                interactionStyle);
+        }
+
+        if (pickedUp)
+        {
+            GUI.Label(new Rect(Screen.width / 20, Screen.height * 8 / 10, 50, 50),
+                "E: Throw Item\nF: Let Go Of Item",
                 interactionStyle);
         }
     }
@@ -109,16 +114,16 @@ public class CharacterPickupItems : MonoBehaviour
     {
         playerHeadPosition = head.transform.position;
         playerForwardDirection = _camera.transform.forward;
-       
+
         Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
         RaycastHit rayPickupHit;
 
-        bool hitFound = Physics.Raycast(pickupRay, out rayPickupHit, showPickupRayLength);
+        bool hitFound = Physics.Raycast(pickupRay, out rayPickupHit, maxDistance: rayLength);
         if (hitFound)
         {
             hitGameObject = rayPickupHit.transform.gameObject;
 
-            if (hitGameObject.CompareTag("Material"))
+            if (hitGameObject.CompareTag("Material") && !pickedUp)
             {
                 showPickup = true;
                 pickupName = hitGameObject.name;
@@ -128,6 +133,10 @@ public class CharacterPickupItems : MonoBehaviour
             {
                 showPickup = false;
             }
+        }
+        else
+        {
+            showPickup = false;
         }
     }
 }
