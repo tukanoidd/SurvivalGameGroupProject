@@ -24,6 +24,12 @@
               <e p="StayInRadiusBehaviour.cs" t="Include" />
               <e p="SteeredCohesionBehaviour.cs" t="Include" />
             </e>
+            <e p="ContextFilter.cs" t="Include" />
+            <e p="Filter Scripts" t="Include">
+              <e p="PhysicsLayerFilter.cs" t="Include" />
+              <e p="SameFlockFilter.cs" t="Include" />
+            </e>
+            <e p="FilteredFlockBehaviour.cs" t="Include" />
             <e p="Flock.cs" t="Include" />
             <e p="FlockAgent.cs" t="Include" />
             <e p="FlockBehaviour.cs" t="Include" />

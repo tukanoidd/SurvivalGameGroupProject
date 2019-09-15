@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e25a627b711f024cb0a2428e6ebd9dc, type: 3}
   m_Name: Avoidence
   m_EditorClassIdentifier: 
+  filter: {fileID: 11400000, guid: 7eaef93c3bf1b934badf56987a0efbdf, type: 2}

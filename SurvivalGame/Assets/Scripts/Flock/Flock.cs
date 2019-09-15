@@ -19,10 +19,8 @@ public class Flock : MonoBehaviour
     private float squareMaxSpeed;
     private float squareNeighborRadius;
     private float squareAvoidanceRadius;
-    public float SquareAvoidanceRadius
-    {
-        get => squareAvoidanceRadius;
-    }
+    public float SquareAvoidanceRadius => squareAvoidanceRadius;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -34,11 +32,12 @@ public class Flock : MonoBehaviour
         for (int i = 0; i < startingCount; i++)
         {
             FlockAgent newAgent = Instantiate(agentPrefab,
-                Random.insideUnitSphere * startingCount * AgentDensity,
+                transform.position + Random.insideUnitSphere * startingCount * AgentDensity,
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
             );
             newAgent.name = "Agent " + i;
+            newAgent.Initialize(this);
             agents.Add(newAgent);
         }
     }
