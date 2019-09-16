@@ -7,6 +7,10 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Scripts" t="Include">
+          <e p="Boids" t="Include">
+            <e p="Boid.cs" t="Include" />
+            <e p="BoidCompute.compute" t="Include" />
+          </e>
           <e p="ChangeColors.cs" t="Include" />
           <e p="Character" t="Include">
             <e p="CharacterCamera.cs" t="Include" />
@@ -15,7 +19,7 @@
             <e p="CharacterPickupItems.cs" t="Include" />
           </e>
           <e p="CheckPickedCollision.cs" t="Include" />
-          <e p="Flock" t="Include">
+          <e p="Flock-Bugs" t="Include">
             <e p="Behaviour Scripts" t="Include">
               <e p="AlignmentBehaviour.cs" t="Include" />
               <e p="AvoidenceBehaviour.cs" t="Include" />

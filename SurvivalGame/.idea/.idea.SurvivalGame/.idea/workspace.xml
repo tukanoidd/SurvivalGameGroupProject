@@ -24,30 +24,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b96ef0a9-1e73-4cec-b1ec-88e436bda201" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Alignment.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Alignment.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Avoidence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Avoidence.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Centered Flock Behaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Centered Flock Behaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Cohesion.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Cohesion.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Stay In Radius.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Stay In Radius.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Steered Cohesion.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Steered Cohesion.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AlignmentBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AlignmentBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Flock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/Flock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FlockAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Flock/FlockAgent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Alignment.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Alignment.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Avoid Obstacles.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Avoid Obstacles.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Avoidence.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Avoidence.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Centered Flock Behaviour.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Centered Flock Behaviour.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Cohesion.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Cohesion.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Default Flock Behaviour.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Default Flock Behaviour.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Stay In Radius.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Stay In Radius.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Steered Cohesion.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Objects/Steered Cohesion.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AlignmentBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AlignmentBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CompositeBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CompositeBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/ContextFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/ContextFilter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Objects.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Objects/Obstacle Layer Filter.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Objects/Obstacle Layer Filter.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Objects/Same Flock Filter.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Objects/Same Flock Filter.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/SameFlockFilter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/SameFlockFilter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FilteredFlockBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FilteredFlockBehaviour.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Flock.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/Flock.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FlockAgent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FlockAgent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FlockBehaviour.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Flock/FlockBehaviour.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/71bd6d-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/71bd6d-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/f732a8-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/f732a8-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,160 +89,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="18" selection-end-column="50" />
-              <folding>
-                <marker date="1568577713996" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568577713996" expanded="true" signature="207:1091" ph="{...}" />
-                <marker date="1568577713996" expanded="true" signature="390:1089" ph="{...}" />
-                <marker date="1568577713996" expanded="true" signature="727:790" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-              <folding>
-                <marker date="1568578098195" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568578098195" expanded="true" signature="194:646" ph="{...}" />
-                <marker date="1568578098195" expanded="true" signature="352:644" ph="{...}" />
-                <marker date="1568578098195" expanded="true" signature="547:600" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-              <folding>
-                <marker date="1568580109420" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568580109420" expanded="true" signature="194:1011" ph="{...}" />
-                <marker date="1568580109420" expanded="true" signature="294:1009" ph="{...}" />
-                <marker date="1568580109420" expanded="true" signature="638:914" ph="{...}" />
-                <marker date="1568580109420" expanded="true" signature="758:904" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Flock.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-              <folding>
-                <marker date="1568576786577" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568576786577" expanded="true" signature="114:2432" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="828:1513" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="1103:1507" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="1571:1995" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="1622:1989" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="1856:1935" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="2051:2430" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="2267:2399" ph="{...}" />
-                <marker date="1568576786577" expanded="true" signature="2319:2389" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-              <folding>
-                <marker date="1568577748859" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568577748859" expanded="true" signature="192:864" ph="{...}" />
-                <marker date="1568577748859" expanded="true" signature="292:862" ph="{...}" />
-                <marker date="1568577748859" expanded="true" signature="629:692" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FlockBehaviour.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <marker date="1568479996991" expanded="true" signature="6:78" ph="..." />
-                <marker date="1568479996991" expanded="true" signature="135:238" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FilteredFlockBehaviour.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-              <folding>
-                <marker date="1568577428535" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568577428535" expanded="true" signature="141:178" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/ContextFilter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="87" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
-              <folding>
-                <marker date="1568577129295" expanded="true" signature="6:78" ph="..." />
-                <marker date="1568577129295" expanded="true" signature="134:226" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-              <folding>
-                <marker date="1568579623119" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568579623119" expanded="true" signature="186:597" ph="{...}" />
-                <marker date="1568579623119" expanded="true" signature="307:595" ph="{...}" />
-                <marker date="1568579623119" expanded="true" signature="416:563" ph="{...}" />
-                <marker date="1568579623119" expanded="true" signature="489:553" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/SameFlockFilter.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-              <folding>
-                <marker date="1568577307134" expanded="false" signature="6:78" ph="..." />
-                <marker date="1568577307134" expanded="true" signature="180:643" ph="{...}" />
-                <marker date="1568577307134" expanded="true" signature="269:641" ph="{...}" />
-                <marker date="1568577307134" expanded="true" signature="378:609" ph="{...}" />
-                <marker date="1568577307134" expanded="true" signature="535:599" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -223,24 +103,11 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Flock.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../SustainableGame/Sustainable Game/Assets/Scripts/CameraController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FlockBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AlignmentBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/CheckPickedCollision.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/SameFlockFilter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ChangeColors.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CompositeBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FlockAgent.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FilteredFlockBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../SustainableGame/Sustainable Game/Assets/Scripts/PlayerInteraction.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../SustainableGame/Sustainable Game/Assets/Scripts/MovementController.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Flock/ContextFilter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -264,9 +131,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/SteeredCohesionBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AlignmentBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -279,8 +146,8 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="612" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="611" />
     <option name="width" value="980" />
     <option name="height" value="1050" />
   </component>
@@ -290,49 +157,15 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="UnityExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Flock" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Flock" type="1045f7f1:UnityExplorerNode" />
-              <item name="Behaviour Scripts" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="8711f2a6:AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Flock" type="1045f7f1:UnityExplorerNode" />
-              <item name="Filter Scripts" type="1045f7f1:UnityExplorerNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-hidden-items" value="false" />
-        <option name="show-project-names" value="true" />
-      </pane>
       <pane id="SolutionExplorer">
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
+      <pane id="UnityExplorer">
+        <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
+      </pane>
       <pane id="AssemblyExplorer" />
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -395,12 +228,13 @@
       <workItem from="1568285759601" duration="5436000" />
       <workItem from="1568381145876" duration="783000" />
       <workItem from="1568479890754" duration="7027000" />
-      <workItem from="1568571641603" duration="6498000" />
+      <workItem from="1568571641603" duration="7107000" />
+      <workItem from="1568631806264" duration="646000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39490000" />
+    <option name="totallyTimeSpent" value="40745000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,9 +247,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11863271" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12005366" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -581,98 +414,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="18" selection-end-column="50" />
-          <folding>
-            <marker date="1568577713996" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568577713996" expanded="true" signature="207:1091" ph="{...}" />
-            <marker date="1568577713996" expanded="true" signature="390:1089" ph="{...}" />
-            <marker date="1568577713996" expanded="true" signature="727:790" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="12" column="49" selection-start-line="12" selection-start-column="49" selection-end-line="12" selection-end-column="49" />
-          <folding>
-            <marker date="1568578098195" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568578098195" expanded="true" signature="194:646" ph="{...}" />
-            <marker date="1568578098195" expanded="true" signature="352:644" ph="{...}" />
-            <marker date="1568578098195" expanded="true" signature="547:600" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/ContextFilter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="87" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
-          <folding>
-            <marker date="1568577129295" expanded="true" signature="6:78" ph="..." />
-            <marker date="1568577129295" expanded="true" signature="134:226" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/SameFlockFilter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-          <folding>
-            <marker date="1568577307134" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568577307134" expanded="true" signature="180:643" ph="{...}" />
-            <marker date="1568577307134" expanded="true" signature="269:641" ph="{...}" />
-            <marker date="1568577307134" expanded="true" signature="378:609" ph="{...}" />
-            <marker date="1568577307134" expanded="true" signature="535:599" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding>
-            <marker date="1568579623119" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568579623119" expanded="true" signature="186:597" ph="{...}" />
-            <marker date="1568579623119" expanded="true" signature="307:595" ph="{...}" />
-            <marker date="1568579623119" expanded="true" signature="416:563" ph="{...}" />
-            <marker date="1568579623119" expanded="true" signature="489:553" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FilteredFlockBehaviour.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
-          <folding>
-            <marker date="1568577428535" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568577428535" expanded="true" signature="141:178" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FlockBehaviour.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1568479996991" expanded="true" signature="6:78" ph="..." />
-            <marker date="1568479996991" expanded="true" signature="135:238" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
-          <folding>
-            <marker date="1568577748859" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568577748859" expanded="true" signature="192:864" ph="{...}" />
-            <marker date="1568577748859" expanded="true" signature="292:862" ph="{...}" />
-            <marker date="1568577748859" expanded="true" signature="629:692" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -680,32 +421,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="29" column="8" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
-          <folding>
-            <marker date="1568576786577" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568576786577" expanded="true" signature="114:2432" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="828:1513" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="1103:1507" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="1571:1995" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="1622:1989" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="1856:1935" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="2051:2430" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="2267:2399" ph="{...}" />
-            <marker date="1568576786577" expanded="true" signature="2319:2389" ph="{...}" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/CohesionBehaviour.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="51" selection-start-line="15" selection-start-column="51" selection-end-line="15" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FlockBehaviour.cs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/FilteredFlockBehaviour.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="6" column="32" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/ContextFilter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="6" column="87" selection-start-line="6" selection-start-column="87" selection-end-line="6" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/PhysicsLayerFilter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Filter Scripts/SameFlockFilter.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/AvoidenceBehaviour.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding>
-            <marker date="1568580109420" expanded="false" signature="6:78" ph="..." />
-            <marker date="1568580109420" expanded="true" signature="194:1011" ph="{...}" />
-            <marker date="1568580109420" expanded="true" signature="294:1009" ph="{...}" />
-            <marker date="1568580109420" expanded="true" signature="638:914" ph="{...}" />
-            <marker date="1568580109420" expanded="true" signature="758:904" ph="{...}" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Flock/Behaviour Scripts/StayInRadiusBehaviour.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="13" column="65" selection-start-line="13" selection-start-column="65" selection-end-line="13" selection-end-column="65" />
         </state>
       </provider>
     </entry>
