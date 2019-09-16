@@ -10,6 +10,10 @@
           <e p="Boids" t="Include">
             <e p="Boid.cs" t="Include" />
             <e p="BoidCompute.compute" t="Include" />
+            <e p="BoidHelper.cs" t="Include" />
+            <e p="BoidManager.cs" t="Include" />
+            <e p="BoidSettings.cs" t="Include" />
+            <e p="Spawner.cs" t="Include" />
           </e>
           <e p="ChangeColors.cs" t="Include" />
           <e p="Character" t="Include">
