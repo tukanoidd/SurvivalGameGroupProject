@@ -11,7 +11,14 @@ public class CharacterCamera : MonoBehaviour
 
     [SerializeField] private GameObject head;
 
+    private bool lookingAtObject = false;
+    private GameObject lookedAtObject;
+
     private float xAxisClamp;
+
+    [SerializeField] private Texture2D crosshairBlack;
+    [SerializeField] private Texture2D crosshairWhite;
+    [SerializeField] private float crosshairSize = 30f;
 
     private void Awake()
     {
@@ -22,6 +29,31 @@ public class CharacterCamera : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+    private void OnGUI()
+    {
+        if (lookingAtObject && lookedAtObject)
+        {
+            var lookedAtColor = lookedAtObject.GetComponent<Renderer>().material.color;
+            var sum = lookedAtColor.r + lookedAtColor.g + lookedAtColor.b;
+            var checkerNum = 383f;
+
+            var text = checkerNum >= 383 ? crosshairBlack : crosshairWhite;
+
+            if (checkerNum >= 383)
+            {
+                GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, crosshairSize, crosshairSize), crosshairBlack);    
+            }
+            else
+            {
+                GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, crosshairSize, crosshairSize), crosshairWhite);
+            }
+        }
+        else
+        {
+            GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, crosshairSize, crosshairSize), crosshairBlack);
+        }
     }
 
     // Update is called once per frame
@@ -46,6 +78,8 @@ public class CharacterCamera : MonoBehaviour
         
         _camera.transform.Rotate(Vector3.left * mouseY);
         transform.Rotate(Vector3.up * mouseX);
+
+        CheckLookingAt();
     }
 
     private void ClampXAxisRotationToValue(float value)
@@ -53,5 +87,18 @@ public class CharacterCamera : MonoBehaviour
         Vector3 eulerRotation = _camera.transform.eulerAngles;
         eulerRotation.x = value;
         _camera.transform.eulerAngles = eulerRotation;
+    }
+
+    void CheckLookingAt()
+    {
+        Ray lookingRay = new Ray(head.transform.position, _camera.transform.forward);
+        RaycastHit rayLookingAtObjectHit;
+
+        lookingAtObject = Physics.Raycast(lookingRay, out rayLookingAtObjectHit);
+
+        if (lookingAtObject)
+        {
+            lookedAtObject = rayLookingAtObjectHit.transform.gameObject;
+        }
     }
 }
