@@ -16,6 +16,7 @@
             <e p="Data" t="Include">
               <e p="NoiseData.cs" t="Include" />
               <e p="TerrainData.cs" t="Include" />
+              <e p="TextureData.cs" t="Include" />
               <e p="UpdatableData.cs" t="Include" />
             </e>
             <e p="EndlessTerrain.cs" t="Include" />
@@ -25,6 +26,7 @@
             <e p="MapGenerator.cs" t="Include" />
             <e p="MeshGenerator.cs" t="Include" />
             <e p="Noise.cs" t="Include" />
+            <e p="Terrain.shader" t="Include" />
             <e p="TextureGenerator.cs" t="Include" />
           </e>
           <e p="Boids" t="Include">
