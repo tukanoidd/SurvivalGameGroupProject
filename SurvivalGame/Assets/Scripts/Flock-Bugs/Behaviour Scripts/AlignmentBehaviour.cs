@@ -9,7 +9,7 @@ public class AlignmentBehaviour : FilteredFlockBehaviour
     {
         //no neighbors - maintain current alignment
         if (context.Count == 0) return agent.transform.forward;
-        
+
         //add all points and average
         Vector3 alignmentMove = Vector3.zero;
         List<Transform> filteredContext = (filter == null) ? context : filter.Filter(agent, context);
@@ -19,7 +19,7 @@ public class AlignmentBehaviour : FilteredFlockBehaviour
         }
 
         alignmentMove /= context.Count;
-        
+
         return alignmentMove;
     }
 }

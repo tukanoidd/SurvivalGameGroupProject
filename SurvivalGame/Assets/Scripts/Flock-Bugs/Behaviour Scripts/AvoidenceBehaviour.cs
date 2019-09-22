@@ -9,7 +9,7 @@ public class AvoidenceBehaviour : FilteredFlockBehaviour
     {
         //no neighbors - maintain current alignment
         if (context.Count == 0) return Vector3.zero;
-        
+
         Vector3 avoidenceMove = Vector3.zero;
         int nAvoid = 0;
         List<Transform> filteredContext = (filter == null) ? context : filter.Filter(agent, context);
@@ -19,12 +19,11 @@ public class AvoidenceBehaviour : FilteredFlockBehaviour
             {
                 nAvoid++;
                 avoidenceMove += agent.transform.position - item.position;
-                
             }
         }
 
         if (nAvoid > 0) avoidenceMove /= nAvoid;
-        
+
         return avoidenceMove;
     }
 }

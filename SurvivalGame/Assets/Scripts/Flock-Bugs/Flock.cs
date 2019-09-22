@@ -20,7 +20,7 @@ public class Flock : MonoBehaviour
     private float squareNeighborRadius;
     private float squareAvoidanceRadius;
     public float SquareAvoidanceRadius => squareAvoidanceRadius;
-    
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,8 +55,8 @@ public class Flock : MonoBehaviour
             if (move.sqrMagnitude > squareMaxSpeed)
             {
                 move = move.normalized * maxSpeed;
-            } 
-            
+            }
+
             agent.Move(move);
         }
     }

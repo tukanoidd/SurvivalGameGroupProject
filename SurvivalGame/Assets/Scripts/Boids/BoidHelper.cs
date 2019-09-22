@@ -24,7 +24,7 @@ public static class BoidHelper
             float x = Mathf.Sin(inclination) * Mathf.Cos(azimuth);
             float y = Mathf.Sin(inclination) * Mathf.Sin(azimuth);
             float z = Mathf.Cos(inclination);
-            
+
             directions[i] = new Vector3(x, y, z);
         }
     }

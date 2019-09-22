@@ -43,16 +43,19 @@ public class CharacterCamera : MonoBehaviour
 
             if (checkerNum >= 383)
             {
-                GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, crosshairSize, crosshairSize), crosshairBlack);    
+                GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshairSize, crosshairSize),
+                    crosshairBlack);
             }
             else
             {
-                GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, crosshairSize, crosshairSize), crosshairWhite);
+                GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshairSize, crosshairSize),
+                    crosshairWhite);
             }
         }
         else
         {
-            GUI.DrawTexture(new Rect(Screen.width/2, Screen.height/2, crosshairSize, crosshairSize), crosshairBlack);
+            GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshairSize, crosshairSize),
+                crosshairBlack);
         }
     }
 
@@ -69,13 +72,14 @@ public class CharacterCamera : MonoBehaviour
             xAxisClamp = 90.0f;
             mouseY = 0.0f;
             ClampXAxisRotationToValue(278.0f);
-        } else if (xAxisClamp < -90.0f)
+        }
+        else if (xAxisClamp < -90.0f)
         {
             xAxisClamp = -90.0f;
             mouseY = 0.0f;
             ClampXAxisRotationToValue(90.0f);
         }
-        
+
         _camera.transform.Rotate(Vector3.left * mouseY);
         transform.Rotate(Vector3.up * mouseX);
 

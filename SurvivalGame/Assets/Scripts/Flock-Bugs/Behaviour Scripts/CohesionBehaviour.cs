@@ -9,7 +9,7 @@ public class CohesionBehaviour : FilteredFlockBehaviour
     {
         //no neighbors - nothing
         if (context.Count == 0) return Vector3.zero;
-        
+
         //add all points and average
         Vector3 cohesionMove = Vector3.zero;
         List<Transform> filteredContext = (filter == null) ? context : filter.Filter(agent, context);

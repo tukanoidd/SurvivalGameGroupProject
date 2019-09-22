@@ -4,9 +4,29 @@
     <e p="C:\Users\tukan\.Rider2019.1\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\tukan\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_SurvivalGame.1859547958.00" t="ExcludeRecursive" />
     <e p="E:\GitHub\SurvivalGameGroupProject\SurvivalGame" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Editor" t="Include">
+          <e p="MapGeneratorEditor.cs" t="Include" />
+          <e p="UpdatableDataEditor.cs" t="Include" />
+        </e>
         <e p="Scripts" t="Include">
+          <e p="Advanced Procedural Generation" t="Include">
+            <e p="Data" t="Include">
+              <e p="NoiseData.cs" t="Include" />
+              <e p="TerrainData.cs" t="Include" />
+              <e p="UpdatableData.cs" t="Include" />
+            </e>
+            <e p="EndlessTerrain.cs" t="Include" />
+            <e p="FalloffGenerator.cs" t="Include" />
+            <e p="HideOnPlay.cs" t="Include" />
+            <e p="MapDisplay.cs" t="Include" />
+            <e p="MapGenerator.cs" t="Include" />
+            <e p="MeshGenerator.cs" t="Include" />
+            <e p="Noise.cs" t="Include" />
+            <e p="TextureGenerator.cs" t="Include" />
+          </e>
           <e p="Boids" t="Include">
             <e p="Boid.cs" t="Include" />
             <e p="BoidCompute.compute" t="Include" />
@@ -41,9 +61,6 @@
             <e p="Flock.cs" t="Include" />
             <e p="FlockAgent.cs" t="Include" />
             <e p="FlockBehaviour.cs" t="Include" />
-          </e>
-          <e p="Procedural Generations" t="Include">
-            <e p="PerlinNoiseTerrainGeneration.cs" t="Include" />
           </e>
         </e>
       </e>

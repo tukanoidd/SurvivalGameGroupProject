@@ -15,10 +15,10 @@ public class CompositeBehaviour : FlockBehaviour
             Debug.LogError("Data mismatch in " + name, this);
             return Vector3.zero;
         }
-        
+
         //set up move
         Vector3 move = Vector3.zero;
-        
+
         //iterate through behaviours
         for (int i = 0; i < behaviours.Length; i++)
         {
@@ -39,4 +39,3 @@ public class CompositeBehaviour : FlockBehaviour
         return move;
     }
 }
-

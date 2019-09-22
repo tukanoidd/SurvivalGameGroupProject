@@ -6,9 +6,9 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
-    
+
     [SerializeField] private float normalSpeed;
-    [SerializeField] private float boostedSpeed; 
+    [SerializeField] private float boostedSpeed;
 
     private CharacterController charController;
 
@@ -34,7 +34,12 @@ public class CharacterMovement : MonoBehaviour
         {
             Application.LoadLevel(Application.loadedLevel);
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Break();
+        }
+
         PlayerMovement();
     }
 
@@ -43,11 +48,12 @@ public class CharacterMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             movementSpeed = boostedSpeed;
-        } else if (Input.GetKeyUp(KeyCode.LeftShift))
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             movementSpeed = normalSpeed;
         }
-        
+
         float vertInput = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
         float horizInput = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
 
@@ -55,7 +61,7 @@ public class CharacterMovement : MonoBehaviour
         Vector3 rightMovement = transform.right * horizInput;
 
         charController.SimpleMove(forwardMovement + rightMovement);
-        
+
         JumpInput();
     }
 
@@ -72,13 +78,13 @@ public class CharacterMovement : MonoBehaviour
     {
         charController.slopeLimit = 90.0f;
         float timeInAir = 0.0f;
-        
+
         do
         {
             float jumpForce = jumpFallOff.Evaluate(timeInAir);
             charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
             timeInAir += Time.deltaTime;
-            
+
             yield return null;
         } while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
 
