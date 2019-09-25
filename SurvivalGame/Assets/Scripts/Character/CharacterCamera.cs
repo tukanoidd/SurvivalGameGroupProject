@@ -35,22 +35,12 @@ public class CharacterCamera : MonoBehaviour
     {
         if (lookingAtObject && lookedAtObject)
         {
-            var lookedAtColor = lookedAtObject.GetComponent<Renderer>().material.color;
-            var sum = lookedAtColor.r + lookedAtColor.g + lookedAtColor.b;
-            var checkerNum = 383f;
+            //todo check color of material somehow
 
-            var text = checkerNum >= 383 ? crosshairBlack : crosshairWhite;
+            var text = crosshairBlack;
 
-            if (checkerNum >= 383)
-            {
-                GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshairSize, crosshairSize),
-                    crosshairBlack);
-            }
-            else
-            {
-                GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshairSize, crosshairSize),
-                    crosshairWhite);
-            }
+            GUI.DrawTexture(new Rect(Screen.width / 2, Screen.height / 2, crosshairSize, crosshairSize),
+                text);
         }
         else
         {

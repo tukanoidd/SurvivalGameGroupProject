@@ -8,26 +8,28 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="Editor" t="Include">
-          <e p="MapGeneratorEditor.cs" t="Include" />
+          <e p="MapPreviewEditor.cs" t="Include" />
           <e p="UpdatableDataEditor.cs" t="Include" />
         </e>
         <e p="Scripts" t="Include">
           <e p="Advanced Procedural Generation" t="Include">
             <e p="Data" t="Include">
-              <e p="NoiseData.cs" t="Include" />
-              <e p="TerrainData.cs" t="Include" />
+              <e p="HeightMapSettings.cs" t="Include" />
+              <e p="MeshSettings.cs" t="Include" />
               <e p="TextureData.cs" t="Include" />
               <e p="UpdatableData.cs" t="Include" />
             </e>
-            <e p="EndlessTerrain.cs" t="Include" />
             <e p="FalloffGenerator.cs" t="Include" />
+            <e p="HeightMapGenerator.cs" t="Include" />
             <e p="HideOnPlay.cs" t="Include" />
-            <e p="MapDisplay.cs" t="Include" />
-            <e p="MapGenerator.cs" t="Include" />
+            <e p="MapPreview.cs" t="Include" />
             <e p="MeshGenerator.cs" t="Include" />
             <e p="Noise.cs" t="Include" />
             <e p="Terrain.shader" t="Include" />
+            <e p="TerrainChunk.cs" t="Include" />
+            <e p="TerrainGenerator.cs" t="Include" />
             <e p="TextureGenerator.cs" t="Include" />
+            <e p="ThreadedDataRequester.cs" t="Include" />
           </e>
           <e p="Boids" t="Include">
             <e p="Boid.cs" t="Include" />
