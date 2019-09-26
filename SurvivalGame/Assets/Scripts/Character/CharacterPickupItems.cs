@@ -6,7 +6,6 @@ using UnityEngine;
 public class CharacterPickupItems : MonoBehaviour
 {
     [SerializeField] private GameObject head;
-    [SerializeField] private GameObject palm;
     [SerializeField] private Camera _camera;
 
     private bool showPickup = false;

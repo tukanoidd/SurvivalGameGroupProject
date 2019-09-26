@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class CharacterInventory : MonoBehaviour
 {
-    [Serializable] public struct Item
+    [Serializable]
+    public struct Item
     {
         public string name;
         public Texture2D image;
@@ -32,7 +33,7 @@ public class CharacterInventory : MonoBehaviour
         {
             Item item = inventory[i];
             int newQuant = item.quantity + quant;
-            
+
             if (item.name == name)
             {
                 inventory[i].quantity = newQuant > item.maxQuanntity ? newQuant : item.maxQuanntity;
@@ -44,7 +45,7 @@ public class CharacterInventory : MonoBehaviour
     bool CheckIfCanRemoveItem(string name, int quant)
     {
         bool canRemove = false;
-        
+
         for (int i = 0; i < inventory.Length; i++)
         {
             if (inventory[i].name == name)

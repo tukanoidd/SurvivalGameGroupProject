@@ -7,6 +7,7 @@ TagManager:
   - Material
   - Portal1
   - Portal2
+  - Flock
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Obstacle
   - 
   - 
   - 
