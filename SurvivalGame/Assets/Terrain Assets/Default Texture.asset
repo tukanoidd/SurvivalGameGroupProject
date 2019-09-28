@@ -14,51 +14,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   autoUpdate: 1
   layers:
-  - texture: {fileID: 2800000, guid: 680658cbfa31f784d80ad8abc7d858ab, type: 3}
-    tint: {r: 0.068798356, g: 0.056069776, b: 0.5660378, a: 0}
-    tintStrength: 0
-    startHeight: 0
-    blendStrength: 0.12
-    textureScale: 3.92
-  - texture: {fileID: 2800000, guid: 680658cbfa31f784d80ad8abc7d858ab, type: 3}
-    tint: {r: 0.34100214, g: 0.4033886, b: 0.9150943, a: 0}
-    tintStrength: 0
-    startHeight: 0.13
-    blendStrength: 0.14
-    textureScale: 6.53
-  - texture: {fileID: 2800000, guid: c2d497d4e267ca0408bee54d56712dee, type: 3}
-    tint: {r: 0.8018868, g: 0.6610586, b: 0.056737266, a: 0}
-    tintStrength: 0
-    startHeight: 0.17
-    blendStrength: 0.12
-    textureScale: 4.07
-  - texture: {fileID: 2800000, guid: a354f4f27b4145143b4221de9648f18f, type: 3}
-    tint: {r: 0.07983623, g: 0.8207547, b: 0.034843344, a: 0}
-    tintStrength: 0
-    startHeight: 0.29
-    blendStrength: 0.2
-    textureScale: 4
-  - texture: {fileID: 2800000, guid: 6a2ca3e9400e2bd42950a55ae116e453, type: 3}
-    tint: {r: 0.017718486, g: 0.5, b: 0.016509444, a: 0}
-    tintStrength: 0
-    startHeight: 0.38
-    blendStrength: 0.16
-    textureScale: 0
-  - texture: {fileID: 2800000, guid: 875a65cb1d390804095184128d053023, type: 3}
-    tint: {r: 0.7264151, g: 0.43980262, b: 0.051397286, a: 0}
-    tintStrength: 0
-    startHeight: 0.69
-    blendStrength: 0.16
-    textureScale: 1.15
-  - texture: {fileID: 2800000, guid: c4f465ede34b6c24c91d19ec487da9d2, type: 3}
-    tint: {r: 0.4245283, g: 0.22013983, b: 0, a: 0}
-    tintStrength: 0
-    startHeight: 0.84
-    blendStrength: 0.23
-    textureScale: 1.18
-  - texture: {fileID: 2800000, guid: 45a05f7fee2da324aa1ec0bed4ee0ba4, type: 3}
-    tint: {r: 1, g: 1, b: 1, a: 0}
-    tintStrength: 0
-    startHeight: 1
-    blendStrength: 0.17
-    textureScale: 4.72
+  - name: Grass
+    objects:
+    - name: Trees
+      chance: 0.906
+      prefabs:
+      - {fileID: 2014225656627745115, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}
+    - name: Rocks
+      chance: 1
+      prefabs:
+      - {fileID: 6916432013266103933, guid: c05d6aff854884242a9279de4c1a5fa2, type: 3}
+      - {fileID: 5328718303718885015, guid: 0f1aaca64e3dec746bcece33f285175a, type: 3}
+      - {fileID: 3743950511227096017, guid: 7f4d50f71178d814491f1005e7e7fdb6, type: 3}
+      - {fileID: 1230637717959722197, guid: f11a2648124e0774facfbb9a6fc25a5a, type: 3}
+      - {fileID: 3479935813746440520, guid: eade4ce7e2dcf6a44bb29d2c2ade6455, type: 3}
+      - {fileID: 6074443171911688313, guid: d7554baa898fc7245a223f82d7368e25, type: 3}
+      - {fileID: 657705998050976320, guid: cda6e321695dfe942b0e4e201794e29c, type: 3}
+    - name: Vegetation
+      chance: 0.038
+      prefabs:
+      - {fileID: 7857654821838204845, guid: 6649cf4b361c45e45a81e0e7b275336e, type: 3}
+    texture: {fileID: 2800000, guid: a354f4f27b4145143b4221de9648f18f, type: 3}
+    tint: {r: 0.19913004, g: 0.7075472, b: 0.030037368, a: 0}
+    tintStrength: 0.579
+    startHeight: 0.35
+    blendStrength: 1
+    textureScale: 1

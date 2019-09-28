@@ -35,10 +35,10 @@ public class CharacterMovement : MonoBehaviour
             Application.LoadLevel(Application.loadedLevel);
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        /*if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Break();
-        }
+        }*/
 
         PlayerMovement();
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.008680698, g: 0.008848519, b: 0.01971401, a: 1}
+  m_IndirectSpecularColor: {r: 0.09181083, g: 0.09337396, b: 0.1518588, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -149,6 +149,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -208,6 +209,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -333,11 +335,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3290071156204282696, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -393,6 +390,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1342187272266933635, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -437,21 +454,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.0006979235
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}
@@ -728,6 +730,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -880,6 +883,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -1031,6 +1035,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -1275,6 +1280,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -1682,6 +1688,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -2066,6 +2073,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -2218,6 +2226,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -2755,11 +2764,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3290071156204282696, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2815,6 +2819,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1342187272266933635, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_ConnectedAnchor.z
@@ -2859,21 +2883,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: -0.002893118
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}
@@ -3019,11 +3028,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3290071156204282696, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3079,6 +3083,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1342187272266933635, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -3123,21 +3147,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: -0.002893118
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}
@@ -3299,7 +3308,6 @@ GameObject:
   - component: {fileID: 1825744751}
   - component: {fileID: 1825744752}
   - component: {fileID: 1825744753}
-  - component: {fileID: 1825744754}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -3397,6 +3405,9 @@ MonoBehaviour:
   mouseSensitivity: 100
   _camera: {fileID: 1189498440}
   head: {fileID: 458408501}
+  crosshairBlack: {fileID: 0}
+  crosshairWhite: {fileID: 0}
+  crosshairSize: 30
 --- !u!114 &1825744750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3482,23 +3493,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 458408501}
-  palm: {fileID: 0}
   _camera: {fileID: 1189498440}
   rayLength: 10
   throwForce: 1000
-  hitGameObject: {fileID: 0}
---- !u!114 &1825744754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1825744744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb4173c9e4335164981f576f703dda3d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1882813860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3646,6 +3643,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
   impactForce: 0
@@ -4377,11 +4375,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3290071156204282696, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4437,6 +4430,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8418066523517373416, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1342187272266933635, guid: 2fb6786cc25d2454ea06047f374da4a8,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -4481,21 +4494,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 0.0006979234
-      objectReference: {fileID: 0}
-    - target: {fileID: 8258815392679678943, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8975036368881689608, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6123959778648034596, guid: 2fb6786cc25d2454ea06047f374da4a8,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}

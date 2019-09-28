@@ -3,17 +3,19 @@ using UnityEngine;
 
 public class TerrainChunk
 {
-    const float colliderGenerationDistanceThreshold = 5;
+    const float colliderGenerationDistanceThreshold = 15;
     public event Action<TerrainChunk, bool> onVisibilityChanged;
     public Vector2 coord;
 
-    GameObject meshObject;
+    public GameObject meshObject;
     Vector2 sampleCentre;
     Bounds bounds;
 
     MeshRenderer meshRenderer;
     MeshFilter meshFilter;
     MeshCollider meshCollider;
+
+    private Vector3[] meshVertices;
 
     LODInfo[] detailLevels;
     LODMesh[] lodMeshes;
@@ -48,6 +50,7 @@ public class TerrainChunk
 
 
         meshObject = new GameObject("Terrain Chunk");
+        meshObject.tag = "terrain";
         meshRenderer = meshObject.AddComponent<MeshRenderer>();
         meshFilter = meshObject.AddComponent<MeshFilter>();
         meshCollider = meshObject.AddComponent<MeshCollider>();
@@ -124,6 +127,7 @@ public class TerrainChunk
                     {
                         previousLODIndex = lodIndex;
                         meshFilter.mesh = lodMesh.mesh;
+                        meshVertices = meshFilter.mesh.vertices;
                     }
                     else if (!lodMesh.hasRequestedMesh)
                     {
@@ -166,6 +170,8 @@ public class TerrainChunk
                     hasSetCollider = true;
                 }
             }
+
+            meshObject.GetComponent<ObjectPlacer>().PlaceObjects(meshVertices);
         }
     }
 
