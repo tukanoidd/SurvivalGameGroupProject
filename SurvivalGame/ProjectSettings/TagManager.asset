@@ -8,6 +8,7 @@ TagManager:
   - Portal1
   - Portal2
   - Flock
+  - terrain
   layers:
   - Default
   - TransparentFX

@@ -6,22 +6,26 @@ using UnityEngine;
 public class CharacterPickupItems : MonoBehaviour
 {
     [SerializeField] private GameObject head;
+    [SerializeField] private GameObject palm;
     [SerializeField] private Camera _camera;
 
     private bool showPickup = false;
     private bool pickedUp = false;
+    private bool lookingAtObj = false;
     private string pickupName;
+    private float pickupTemp;
 
     [SerializeField] private float rayLength;
     [SerializeField] private float throwForce;
 
-    private GameObject hitGameObject;
+    public GameObject hitGameObject;
     private GameObject pickedObject;
     private Vector3 scale;
 
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
@@ -41,20 +45,29 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = true;
                     showPickup = false;
                     pickedObject = hitGameObject;
-                    scale = pickedObject.transform.localScale;
+                    scale = pickedObject.transform.lossyScale;
                     pickedObject.GetComponent<Rigidbody>().isKinematic = true;
                     pickedObject.transform.parent = _camera.transform;
                 }
                 else
                 {
+                    var playerFeet = transform.position.y - ((GetComponent<MeshRenderer>().bounds.size.y / 2) - 0.5);
+                    
+                    if (pickedObject.transform.position.y < playerFeet)
+                    {
+                        pickedObject.transform.position = new Vector3(pickedObject.transform.position.x, (float) playerFeet, pickedObject.transform.position.z);
+                    }
+                    else
+                    {
+                        pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
+                    }
+                    
                     pickedUp = false;
 
                     pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickedObject.transform.parent = null;
 
                     pickedObject.transform.localScale = scale;
-
-                    pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
                 }
             }
 
@@ -73,19 +86,19 @@ public class CharacterPickupItems : MonoBehaviour
             }
         }
 
+        /*
         if (pickedUp)
         {
             if (pickedObject.GetComponent<CheckPickedCollision>().collided)
             {
                 pickedUp = false;
                 showPickup = false;
-
                 pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                 pickedObject.transform.parent = null;
             }
-
             pickedObject.transform.localScale = scale;
         }
+        */
     }
 
     private void OnGUI()
@@ -103,8 +116,15 @@ public class CharacterPickupItems : MonoBehaviour
 
         if (pickedUp)
         {
-            GUI.Label(new Rect(Screen.width / 20, Screen.height * 8 / 10, 50, 50),
+            GUI.Label(new Rect(Screen.width / 20, Screen.height * 9 / 10, 50, 50),
                 "E: Throw Item\nF: Let Go Of Item",
+                interactionStyle);
+        }
+
+        if(lookingAtObj)
+        {
+            GUI.Label(new Rect(Screen.width / 50, Screen.height * 8 / 10, 50, 50),
+                pickupName + " - (Temp: " + pickupTemp + ")",
                 interactionStyle);
         }
     }
@@ -117,20 +137,39 @@ public class CharacterPickupItems : MonoBehaviour
         Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
         RaycastHit rayPickupHit;
 
-        bool hitFound = Physics.Raycast(pickupRay, out rayPickupHit, maxDistance: rayLength);
-        if (hitFound)
+        if (Physics.Raycast(pickupRay, out rayPickupHit, maxDistance: rayLength))
         {
-            hitGameObject = rayPickupHit.transform.gameObject;
+            if(rayPickupHit.transform.gameObject != null)
+            {
+                hitGameObject = rayPickupHit.transform.gameObject;
 
-            if (hitGameObject.CompareTag("Material") && !pickedUp)
-            {
-                showPickup = true;
-                pickupName = hitGameObject.name;
-                Debug.Log(pickupName);
-            }
-            else
-            {
-                showPickup = false;
+                if (hitGameObject.GetComponent<Combustable>() != null)
+                {
+                    lookingAtObj = true;
+
+                    if(!pickedUp)
+                    {
+                        showPickup = true;
+                    }
+                    
+                    pickupName = hitGameObject.GetComponent<Combustable>().name;
+
+                    if(hitGameObject.GetComponent<Combustable>().fuel <= 0 && hitGameObject.GetComponent<Combustable>().name == "Wood")
+                    {
+                        pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burnt)";
+                    }
+
+                    if(hitGameObject.GetComponent<Combustable>().isBurning)
+                    {
+                        pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burning)";
+                    }
+
+                    pickupTemp = hitGameObject.GetComponent<Combustable>().temperature;
+                }
+                else
+                {
+                    showPickup = false;
+                }
             }
         }
         else

@@ -56,11 +56,21 @@ public class TextureData : UpdatableData
     [Serializable]
     public class Layer
     {
+        public string name;
+        public SpawnableObject[] objects;
         public Texture2D texture;
         public Color tint;
         [Range(0, 1)] public float tintStrength;
         [Range(0, 1)] public float startHeight;
         [Range(0, 1)] public float blendStrength;
         public float textureScale;
+    }
+
+    [Serializable]
+    public class SpawnableObject
+    {
+        public string name;
+        [Range(0,1)] public float chance;
+        public GameObject[] prefabs;
     }
 }

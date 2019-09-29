@@ -2,7 +2,7 @@
 using System.Collections;
 
 public static class MeshGenerator
-{
+{ 
     public static MeshData GenerateTerrainMesh(float[,] heightMap, MeshSettings meshSettings, int levelOfDetail)
     {
         int skipIncrement = (levelOfDetail == 0) ? 1 : levelOfDetail * 2;
@@ -111,6 +111,8 @@ public class MeshData
     int[] triangles;
     Vector2[] uvs;
     Vector3[] bakedNormals;
+
+    GameObject[] objects;
 
     Vector3[] outOfMeshVertices;
     int[] outOfMeshTriangles;
