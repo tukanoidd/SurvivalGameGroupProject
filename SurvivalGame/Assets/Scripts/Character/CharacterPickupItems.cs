@@ -53,11 +53,10 @@ public class CharacterPickupItems : MonoBehaviour
                 }
                 else
                 {
+                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce, ForceMode.Impulse);
 
                     pickedUp = false;
-
-                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                     pickedObject.transform.parent = null;
 
                     pickedObject.transform.localScale = scale;
