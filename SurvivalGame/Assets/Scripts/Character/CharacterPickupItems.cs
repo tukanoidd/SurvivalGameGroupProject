@@ -15,6 +15,8 @@ public class CharacterPickupItems : MonoBehaviour
     private string pickupName;
     private float pickupTemp;
 
+    private RaycastHit planeHit;
+
     [SerializeField] private float rayLength;
     [SerializeField] private float throwForce;
 
@@ -25,7 +27,6 @@ public class CharacterPickupItems : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -51,17 +52,8 @@ public class CharacterPickupItems : MonoBehaviour
                 }
                 else
                 {
-                    var playerFeet = transform.position.y - ((GetComponent<MeshRenderer>().bounds.size.y / 2) - 0.5);
-                    
-                    if (pickedObject.transform.position.y < playerFeet)
-                    {
-                        pickedObject.transform.position = new Vector3(pickedObject.transform.position.x, (float) playerFeet, pickedObject.transform.position.z);
-                    }
-                    else
-                    {
-                        pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
-                    }
-                    
+                    pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
+
                     pickedUp = false;
 
                     pickedObject.GetComponent<Rigidbody>().isKinematic = false;
@@ -86,19 +78,20 @@ public class CharacterPickupItems : MonoBehaviour
             }
         }
 
-        /*
-        if (pickedUp)
+        if (pickedObject != null && !pickedUp)
         {
-            if (pickedObject.GetComponent<CheckPickedCollision>().collided)
+            try
             {
-                pickedUp = false;
-                showPickup = false;
-                pickedObject.GetComponent<Rigidbody>().isKinematic = false;
-                pickedObject.transform.parent = null;
+                var pos = pickedObject.transform.position;
+                if (pos.y < planeHit.point.y)
+                {
+                    pickedObject.transform.position = new Vector3(pos.x, planeHit.point.y + 2, pos.z);
+                }
             }
-            pickedObject.transform.localScale = scale;
+            catch
+            {
+            }
         }
-        */
     }
 
     private void OnGUI()
@@ -121,7 +114,7 @@ public class CharacterPickupItems : MonoBehaviour
                 interactionStyle);
         }
 
-        if(lookingAtObj)
+        if (lookingAtObj)
         {
             GUI.Label(new Rect(Screen.width / 50, Screen.height * 8 / 10, 50, 50),
                 pickupName + " - (Temp: " + pickupTemp + ")",
@@ -139,27 +132,33 @@ public class CharacterPickupItems : MonoBehaviour
 
         if (Physics.Raycast(pickupRay, out rayPickupHit, maxDistance: rayLength))
         {
-            if(rayPickupHit.transform.gameObject != null)
+            if (rayPickupHit.transform.gameObject != null)
             {
                 hitGameObject = rayPickupHit.transform.gameObject;
+
+                if (hitGameObject.CompareTag("terrain"))
+                {
+                    planeHit = rayPickupHit;
+                }
 
                 if (hitGameObject.GetComponent<Combustable>() != null)
                 {
                     lookingAtObj = true;
 
-                    if(!pickedUp)
+                    if (!pickedUp)
                     {
                         showPickup = true;
                     }
-                    
+
                     pickupName = hitGameObject.GetComponent<Combustable>().name;
 
-                    if(hitGameObject.GetComponent<Combustable>().fuel <= 0 && hitGameObject.GetComponent<Combustable>().name == "Wood")
+                    if (hitGameObject.GetComponent<Combustable>().fuel <= 0 &&
+                        hitGameObject.GetComponent<Combustable>().name == "Wood")
                     {
                         pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burnt)";
                     }
 
-                    if(hitGameObject.GetComponent<Combustable>().isBurning)
+                    if (hitGameObject.GetComponent<Combustable>().isBurning)
                     {
                         pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burning)";
                     }

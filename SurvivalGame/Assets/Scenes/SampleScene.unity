@@ -890,6 +890,11 @@ PrefabInstance:
       propertyPath: cube
       value: 
       objectReference: {fileID: 1882813860}
+    - target: {fileID: 5194478966582594391, guid: 57517eb58446fa444a6154d049798b31,
+        type: 3}
+      propertyPath: throwForce
+      value: 10000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57517eb58446fa444a6154d049798b31, type: 3}
 --- !u!1001 &8819474485652716004
