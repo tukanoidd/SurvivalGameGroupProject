@@ -46,13 +46,14 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = true;
                     showPickup = false;
                     pickedObject = hitGameObject;
+                    pickedObject.GetComponent<Combustable>().isGrounded = false;
                     scale = pickedObject.transform.lossyScale;
                     pickedObject.GetComponent<Rigidbody>().isKinematic = true;
                     pickedObject.transform.parent = _camera.transform;
                 }
                 else
                 {
-                    pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce);
+                    pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce, ForceMode.Impulse);
 
                     pickedUp = false;
 
@@ -78,7 +79,7 @@ public class CharacterPickupItems : MonoBehaviour
             }
         }
 
-        if (pickedObject != null && !pickedUp)
+        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded)
         {
             try
             {
