@@ -57,12 +57,5 @@ public class ObjectPlacer : MonoBehaviour
                 }
             }
         }
-        else
-        {
-            /*foreach (var entry in occupiedVertices)
-            {
-                Instantiate(entry.Value, entry.Key, Quaternion.identity, transform);
-            }*/
-        }
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
+    public GameObject stars;
+    
     private float movementSpeed;
 
     [SerializeField] private float normalSpeed;
@@ -30,6 +32,8 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
+        stars.transform.position = transform.position;
+        
         if (Input.GetKeyDown(KeyCode.R))
         {
             Application.LoadLevel(Application.loadedLevel);

@@ -58,6 +58,10 @@
             <e p="Creature.cs" t="Include" />
             <e p="Spawner.cs" t="Include" />
           </e>
+          <e p="DayNight Cycle" t="Include">
+            <e p="AutoIntensity.cs" t="Include" />
+            <e p="SetSunLight.cs" t="Include" />
+          </e>
           <e p="Flock-Bugs" t="Include">
             <e p="Behaviour Scripts" t="Include">
               <e p="AlignmentBehaviour.cs" t="Include" />
