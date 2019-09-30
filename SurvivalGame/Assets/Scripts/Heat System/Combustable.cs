@@ -33,7 +33,8 @@ public class Combustable : MonoBehaviour
     public GameObject heatedBy;
     public bool vaporized = false;
     public bool preIgnited = false;
-
+    public bool isGrounded;
+    
     // Start is called before the first frame update
     protected virtual void Start()
     {
@@ -208,6 +209,11 @@ public class Combustable : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("terrain"))
+        {
+            isGrounded = true;
+        }
+        
         impactForce = collision.relativeVelocity.magnitude;
         contactPoints = collision.contacts;
         impactedObject = collision.gameObject;

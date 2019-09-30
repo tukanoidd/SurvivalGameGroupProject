@@ -6,7 +6,7 @@ public class ObjectPlacer : MonoBehaviour
 {
     private Dictionary<Vector3, GameObject> occupiedVertices;
     TextureData.Layer[] terrainLayers;
-    private int skipIncrement = 100;
+    private int skipIncrement = 50;
 
     void Start()
     {
@@ -16,13 +16,13 @@ public class ObjectPlacer : MonoBehaviour
 
     public void PlaceObjects(Vector3[] vertices)
     {
-        if (occupiedVertices.Count == 0)
+        if (vertices != null && occupiedVertices.Count == 0)
         {
             for (int i = terrainLayers.Length - 1; i >= 0; i--)
             {
                 for (int j = 0; j < vertices.Length; j += skipIncrement)
                 {
-                    skipIncrement = Mathf.FloorToInt(Random.Range(100, 500));
+                    skipIncrement = Mathf.FloorToInt(Random.Range(50, 100));
                     if (j + skipIncrement < vertices.Length)
                     {
                         if (terrainLayers[i].startHeight >= vertices[j].y)
@@ -33,16 +33,23 @@ public class ObjectPlacer : MonoBehaviour
                             {
                                 if (Random.Range(0, 1) <= obj.chance)
                                 {
-                                    var prefab = obj.prefabs[Mathf.FloorToInt(Random.Range(0, obj.prefabs.Length))];
-                                    Vector3 euler = transform.eulerAngles;
-                                    euler.y = Random.Range(0f, 360f);
+                                    try
+                                    {
+                                        var prefab = obj.prefabs[Mathf.FloorToInt(Random.Range(0, obj.prefabs.Length-1))];
+                                        Vector3 euler = transform.eulerAngles;
+                                        euler.y = Random.Range(0f, 360f);
 
-                                    var spawned = Instantiate(prefab, vertices[j] + transform.position, Quaternion.identity,
-                                        transform);
+                                        var spawned = Instantiate(prefab, vertices[j] + transform.position, Quaternion.identity,
+                                            transform);
 
-                                    spawned.transform.eulerAngles = euler;
-                                    
-                                    occupiedVertices.Add(vertices[j], prefab);
+                                        spawned.transform.eulerAngles = euler;
+                                        
+                                        occupiedVertices.Add(vertices[j], prefab);
+                                    }
+                                    catch
+                                    {
+                                        break;
+                                    }
                                 }
                             }
                         }
