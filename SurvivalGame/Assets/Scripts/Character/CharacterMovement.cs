@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed;
+    private float movementSpeed;
 
     [SerializeField] private float normalSpeed;
     [SerializeField] private float boostedSpeed;
@@ -25,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Start()
     {
-        normalSpeed = movementSpeed;
+        movementSpeed = normalSpeed;
     }
 
     private void Update()
