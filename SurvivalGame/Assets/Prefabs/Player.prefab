@@ -195,7 +195,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4668f30307c737e4d8177a347bc253fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 1000
   normalSpeed: 1000
   boostedSpeed: 2000
   jumpFallOff:
@@ -286,9 +285,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 5194478966842633747}
+  palm: {fileID: 0}
   _camera: {fileID: 5194478965943706222}
   rayLength: 10
   throwForce: 1000
+  hitGameObject: {fileID: 0}
 --- !u!114 &5194478966582594388
 MonoBehaviour:
   m_ObjectHideFlags: 0

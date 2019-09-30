@@ -22,20 +22,20 @@ public class ObjectPlacer : MonoBehaviour
             {
                 for (int j = 0; j < vertices.Length; j += skipIncrement)
                 {
-                    skipIncrement = Mathf.FloorToInt(Random.Range(50, 100));
+                    skipIncrement = Random.Range(50, 100);
                     if (j + skipIncrement < vertices.Length)
                     {
                         if (terrainLayers[i].startHeight >= vertices[j].y)
                         {
                             TextureData.SpawnableObject obj =
-                                terrainLayers[i].objects[Mathf.FloorToInt(Random.Range(0, 3))];
+                                terrainLayers[i].objects[Random.Range(0, 3)];
                             if (obj.prefabs.Length > 0)
                             {
                                 if (Random.Range(0, 1) <= obj.chance)
                                 {
                                     try
                                     {
-                                        var prefab = obj.prefabs[Mathf.FloorToInt(Random.Range(0, obj.prefabs.Length-1))];
+                                        var prefab = obj.prefabs[Random.Range(0, obj.prefabs.Length-1)];
                                         Vector3 euler = transform.eulerAngles;
                                         euler.y = Random.Range(0f, 360f);
 
@@ -56,13 +56,6 @@ public class ObjectPlacer : MonoBehaviour
                     }
                 }
             }
-        }
-        else
-        {
-            /*foreach (var entry in occupiedVertices)
-            {
-                Instantiate(entry.Value, entry.Key, Quaternion.identity, transform);
-            }*/
         }
     }
 }
