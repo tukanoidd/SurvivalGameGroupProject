@@ -11,18 +11,18 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f9e37a1418260945bed23920631fbc4, type: 3}
   m_Name: Default Height Map Settings
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   autoUpdate: 1
   noiseSettings:
     normalizeMode: 1
-    scale: 39.95
-    octaves: 8
-    persistance: 0.5
-    lacunarity: 2
-    seed: 0
+    scale: 54.25
+    octaves: 21
+    persistance: 0.446
+    lacunarity: 1.87
+    seed: 15
     offset: {x: 0, y: 0}
   useFalloff: 0
-  heightMultiplier: 33.3
+  heightMultiplier: 48.21
   heightCurve:
     serializedVersion: 2
     m_Curve:

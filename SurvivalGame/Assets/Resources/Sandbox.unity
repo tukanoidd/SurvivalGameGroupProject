@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 3876d0e183013044aab5adba683217d7, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 5f7e305986172ad41a73d19f40e17bc7, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.09181083, g: 0.09337396, b: 0.1518588, a: 1}
+  m_IndirectSpecularColor: {r: 0.19272214, g: 0.26810962, b: 0.36275995, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,6 +165,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 0
+  isGrounded: 0
 --- !u!1 &29189554
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,6 +228,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 1
+  isGrounded: 0
 --- !u!54 &29189556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -748,6 +750,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 1
+  isGrounded: 0
 --- !u!54 &324532953
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -901,6 +904,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 0
+  isGrounded: 0
 --- !u!54 &346704993
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1053,6 +1057,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 0
+  isGrounded: 0
 --- !u!54 &390590961
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1298,6 +1303,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 1
+  isGrounded: 0
 --- !u!54 &594006186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1417,8 +1423,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 1
-  m_Color: {r: 0.9019608, g: 1, b: 0.99714947, a: 1}
-  m_Intensity: 0.05
+  m_Color: {r: 1, g: 0.9812703, b: 0.9019608, a: 1}
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -1463,7 +1469,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 3.262761e-34, z: 7.2e-43, w: 3.262816e-34}
+  m_BoundingSphereOverride: {x: 0, y: 1e-44, z: 1.5633e-41, w: 6e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 14.4
@@ -1706,6 +1712,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 0
+  isGrounded: 0
 --- !u!4 &1149539896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7006076943729903694, guid: 0f3e7ca37a5252d478087b09fac6e968,
@@ -2091,6 +2098,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 1
+  isGrounded: 0
 --- !u!54 &1246511200
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2244,6 +2252,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 1
+  isGrounded: 0
 --- !u!54 &1258452131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2407,11 +2416,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4439970048061337045, guid: 6649cf4b361c45e45a81e0e7b275336e,
-        type: 3}
-      propertyPath: burnRate
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6985038852839663450, guid: 6649cf4b361c45e45a81e0e7b275336e,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2476,6 +2480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4439970048061337045, guid: 6649cf4b361c45e45a81e0e7b275336e,
+        type: 3}
+      propertyPath: burnRate
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6649cf4b361c45e45a81e0e7b275336e, type: 3}
@@ -2673,7 +2682,7 @@ PrefabInstance:
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: m_BoundingSphereOverride.x
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
@@ -2683,12 +2692,12 @@ PrefabInstance:
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: -1.7014118e+38
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 0.26953125
+      value: 1.05e-43
       objectReference: {fileID: 0}
     - target: {fileID: 7006076942597300156, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
@@ -3420,7 +3429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4668f30307c737e4d8177a347bc253fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 200
+  stars: {fileID: 0}
   normalSpeed: 200
   boostedSpeed: 400
   jumpFallOff:
@@ -3493,9 +3502,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 458408501}
+  palm: {fileID: 0}
   _camera: {fileID: 1189498440}
   rayLength: 10
   throwForce: 1000
+  hitGameObject: {fileID: 0}
 --- !u!1 &1882813860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3661,6 +3672,7 @@ MonoBehaviour:
   heatedBy: {fileID: 0}
   vaporized: 0
   preIgnited: 0
+  isGrounded: 0
 --- !u!1 &1891154632
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,17 +4203,17 @@ PrefabInstance:
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: m_BoundingSphereOverride.z
-      value: 0
+      value: NaN
       objectReference: {fileID: 0}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: m_BoundingSphereOverride.w
-      value: 114
+      value: 1.05e-43
       objectReference: {fileID: 0}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: m_BoundingSphereOverride.y
-      value: 111
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7006076942597300156, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}

@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Resources/Sandbox.unity
+- path: Assets/Scenes/Test Advanced World Generation.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

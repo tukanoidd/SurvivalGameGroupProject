@@ -8,10 +8,20 @@ public class BoidManager : MonoBehaviour
 
     public BoidSettings settings;
     public ComputeShader compute;
+    private Vector3 flockCenter;
+    private GameObject flockSphere;
+    private GameObject sphereParent;
+    private SphereCollider SOI;
+    
     Boid[] boids;
 
     void Start()
     {
+        sphereParent = new GameObject("Behaviour Parent");
+        sphereParent.AddComponent<Creature>();
+        flockCenter = transform.position;
+        flockSphere = Instantiate(sphereParent, flockCenter, Quaternion.identity, transform);
+        SOI = flockSphere.AddComponent<SphereCollider>();
         boids = FindObjectsOfType<Boid>();
         foreach (Boid b in boids)
         {
@@ -44,16 +54,25 @@ public class BoidManager : MonoBehaviour
             compute.Dispatch(0, threadGroups, 1, 1);
 
             boidBuffer.GetData(boidData);
-
+            
+            flockCenter = Vector3.zero;
+            
             for (int i = 0; i < boids.Length; i++)
             {
                 boids[i].avgFlockHeading = boidData[i].flockHeading;
                 boids[i].centerOfFlockmates = boidData[i].flockCentre;
+                flockCenter += boids[i].transform.position;
                 boids[i].avgAvoidanceHeading = boidData[i].avoidanceHeading;
                 boids[i].numPerceivedFlockmates = boidData[i].numFlockmates;
+                boids[i].target = sphereParent.GetComponent<Creature>().focalPoint;
 
                 boids[i].UpdateBoid();
             }
+
+            flockCenter /= boids.Length;
+            flockSphere.transform.position = flockCenter;
+            SOI.isTrigger = true;
+            SOI.radius = numBoids / 50;
 
             boidBuffer.Release();
         }
