@@ -126,11 +126,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/MeshGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/Data/TextureData.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/TerrainGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/TerrainChunk.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Heat System/Combustable.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Character/CharacterPickupItems.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
       </list>
     </option>
   </component>
@@ -215,7 +215,7 @@
       <workItem from="1568964547969" duration="40253000" />
       <workItem from="1569342150705" duration="20921000" />
       <workItem from="1569495263224" duration="769000" />
-      <workItem from="1569673841359" duration="17940000" />
+      <workItem from="1569673841359" duration="23160000" />
     </task>
     <servers />
   </component>
