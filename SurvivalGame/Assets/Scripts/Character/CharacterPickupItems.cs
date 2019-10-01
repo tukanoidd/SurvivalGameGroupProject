@@ -83,9 +83,10 @@ public class CharacterPickupItems : MonoBehaviour
             try
             {
                 var pos = pickedObject.transform.position;
+                var size = pickedObject.GetComponent<Renderer>().bounds.size;
                 if (pos.y < planeHit.point.y)
                 {
-                    pickedObject.transform.position = new Vector3(pos.x, planeHit.point.y + 2, pos.z);
+                    pickedObject.transform.position = new Vector3(pos.x, planeHit.point.y + Mathf.Max(size.x, size.y, size.z), pos.z);
                 }
             }
             catch

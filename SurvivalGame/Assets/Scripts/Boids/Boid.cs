@@ -20,7 +20,7 @@ public class Boid : MonoBehaviour
 
     private Material _material;
     private Transform _cachedTransform;
-    private Transform _target;
+    public Vector3 target;
 
     void Awake()
     {
@@ -28,9 +28,9 @@ public class Boid : MonoBehaviour
         _cachedTransform = transform;
     }
 
-    public void Initialize(BoidSettings settings, Transform target)
+    public void Initialize(BoidSettings settings, Transform targetTransform)
     {
-        _target = target;
+        target = targetTransform.position;
         _settings = settings;
 
         position = _cachedTransform.position;
@@ -87,9 +87,9 @@ public class Boid : MonoBehaviour
     {
         Vector3 acceleration = Vector3.zero;
 
-        if (_target != null)
+        if (target != null)
         {
-            Vector3 offsetToTarget = (_target.position - position);
+            Vector3 offsetToTarget = (target - position);
             acceleration = SteerTowards(offsetToTarget) * _settings.targetWeight;
         }
 

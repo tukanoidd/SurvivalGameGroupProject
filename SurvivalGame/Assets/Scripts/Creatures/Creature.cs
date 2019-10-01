@@ -87,7 +87,15 @@ public class Creature : MonoBehaviour
                 alive = false;
             }
         } else {
-            GetComponent<Rigidbody>().useGravity = true;
+            if (gameObject.GetComponentInParent<BoidManager>() != null)
+            {
+                Destroy(gameObject.transform.parent.gameObject);   
+            }
+            else
+            {
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
+                Destroy(gameObject, 10);
+            }
         }
     }
 
