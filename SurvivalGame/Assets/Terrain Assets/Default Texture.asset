@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3fa5bcfb7ab10a542bdd3735b3be99ce, type: 3}
   m_Name: Default Texture
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   autoUpdate: 1
   layers:
   - name: Grass

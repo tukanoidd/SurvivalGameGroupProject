@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7f9e37a1418260945bed23920631fbc4, type: 3}
   m_Name: Default Height Map Settings
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   autoUpdate: 1
   noiseSettings:
     normalizeMode: 1
@@ -27,8 +27,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
-      value: 0
+      time: 0.12269974
+      value: 0.3175354
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 1
+      value: 1.3530884
       inSlope: 2
       outSlope: 2
       tangentMode: 0
