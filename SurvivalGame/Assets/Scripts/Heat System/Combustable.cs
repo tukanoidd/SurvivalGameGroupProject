@@ -34,6 +34,7 @@ public class Combustable : MonoBehaviour
     public bool vaporized = false;
     public bool preIgnited = false;
     public bool isGrounded;
+    public bool isThrown = false;
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -233,5 +234,7 @@ public class Combustable : MonoBehaviour
                 GetComponent<Rigidbody>().isKinematic = true;
             }
         }
+        
+        isThrown = false;
     }
 }
