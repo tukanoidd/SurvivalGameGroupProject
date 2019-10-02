@@ -46,6 +46,7 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = true;
                     showPickup = false;
                     pickedObject = hitGameObject;
+                    pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = false;
                     pickedObject.GetComponent<Combustable>().isGrounded = false;
                     scale = pickedObject.transform.lossyScale;
                     pickedObject.GetComponent<Rigidbody>().isKinematic = true;
@@ -80,7 +81,7 @@ public class CharacterPickupItems : MonoBehaviour
             }
         }
 
-        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded && pickedObject.GetComponent<Combustable>().isThrown)
+        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded && pickedObject.GetComponent<Combustable>().isThrown && !pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow)
         {
             try
             {
@@ -89,6 +90,7 @@ public class CharacterPickupItems : MonoBehaviour
                 if (pos.y < planeHit.point.y)
                 {
                     pickedObject.transform.position = new Vector3(pos.x, planeHit.point.y + Mathf.Max(size.x, size.y, size.z), pos.z);
+                    pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = true;
                 }
             }
             catch
