@@ -39,8 +39,6 @@ public class ObjectPlacer : MonoBehaviour
                                         var prefab = obj.prefabs[Random.Range(0, obj.prefabs.Length)];
                                         Vector3 euler = transform.eulerAngles;
                                         euler.y = Random.Range(0f, 360f);
-                                        
-                                        Debug.Log(prefab);
 
                                         var spawned = Instantiate(prefab, vertices[j] + transform.position,
                                             Quaternion.identity,

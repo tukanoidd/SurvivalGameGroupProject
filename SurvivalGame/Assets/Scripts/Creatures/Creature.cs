@@ -1,15 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Creature : MonoBehaviour
 {
+    [Serializable]
+    public enum Type
+    {
+        FireFlies,
+        BoomBugs
+    }
+
+    public Type type;
     public float energy;
     public float energyFull;
     public float movementSpeed;
     public float viewAngle;
     public float viewRadius;
     public float step;
+    public float minimumEnergySourceTemp;
     public Vector3 focalPoint;
     public bool moving;
     public bool recharging;
@@ -19,7 +30,22 @@ public class Creature : MonoBehaviour
     public List<GameObject> vicinity;
     public SphereCollider SOI_Collider;
     public GameObject mainEnergySource;
+    
+    public BoidSettings settings;
 
+    [HideInInspector] public Vector3 position;
+    [HideInInspector] public Vector3 forward;
+    private Vector3 _velocity;
+
+    private Vector3 _acceleration;
+
+    private Transform _cachedTransform;
+
+    void Awake()
+    {
+        _cachedTransform = transform;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if(vicinity.Count < 11)
@@ -37,66 +63,72 @@ public class Creature : MonoBehaviour
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        GetRandomFocalPoint();
+        Initialize(settings);
         alive = true;
         energyFull = energy;
         viewAngle = 45;
-        viewRadius = 20;
+        viewRadius = 20f;
         movementSpeed = 7;
         moving = false;
         vicinity = new List<GameObject>();
-        SOI_Collider = GetComponent<SphereCollider>();
+
+        if (GetComponent<SphereCollider>() == null)
+        {
+            SOI_Collider = gameObject.AddComponent<SphereCollider>();
+            SOI_Collider.radius = viewRadius;
+        }
+        else
+        {
+            SOI_Collider = GetComponent<SphereCollider>();
+            SOI_Collider.radius = viewRadius;
+        }
     }
 
-    // Update is called once per frame
-    protected virtual void Update()
+    public void Initialize(BoidSettings settings)
     {
-        if(alive)
-        {
-            if(!recharging)
-            {
-                energy -= 0.5f;
-            }
-            var speed = (energy/energyFull * movementSpeed);
-            step += 1;
+        this.settings = settings;
 
-            if(energy > 0)
+        position = _cachedTransform.position;
+        forward = _cachedTransform.forward;
+
+        float startSpeed = (this.settings.minSpeed + this.settings.maxSpeed) / 2;
+        _velocity = transform.forward * startSpeed;
+    }
+    
+    Vector3 SteerTowards(Vector3 vector)
+    {
+        Vector3 v = vector.normalized * settings.maxSpeed - _velocity;
+        return Vector3.ClampMagnitude(v, settings.maxSteerForce);
+    }
+    
+    bool isHeadingForCollision()
+    {
+        RaycastHit hit;
+        if (Physics.SphereCast(position, settings.boundsRadius, forward, out hit, settings.collisionAvoidDst,
+            settings.obstacleMask))
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    Vector3 ObstacleRays()
+    {
+        Vector3[] rayDirections = BoidHelper.directions;
+
+        for (int i = 0; i < rayDirections.Length; i++)
+        {
+            Vector3 dir = _cachedTransform.TransformDirection(rayDirections[i]);
+            Ray ray = new Ray(position, dir);
+            if (!Physics.SphereCast(ray, settings.boundsRadius, settings.collisionAvoidDst, settings.obstacleMask))
             {
-                if(energy < (energyFull/2))
-                {
-                    hungry = true;
-                }
-                if(moving)
-                {
-                    move(focalPoint);
-                } else {
-                    if(step % viewRadius == 0)
-                    {
-                        if(energy < energyFull)
-                        {
-                            GetRandomFocalPoint();
-                            move(focalPoint);
-                            findEnergySource();
-                        } else {
-                            GetRandomFocalPoint();
-                            move(focalPoint);
-                            recharging = false;
-                        }
-                    }
-                }
-            } else {
-                alive = false;
-            }
-        } else {
-            if (gameObject.GetComponentInParent<BoidManager>() != null)
-            {
-                Destroy(gameObject.transform.parent.gameObject);   
-            }
-            else
-            {
-                gameObject.GetComponent<Rigidbody>().useGravity = true;
-                Destroy(gameObject, 10);
+                return dir;
             }
         }
+
+        return forward;
     }
 
     public static Vector3 GetPointOnUnitSphereCap(Quaternion targetDirection, float angle)
@@ -109,12 +141,12 @@ public class Creature : MonoBehaviour
 
     protected virtual void GetRandomFocalPoint()
     {
-        var dist = Random.Range(0f,(float) viewRadius);
-        focalPoint = GetPointOnUnitSphereCap(transform.rotation, viewAngle)*dist;
+        focalPoint = position + forward + (position.y > 30 ? Vector3.down : Vector3.zero) + (position.y < 0 ? Vector3.up : Vector3.zero);
     }
 
     protected virtual void move(Vector3 direction)
     {
+        /*
         if(direction != null)
         {
             if(Vector3.Distance(transform.position, focalPoint) < 1)
@@ -129,26 +161,72 @@ public class Creature : MonoBehaviour
                 Debug.DrawRay(transform.position, direction, Color.red);
                 moving = true;
             }
-        } else {
+        }
+        else
+        {
             GetRandomFocalPoint();
+            moving = true;
+        }
+        */
+        
+        if(Vector3.Distance(transform.position, focalPoint) < 1)
+        {
+            moving = false;
+        }
+        else
+        {
+            Vector3 acceleration = Vector3.zero;
+
+            if (direction != null)
+            {
+                Vector3 offsetToTarget = (direction - position);
+                acceleration = SteerTowards(offsetToTarget) * settings.targetWeight;
+            }
+
+            if (isHeadingForCollision())
+            {
+                Vector3 collisionAvoidDir = ObstacleRays();
+                Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * settings.avoidCollisionWeight;
+                acceleration += collisionAvoidForce;
+            }
+
+            _velocity += acceleration * Time.deltaTime;
+            float speed = _velocity.magnitude;
+            Vector3 dir = _velocity / speed;
+            speed = Mathf.Clamp(speed, settings.minSpeed, settings.maxSpeed);
+            _velocity = dir * speed;
+
+            _cachedTransform.position += _velocity * Time.deltaTime;
+            _cachedTransform.forward = dir;
+            position = _cachedTransform.position;
+            forward = dir;
             moving = true;
         }
     }
 
     protected virtual void recharge()
     {
-        var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
-        if(sourceTemp > 0)
+        if (energy < energyFull)
         {
-            var amount = 2;
-            mainEnergySource.GetComponent<Combustable>().temperature -= amount;
-            energy += amount;
-            recharging = true;
-        } else {
-            vicinity.Remove(mainEnergySource);
-            recharging = false;
-            //GetRandomFocalPoint();
-            mainEnergySource = null;
+            var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
+            if(sourceTemp > 0)
+            {
+                var amount = 2;
+                mainEnergySource.GetComponent<Combustable>().temperature -= amount;
+                energy += amount;
+                recharging = true;
+            }
+            else
+            {
+                vicinity.Remove(mainEnergySource);
+                recharging = false;
+                //GetRandomFocalPoint();
+                mainEnergySource = null;
+            }
+        }
+        else
+        {
+            hungry = false;
         }
     }
 
@@ -180,7 +258,7 @@ public class Creature : MonoBehaviour
                 }
             }
 
-            var random = Random.Range(0f, (float) totalTemp);
+            var random = Random.Range(minimumEnergySourceTemp, (float) totalTemp);
 
             for(int j = 0; j < vicinity.Count; j++)
             {
