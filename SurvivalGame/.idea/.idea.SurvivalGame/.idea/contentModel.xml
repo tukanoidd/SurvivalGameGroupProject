@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\tukan\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\tukan\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_SurvivalGame.1859547958.00" t="ExcludeRecursive" />
-    <e p="E:\GitHub\SurvivalGameGroupProject\SurvivalGame" t="IncludeRecursive">
+    <e p="C:\Users\Brandon\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Brandon\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_SurvivalGame.1010530122.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Brandon\Documents\GitHub\SurvivalGameGroupProject\SurvivalGame" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -38,12 +38,9 @@
             <e p="ThreadedDataRequester.cs" t="Include" />
           </e>
           <e p="Boids" t="Include">
-            <e p="Boid.cs" t="Include" />
-            <e p="BoidCompute.compute" t="Include" />
             <e p="BoidHelper.cs" t="Include" />
-            <e p="BoidManager.cs" t="Include" />
             <e p="BoidSettings.cs" t="Include" />
-            <e p="BoidsSpawner.cs" t="Include" />
+            <e p="BoomBugs.cs" t="Include" />
           </e>
           <e p="ChangeColors.cs" t="Include" />
           <e p="Character" t="Include">
@@ -54,8 +51,8 @@
           </e>
           <e p="CheckPickedCollision.cs" t="Include" />
           <e p="Creatures" t="Include">
-            <e p="BoidCluster.cs" t="Include" />
             <e p="Creature.cs" t="Include" />
+            <e p="FireFlies.cs" t="Include" />
             <e p="Spawner.cs" t="Include" />
           </e>
           <e p="DayNight Cycle" t="Include">

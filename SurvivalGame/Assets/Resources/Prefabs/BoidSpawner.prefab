@@ -46,8 +46,8 @@ MonoBehaviour:
   spawnObject: {fileID: 5669992536431206071, guid: f4e69930c0ad24de8bee07e48346068d,
     type: 3}
   spawnGroup: []
-  spawnAmount: 10
-  spawnInterval: 20
+  spawnAmount: 1
+  spawnInterval: 60
   counter: 0
   onStart: 0
   startAtNight: 1
