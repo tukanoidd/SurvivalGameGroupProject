@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6681870464476883108}
   - component: {fileID: 5646616478242202562}
   m_Layer: 0
-  m_Name: BoidSpawner(Swarm)
+  m_Name: BoomBugsSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,11 +43,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5874dc25377c4930ac4b491fb8575a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnObject: {fileID: 8819474484907068408, guid: ec01b6431759ed74ea774b0714f43fcf,
+  spawnObject: {fileID: 6365196010681266399, guid: 707c31eb11e720e479335aeafe4c7a40,
     type: 3}
   spawnGroup: []
   spawnAmount: 1
-  spawnInterval: 0
+  spawnInterval: 60
   counter: 0
   onStart: 1
   startAtNight: 0

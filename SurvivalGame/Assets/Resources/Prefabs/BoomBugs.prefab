@@ -105,6 +105,9 @@ GameObject:
   - component: {fileID: 3300206439273331995}
   - component: {fileID: 807897748682232524}
   - component: {fileID: 3452609868819163885}
+  - component: {fileID: -8183071509131037279}
+  - component: {fileID: 2782424590038481664}
+  - component: {fileID: 6041784025341224017}
   m_Layer: 0
   m_Name: BoomBugs
   m_TagString: Untagged
@@ -159,7 +162,6 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 3233ef5a87413a94dac269cbd3ee07b6, type: 2}
   position: {x: 0, y: 0, z: 0}
   forward: {x: 0, y: 0, z: 0}
-  boidGlow: {fileID: 6954437868399190531}
   energyThreshold: 0
 --- !u!54 &236716420778930181
 Rigidbody:
@@ -5393,3 +5395,51 @@ ParticleSystemForceField:
         m_RotationOrder: 4
     m_MultiplyDragByParticleSize: 1
     m_MultiplyDragByParticleVelocity: 1
+--- !u!220 &-8183071509131037279
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365196010681266399}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 1, y: -1, z: -1}
+  - {x: -1, y: 1, z: 1}
+  - {x: -1, y: 1, z: -1}
+  - {x: -1, y: -1, z: 1}
+  - {x: -1, y: -1, z: -1}
+  m_Dering: 1
+--- !u!114 &2782424590038481664
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365196010681266399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: aa1333683631a8f41b4f526d7baee631, type: 2}
+  isGlobal: 0
+  blendDistance: 10.62
+  weight: 1
+  priority: 0.5
+--- !u!135 &6041784025341224017
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6365196010681266399}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 8.11
+  m_Center: {x: -0.08588269, y: -0.0012294058, z: 0.020447379}

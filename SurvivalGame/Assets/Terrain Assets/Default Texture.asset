@@ -55,6 +55,7 @@ MonoBehaviour:
       chance: 0.304
       prefabs:
       - {fileID: 704925163847726216, guid: a57e31ff0aedf334c9c59c48b198b984, type: 3}
+      - {fileID: 5265037271211194653, guid: c4cb035342cd21f46a6fe8e3db12ccc2, type: 3}
     texture: {fileID: 2800000, guid: c2d497d4e267ca0408bee54d56712dee, type: 3}
     tint: {r: 0.754717, g: 0.1438363, b: 0.0035599943, a: 0}
     tintStrength: 0.774
