@@ -103,11 +103,12 @@ GameObject:
   - component: {fileID: 5669992536431205963}
   - component: {fileID: 5669992536431206068}
   - component: {fileID: 5669992536431206069}
-  - component: {fileID: 5669992536431206070}
   - component: {fileID: 5669992536431205960}
   - component: {fileID: 4351193813931860436}
+  - component: {fileID: 4186584225894514167}
+  - component: {fileID: 6100542598785574651}
   m_Layer: 10
-  m_Name: BoidCluster
+  m_Name: FireFlies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4863,39 +4864,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 8.11
   m_Center: {x: -0.08588269, y: -0.0012294058, z: 0.020447379}
---- !u!114 &5669992536431206070
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5669992536431206071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfcb39777af96094f95b4cd61932caff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  energy: 0
-  energyFull: 0
-  movementSpeed: 0
-  viewAngle: 0
-  viewRadius: 0
-  step: 0
-  minimumEnergySourceTemp: 0
-  focalPoint: {x: 0, y: 0, z: 0}
-  moving: 0
-  recharging: 0
-  lookingForEnergy: 0
-  hungry: 0
-  alive: 0
-  vicinity: []
-  SOI_Collider: {fileID: 5669992536431206069}
-  mainEnergySource: {fileID: 0}
-  settings: {fileID: 11400000, guid: 3233ef5a87413a94dac269cbd3ee07b6, type: 2}
-  position: {x: 0, y: 0, z: 0}
-  forward: {x: 0, y: 0, z: 0}
-  boidGlow: {fileID: 7514601522671448242}
 --- !u!54 &5669992536431205960
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4929,6 +4897,56 @@ MonoBehaviour:
   blendDistance: 10.62
   weight: 1
   priority: 0.5
+--- !u!220 &4186584225894514167
+LightProbeGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669992536431206071}
+  m_Enabled: 1
+  m_SourcePositions:
+  - {x: 1, y: 1, z: 1}
+  - {x: 1, y: 1, z: -1}
+  - {x: 1, y: -1, z: 1}
+  - {x: 1, y: -1, z: -1}
+  - {x: -1, y: 1, z: 1}
+  - {x: -1, y: 1, z: -1}
+  - {x: -1, y: -1, z: 1}
+  - {x: -1, y: -1, z: -1}
+  m_Dering: 1
+--- !u!114 &6100542598785574651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5669992536431206071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfcb39777af96094f95b4cd61932caff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  energy: 0
+  energyFull: 0
+  movementSpeed: 0
+  viewAngle: 0
+  viewRadius: 0
+  step: 0
+  minimumEnergySourceTemp: 0
+  focalPoint: {x: 0, y: 0, z: 0}
+  moving: 0
+  recharging: 0
+  lookingForEnergy: 0
+  hungry: 0
+  alive: 0
+  vicinity: []
+  SOI_Collider: {fileID: 0}
+  mainEnergySource: {fileID: 0}
+  settings: {fileID: 11400000, guid: 3233ef5a87413a94dac269cbd3ee07b6, type: 2}
+  position: {x: 0, y: 0, z: 0}
+  forward: {x: 0, y: 0, z: 0}
 --- !u!1 &5669992536454154536
 GameObject:
   m_ObjectHideFlags: 0

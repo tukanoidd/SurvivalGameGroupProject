@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Spawner : MonoBehaviour
 {
@@ -24,7 +25,12 @@ public class Spawner : MonoBehaviour
         {
             for (int i = 0; i < spawnAmount; i++)
             {
-                var obj = Instantiate(spawnObject, transform.position, Quaternion.identity);
+                Vector3 euler = transform.eulerAngles;
+                euler.y = Random.Range(0f, 360f);
+                
+                var obj = Instantiate(spawnObject, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+                obj.transform.eulerAngles = euler;
+                
                 spawnGroup.Add(obj);
             }
         }
@@ -41,17 +47,15 @@ public class Spawner : MonoBehaviour
 
     void spawn()
     {
-        var intensity = sun.GetComponent<Light>().intensity;
-        var maxIntensity = sun.GetComponent<AutoIntensity>().maxIntensity;
-        var minInensity = sun.GetComponent<AutoIntensity>().minIntensity;
+        var dot = sun.GetComponent<AutoIntensity>().dot;
 
-        if (startAtNight && (counter < spawnAmount && intensity < (maxIntensity - maxIntensity / 4)))
+        if (startAtNight && (counter < spawnAmount && dot <= 0))
         {
             var obj = Instantiate(spawnObject, transform.position, Quaternion.identity);
             spawnGroup.Add(obj);
             counter++;
         }
-        else if (!startAtNight && intensity > (minInensity + minInensity / 2))
+        else if (!startAtNight && dot > 0)
         {
             var obj = Instantiate(spawnObject, transform.position, Quaternion.identity);
             spawnGroup.Add(obj);

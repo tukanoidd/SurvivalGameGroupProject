@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BoomBugs : Creature
 {
-    public Light boidGlow;
+    //public Light boidGlow;
     public float energyThreshold;
 
     // Start is called before the first frame update
@@ -21,45 +21,48 @@ public class BoomBugs : Creature
     {
         if (alive)
         {
-            if(!recharging)
+            if (!recharging)
             {
                 energy += 0.8f;
-            }
-            var speed = (energy/energyFull * movementSpeed);
-            step += 1;
-                
-            if(energy < energyThreshold)
-            {
-                if(energy > (energyThreshold/2))
+                var speed = (energy / energyFull * movementSpeed);
+                step += 1;
+
+                if (energy < energyThreshold)
                 {
-                    hungry = true;
-                }
-                if(moving)
-                {
-                    move(focalPoint);
-                } else {
-                    if(step % viewRadius == 0)
+                    if (energy > (energyThreshold / 2))
                     {
-                        if(hungry)
-                        {
-                            GetRandomFocalPoint();
-                            move(focalPoint);
-                            findEnergySource();
-                        } else {
-                            GetRandomFocalPoint();
-                            move(focalPoint);
-                            recharging = false;
-                        }
+                        hungry = true;
+                    }
+
+                    if (hungry)
+                    {
+                        findEnergySource();
+                        move(focalPoint);
+                    }
+                    else
+                    {
+                        GetRandomFocalPoint();
+                        move(focalPoint);
+                        recharging = false;
                     }
                 }
-            } else
-            {
-                alive = false;
-                gameObject.GetComponent<Rigidbody>().useGravity = true;
-                Destroy(gameObject, 10);
+                else
+                {
+                    alive = false;
+                    if (GetComponent<Rigidbody>() != null)
+                    {
+                        GetComponent<Rigidbody>().useGravity = true;
+                        Destroy(gameObject, 10);
+                    }
+                }
             }
+            else
+            {
+                recharge();
+            }
+            
         }
-
-        boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
+        
+        //boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
     }
 }

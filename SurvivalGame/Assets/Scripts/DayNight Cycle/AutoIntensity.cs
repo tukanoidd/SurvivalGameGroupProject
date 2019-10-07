@@ -32,16 +32,21 @@ public class AutoIntensity : MonoBehaviour
     private Skybox sky;
     private Material skyMat;
 
+    [HideInInspector] public float dot;
+
     private void Start()
     {
         mainLight = GetComponent<Light>();
         skyMat = RenderSettings.skybox;
+
+        float tRange = 1 - minPoint;
+        dot = Mathf.Clamp01((Vector3.Dot(mainLight.transform.forward, Vector3.down) - minPoint) / tRange);
     }
 
     private void Update()
     {
         float tRange = 1 - minPoint;
-        float dot = Mathf.Clamp01((Vector3.Dot(mainLight.transform.forward, Vector3.down) - minPoint) / tRange);
+        dot = Mathf.Clamp01((Vector3.Dot(mainLight.transform.forward, Vector3.down) - minPoint) / tRange);
         float i = ((maxIntensity - minIntensity) * dot) + minIntensity;
 
         mainLight.intensity = i;

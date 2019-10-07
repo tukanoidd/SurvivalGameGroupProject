@@ -64,13 +64,13 @@ public class Creature : MonoBehaviour
     protected virtual void Start()
     {
         GetRandomFocalPoint();
-        Initialize(settings);
+        Initialize();
         alive = true;
         energyFull = energy;
         viewAngle = 45;
         viewRadius = 20f;
         movementSpeed = 7;
-        moving = false;
+        moving = true;
         vicinity = new List<GameObject>();
 
         if (GetComponent<SphereCollider>() == null)
@@ -85,21 +85,27 @@ public class Creature : MonoBehaviour
         }
     }
 
-    public void Initialize(BoidSettings settings)
+    public void Initialize()
     {
-        this.settings = settings;
+        if (settings != null)
+        {
+            position = _cachedTransform.position;
+            forward = _cachedTransform.forward;
 
-        position = _cachedTransform.position;
-        forward = _cachedTransform.forward;
-
-        float startSpeed = (this.settings.minSpeed + this.settings.maxSpeed) / 2;
-        _velocity = transform.forward * startSpeed;
+            float startSpeed = (settings.minSpeed + settings.maxSpeed) / 2;
+            _velocity = transform.forward * startSpeed;   
+        }
     }
     
     Vector3 SteerTowards(Vector3 vector)
     {
-        Vector3 v = vector.normalized * settings.maxSpeed - _velocity;
-        return Vector3.ClampMagnitude(v, settings.maxSteerForce);
+        if (settings != null)
+        {
+            Vector3 v = vector.normalized * settings.maxSpeed - _velocity;
+            return Vector3.ClampMagnitude(v, settings.maxSteerForce);   
+        }
+
+        return Vector3.zero;
     }
     
     bool isHeadingForCollision()
@@ -141,7 +147,9 @@ public class Creature : MonoBehaviour
 
     protected virtual void GetRandomFocalPoint()
     {
-        focalPoint = position + forward + (position.y > 30 ? Vector3.down : Vector3.zero) + (position.y < 0 ? Vector3.up : Vector3.zero);
+        var lessZero = transform.position.y < 0;
+        
+        focalPoint = transform.position + transform.forward + new Vector3(0, lessZero ? 0 : -1, 0) + new Vector3(0, lessZero ? 1 : 0, 0);
     }
 
     protected virtual void move(Vector3 direction)
@@ -168,65 +176,86 @@ public class Creature : MonoBehaviour
             moving = true;
         }
         */
-        
-        if(Vector3.Distance(transform.position, focalPoint) < 1)
+        if (settings != null)
         {
-            moving = false;
-        }
-        else
-        {
-            Vector3 acceleration = Vector3.zero;
-
-            if (direction != null)
+            if(Vector3.Distance(transform.position, focalPoint) < 1 && recharging)
             {
-                Vector3 offsetToTarget = (direction - position);
-                acceleration = SteerTowards(offsetToTarget) * settings.targetWeight;
+                moving = false;
             }
-
-            if (isHeadingForCollision())
+            else
             {
-                Vector3 collisionAvoidDir = ObstacleRays();
-                Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * settings.avoidCollisionWeight;
-                acceleration += collisionAvoidForce;
-            }
+                Vector3 acceleration = Vector3.zero;
 
-            _velocity += acceleration * Time.deltaTime;
-            float speed = _velocity.magnitude;
-            Vector3 dir = _velocity / speed;
-            speed = Mathf.Clamp(speed, settings.minSpeed, settings.maxSpeed);
-            _velocity = dir * speed;
+                if (direction != null)
+                {
+                    Vector3 offsetToTarget = (direction - position);
+                    acceleration = SteerTowards(offsetToTarget) * settings.targetWeight;
+                }
 
-            _cachedTransform.position += _velocity * Time.deltaTime;
-            _cachedTransform.forward = dir;
-            position = _cachedTransform.position;
-            forward = dir;
-            moving = true;
+                if (isHeadingForCollision())
+                {
+                    Vector3 collisionAvoidDir = ObstacleRays();
+                    Vector3 collisionAvoidForce = SteerTowards(collisionAvoidDir) * settings.avoidCollisionWeight;
+                    acceleration += collisionAvoidForce;
+                }
+
+                _velocity += acceleration * Time.deltaTime;
+                float speed = _velocity.magnitude;
+                Vector3 dir = _velocity / speed;
+                speed = Mathf.Clamp(speed, settings.minSpeed, settings.maxSpeed);
+                _velocity = dir * speed;
+
+                _cachedTransform.position += _velocity * Time.deltaTime;
+                _cachedTransform.forward = dir;
+                position = _cachedTransform.position;
+                forward = dir;
+                moving = true;
+            }   
         }
     }
 
     protected virtual void recharge()
     {
-        if (energy < energyFull)
+        if (type == Type.FireFlies)
+        {
+            if (energy < energyFull)
+            {
+                var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
+                if(sourceTemp > 0)
+                {
+                    var amount = 2;
+                    mainEnergySource.GetComponent<Combustable>().temperature -= amount;
+                    energy += amount;
+                    recharging = true;
+                }
+                else
+                {
+                    vicinity.Remove(mainEnergySource);
+                    recharging = false;
+                    //GetRandomFocalPoint();
+                    mainEnergySource = null;
+                }
+            }
+            else
+            {
+                hungry = false;
+            }   
+        } else if (type == Type.BoomBugs)
         {
             var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
-            if(sourceTemp > 0)
+            if (sourceTemp < 100)
             {
                 var amount = 2;
-                mainEnergySource.GetComponent<Combustable>().temperature -= amount;
-                energy += amount;
+                mainEnergySource.GetComponent<Combustable>().temperature += amount;
+                energy -= amount;
                 recharging = true;
             }
             else
             {
                 vicinity.Remove(mainEnergySource);
                 recharging = false;
-                //GetRandomFocalPoint();
                 mainEnergySource = null;
             }
-        }
-        else
-        {
-            hungry = false;
         }
     }
 

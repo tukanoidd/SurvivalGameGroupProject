@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FireFlies : Creature
 {
-    public Light boidGlow;
+    //public Light boidGlow;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -34,8 +34,8 @@ public class FireFlies : Creature
 
                     if(hungry)
                     {
-                        move(focalPoint);
                         findEnergySource();
+                        move(focalPoint);
                     } else {
                         GetRandomFocalPoint();
                         move(focalPoint);
@@ -44,8 +44,11 @@ public class FireFlies : Creature
                             
                 } else {
                     alive = false;
-                    gameObject.GetComponent<Rigidbody>().useGravity = true;
-                    Destroy(gameObject, 10);
+                    if (GetComponent<Rigidbody>() != null)
+                    {
+                        GetComponent<Rigidbody>().useGravity = true;
+                        Destroy(gameObject, 10);   
+                    }
                 }
             }
             else
@@ -54,6 +57,6 @@ public class FireFlies : Creature
             }
         }
 
-        boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
+        //boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
     }
 }
