@@ -178,22 +178,34 @@ MonoBehaviour:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
-  flashpoint: 150
+  flashpoint: 50
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 1
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 0}
-  flameObj: {fileID: 0}
-  smokeObj: {fileID: 0}
+  collider: {fileID: 0}
+  flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
+    type: 3}
+  smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
+    type: 3}
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 1
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -324,22 +336,34 @@ MonoBehaviour:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
-  flashpoint: 150
+  flashpoint: 50
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 1
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 0}
-  flameObj: {fileID: 0}
-  smokeObj: {fileID: 0}
+  collider: {fileID: 0}
+  flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
+    type: 3}
+  smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
+    type: 3}
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -577,22 +601,34 @@ MonoBehaviour:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
-  flashpoint: 150
+  flashpoint: 50
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 1
   maxTemp: 1000
   burnRate: 7
-  isBurning: 0
+  doesIgnite: 1
+  isBurning: 1
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 0}
-  flameObj: {fileID: 0}
-  smokeObj: {fileID: 0}
+  collider: {fileID: 0}
+  flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
+    type: 3}
+  smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
+    type: 3}
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &8975036368881689608
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,22 +756,34 @@ MonoBehaviour:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
-  flashpoint: 150
+  flashpoint: 50
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 1
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 0}
-  flameObj: {fileID: 0}
-  smokeObj: {fileID: 0}
+  collider: {fileID: 0}
+  flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
+    type: 3}
+  smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
+    type: 3}
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
