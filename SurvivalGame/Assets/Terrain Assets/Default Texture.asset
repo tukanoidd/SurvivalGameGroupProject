@@ -35,6 +35,7 @@ MonoBehaviour:
       chance: 0.594
       prefabs:
       - {fileID: 7857654821838204845, guid: 6649cf4b361c45e45a81e0e7b275336e, type: 3}
+      - {fileID: 6916432013266103933, guid: c05d6aff854884242a9279de4c1a5fa2, type: 3}
     texture: {fileID: 2800000, guid: a354f4f27b4145143b4221de9648f18f, type: 3}
     tint: {r: 0.32009545, g: 0.38679248, b: 0, a: 0}
     tintStrength: 1
@@ -54,7 +55,7 @@ MonoBehaviour:
       - {fileID: 3652127512277983514, guid: b224cc0d63e60be4a925844d12399371, type: 3}
       - {fileID: 4071446036896253347, guid: 7a0a5e53acd2dff498e54469ab5ba096, type: 3}
     - name: Boids
-      chance: 0.304
+      chance: 0.359
       prefabs:
       - {fileID: 704925163847726216, guid: a57e31ff0aedf334c9c59c48b198b984, type: 3}
       - {fileID: 5265037271211194653, guid: c4cb035342cd21f46a6fe8e3db12ccc2, type: 3}

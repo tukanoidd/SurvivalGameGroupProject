@@ -11,7 +11,7 @@ public class BoomBugs : Creature
     protected override void Start()
     {
         energy = 0;
-        energyThreshold = 1000;
+        energyThreshold = 3000;
         minimumEnergySourceTemp = 50f;
         base.Start();
     }
@@ -29,7 +29,7 @@ public class BoomBugs : Creature
 
                 if (energy < energyThreshold)
                 {
-                    if (energy > (energyThreshold / 2))
+                    if (energy > (energyThreshold / 4))
                     {
                         hungry = true;
                     }
@@ -60,9 +60,68 @@ public class BoomBugs : Creature
             {
                 recharge();
             }
-            
+
         }
-        
+
         //boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
+    }
+
+    void recharge()
+    {
+        var amount = 2;
+        mainEnergySource.GetComponent<Combustable>().temperature += amount;
+        mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;
+        energy -= amount;
+        recharging = true;
+        if (mainEnergySource.GetComponent<Combustable>().isBurning || energy < 1f)
+        {
+            vicinity.Remove(mainEnergySource);
+            recharging = false;
+            mainEnergySource = null;
+        }
+    }
+    
+    void findEnergySource()
+    {
+        lookingForEnergy = true;
+
+        if(mainEnergySource == null)
+        {
+            if(vicinity.Count == 0)
+            {
+                var dist = Random.Range(0f,(float) viewRadius);
+                focalPoint = GetPointOnUnitSphereCap(transform.rotation, viewAngle)*dist;
+                move(focalPoint);
+            }
+            else
+            {
+                float smallest;
+                int index = 0;
+                
+                for (int i = vicinity.Count - 1; i >= 0; i--)
+                {
+                    smallest = Vector3.Distance(transform.position, vicinity[i].transform.position);
+                    index = i;
+
+                    if (i > 0)
+                    {
+                        if (Vector3.Distance(transform.position, vicinity[i-1].transform.position) < smallest)
+                        {
+                            smallest = Vector3.Distance(transform.position, vicinity[i-1].transform.position);
+                            index = i-1;
+                        }
+                    }
+                }
+                
+                focalPoint = vicinity[index].transform.position;
+                mainEnergySource = vicinity[index];
+            }
+        } else {
+            focalPoint = mainEnergySource.transform.position;
+            if(Vector3.Distance(transform.position, focalPoint) < 1)
+            {
+                recharge();
+            }
+        }
     }
 }

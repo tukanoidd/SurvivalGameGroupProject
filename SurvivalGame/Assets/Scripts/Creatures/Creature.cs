@@ -52,7 +52,7 @@ public class Creature : MonoBehaviour
         {
             if(other.gameObject != null)
             {
-                if(!vicinity.Contains(other.gameObject))
+                if(!vicinity.Contains(other.gameObject) && other.GetComponent<Combustable>() != null)
                 {
                     vicinity.Add(other.gameObject);
                 }
@@ -147,9 +147,9 @@ public class Creature : MonoBehaviour
 
     protected virtual void GetRandomFocalPoint()
     {
-        var lessZero = transform.position.y < 0;
-        
-        focalPoint = transform.position + transform.forward + new Vector3(0, lessZero ? 0 : -1, 0) + new Vector3(0, lessZero ? 1 : 0, 0);
+        Vector3[] rayDirections = BoidHelper.directions;
+        var random = Mathf.FloorToInt(Random.Range(0, rayDirections.Length));
+        focalPoint = rayDirections[random] * viewRadius;
     }
 
     protected virtual void move(Vector3 direction)
@@ -218,99 +218,10 @@ public class Creature : MonoBehaviour
     {
         if (type == Type.FireFlies)
         {
-            if (energy < energyFull)
-            {
-                var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
-                if(sourceTemp > 0)
-                {
-                    var amount = 2;
-                    mainEnergySource.GetComponent<Combustable>().temperature -= amount;
-                    energy += amount;
-                    recharging = true;
-                }
-                else
-                {
-                    vicinity.Remove(mainEnergySource);
-                    recharging = false;
-                    //GetRandomFocalPoint();
-                    mainEnergySource = null;
-                }
-            }
-            else
-            {
-                hungry = false;
-            }   
+            
         } else if (type == Type.BoomBugs)
         {
-            var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
-            if (sourceTemp < 100)
-            {
-                var amount = 2;
-                mainEnergySource.GetComponent<Combustable>().temperature += amount;
-                energy -= amount;
-                recharging = true;
-            }
-            else
-            {
-                vicinity.Remove(mainEnergySource);
-                recharging = false;
-                mainEnergySource = null;
-            }
-        }
-    }
-
-    protected virtual void findEnergySource()
-    {
-        var totalTemp = 0f;
-
-        lookingForEnergy = true;
-
-        if(mainEnergySource == null)
-        {
-            if(vicinity.Count == 0)
-            {
-                var dist = Random.Range(0f,(float) viewRadius);
-                focalPoint = GetPointOnUnitSphereCap(transform.rotation, viewAngle)*dist;
-                move(focalPoint);
-            }
-
-            for(int i = 0; i < vicinity.Count; i++)
-            {
-                if(vicinity[i] != null)
-                {
-                    if(vicinity[i].GetComponent<Combustable>() != null)
-                    {
-                        var obj = vicinity[i];
-                        var temp = obj.GetComponent<Combustable>().temperature;
-                        totalTemp += temp;
-                    }
-                }
-            }
-
-            var random = Random.Range(minimumEnergySourceTemp, (float) totalTemp);
-
-            for(int j = 0; j < vicinity.Count; j++)
-            {
-                if(vicinity[j] != null)
-                {
-                    if(vicinity[j].GetComponent<Combustable>() != null)
-                    {
-                        var temp = vicinity[j].GetComponent<Combustable>().temperature;
-                        
-                        if(temp > random)
-                        {
-                            focalPoint = vicinity[j].transform.position;
-                            mainEnergySource = vicinity[j];
-                        }
-                    }
-                }
-            }
-        } else {
-            focalPoint = mainEnergySource.transform.position;
-            if(Vector3.Distance(transform.position, focalPoint) < 5)
-            {
-                recharge();
-            }
+  
         }
     }
 }

@@ -112,19 +112,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 473732827157738914}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &314726071320001437
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,19 +250,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 2877686991665726998}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970048061337044
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,19 +388,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970048061337128}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970048239056149
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,19 +526,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970048239056233}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970048394551514
 GameObject:
   m_ObjectHideFlags: 0
@@ -612,19 +664,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970048394551518}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970048491480153
 GameObject:
   m_ObjectHideFlags: 0
@@ -737,19 +802,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970048491480157}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970048694059386
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,19 +940,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970048694059390}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970048991587419
 GameObject:
   m_ObjectHideFlags: 0
@@ -987,19 +1078,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970048991587423}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &4439970049555524852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1112,19 +1216,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4439970049555524808}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &6014533325695782377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,19 +1354,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 8271858373168770953}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &6985038852839663450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1362,19 +1492,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 4191420221091500485}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &7532849679300645831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,19 +1630,32 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6670509803957229621}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &7857654821838204845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1510,6 +1666,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4433952291010125791}
   - component: {fileID: 1302219893545153377}
+  - component: {fileID: 3988886489709015979}
   m_Layer: 0
   m_Name: Fireplace
   m_TagString: Untagged
@@ -1560,6 +1717,48 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3988886489709015979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7857654821838204845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  name: Fireplace
+  temperature: 25
+  tempInitial: 0
+  tempExternal: 0
+  flashpoint: 150
+  fuel: 1000
+  glowTemp: 1100
+  heatTransfer: 2
+  heatResistance: 5
+  maxTemp: 0
+  burnRate: 7
+  doesIgnite: 1
+  isBurning: 0
+  heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
+  red: {r: 255, g: 0, b: 0, a: 1}
+  blue: {r: 0, g: 0, b: 255, a: 1}
+  color: {r: 0, g: 0, b: 0, a: 0}
+  renderer: {fileID: 0}
+  collider: {fileID: 0}
+  flameObj: {fileID: 0}
+  smokeObj: {fileID: 0}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
 --- !u!1 &8038030073796136562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,16 +1871,29 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6631305487554591337}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
     type: 3}
+  groupParent: {fileID: 0}
+  heatedBy: {fileID: 0}
+  vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
