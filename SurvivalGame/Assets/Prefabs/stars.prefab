@@ -4691,7 +4691,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 1a7cbfb1fbaa45c478a606acbd06e7dd, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4823,3 +4823,4 @@ MonoBehaviour:
   nightAtmosphereThickness: 0.87
   dayRotateSpeed: {x: 0, y: 0, z: 0}
   nightRotateSpeed: {x: 0, y: 0, z: 0}
+  dot: 0

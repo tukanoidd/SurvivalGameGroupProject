@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -51,13 +52,12 @@ public class Combustable : MonoBehaviour
         {
             renderer = GetComponent<MeshRenderer>();
             color = renderer.material.color;
-        } else {
-            Debug.Log("No mesh renderer found: (Combustable) " + gameObject.name);
         }
 
         maxTemp = (heatResistance * 200) + (GetObjectVolume() * 50);
 
-        smokeObj = Resources.Load<GameObject>("Prefabs/TorchSmoke");
+        smokeObj = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefabs/TorchSmoke.prefab", typeof(GameObject));
+        flameObj = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefabs/FlameMain.prefab", typeof(GameObject));
 
         if(preIgnited)
         {
@@ -189,7 +189,23 @@ public class Combustable : MonoBehaviour
 
     public float GetObjectVolume()
     {
-        float volume = renderer.bounds.size.x + renderer.bounds.size.y + renderer.bounds.size.z;
+        float volume;
+        
+        if (renderer == null)
+        {
+            Bounds bounds = new Bounds();
+            foreach (var renderer in GetComponentsInChildren<MeshRenderer>())
+            {
+                bounds.Encapsulate(renderer.bounds);
+            }   
+            
+            volume = bounds.size.x + bounds.size.y + bounds.size.z;
+        }
+        else
+        {
+            volume = renderer.bounds.size.x + renderer.bounds.size.y + renderer.bounds.size.z;    
+        }
+        
         return volume;
     }
 
@@ -224,7 +240,7 @@ public class Combustable : MonoBehaviour
         Vector3 directionOut;
         float distanceOut;
 
-        if (impactedObject.GetComponent<Collider>() != null)
+        if (impactedObject.GetComponent<Collider>() != null && collider != null)
         {
             bool overlapped = Physics.ComputePenetration(collider, transform.position, transform.rotation,
                 impactedObject.GetComponent<Collider>(), objectPosition, objectRotation, out directionOut, out distanceOut);

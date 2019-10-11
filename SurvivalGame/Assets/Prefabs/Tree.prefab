@@ -202,7 +202,7 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
-  preIgnited: 1
+  preIgnited: 0
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0

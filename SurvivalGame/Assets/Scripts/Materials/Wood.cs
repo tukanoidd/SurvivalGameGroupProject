@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Wood : Combustable
@@ -20,8 +21,20 @@ public class Wood : Combustable
         heatResistance = 4;
         burnRate = 5;     
         renderer = GetComponent<MeshRenderer>();
-        renderer.material = Resources.Load<Material>("Materials/Wood");
-        color = renderer.material.color;
+
+        if (renderer == null)
+        {
+            foreach (var childRenderer in GetComponentsInChildren<MeshRenderer>())
+            {
+                childRenderer.material = (Material) AssetDatabase.LoadAssetAtPath("Assets/Materials/Wood.mat", typeof(Material));
+                color = childRenderer.material.color;
+            }
+        }
+        else
+        {
+            renderer.material = (Material) AssetDatabase.LoadAssetAtPath("Assets/Materials/Wood.mat", typeof(Material));
+            color = renderer.material.color;
+        }
     }
 
     // Update is called once per frame

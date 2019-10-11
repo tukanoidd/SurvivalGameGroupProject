@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Flint : Stone
@@ -21,7 +22,7 @@ public class Flint : Stone
         glowTemp = 400;
         flashpoint = glowTemp;
         doesIgnite = false;
-        sparkObj = Resources.Load<GameObject>("Prefabs/Sparks");
+        sparkObj = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Sparks.prefab", typeof(GameObject));
         sparks = sparkObj.GetComponent<ParticleSystem>();
     }
 

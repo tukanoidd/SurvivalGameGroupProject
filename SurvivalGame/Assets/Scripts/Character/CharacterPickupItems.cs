@@ -124,6 +124,8 @@ public class CharacterPickupItems : MonoBehaviour
             GUI.Label(new Rect(Screen.width / 50, Screen.height * 8 / 10, 50, 50),
                 pickupName + " - (Temp: " + pickupTemp + ")",
                 interactionStyle);
+            
+            GUI.Label(new Rect(Screen.width * 15 / 20, Screen.height * 9 / 10, 300, 50), "MRB: Show Information About Object");
         }
     }
 
@@ -134,17 +136,16 @@ public class CharacterPickupItems : MonoBehaviour
 
         Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
         RaycastHit rayPickupHit;
+        
+        float distToObj = 0;
 
-        if (Physics.Raycast(pickupRay, out rayPickupHit, maxDistance: rayLength))
+        if (Physics.Raycast(pickupRay, out rayPickupHit, rayLength))
         {
             if (rayPickupHit.transform.gameObject != null)
             {
                 hitGameObject = rayPickupHit.transform.gameObject;
 
-                if (hitGameObject.CompareTag("terrain"))
-                {
-                    planeHit = rayPickupHit;
-                }
+                distToObj = rayPickupHit.distance;
 
                 if (hitGameObject.GetComponent<Combustable>() != null)
                 {
@@ -179,6 +180,17 @@ public class CharacterPickupItems : MonoBehaviour
         else
         {
             showPickup = false;
+            lookingAtObj = false;
+        }
+
+        Ray checkTerrainRay = new Ray(playerHeadPosition, playerForwardDirection);
+        RaycastHit terrainRayHit;
+        if (Physics.Raycast(checkTerrainRay, out terrainRayHit, distToObj))
+        {
+            if (hitGameObject.CompareTag("terrain"))
+            {
+                planeHit = rayPickupHit;
+            }
         }
     }
 }

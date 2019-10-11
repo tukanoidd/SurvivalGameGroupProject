@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class ObjectPlacer : MonoBehaviour
 {
@@ -43,8 +45,6 @@ public class ObjectPlacer : MonoBehaviour
                                         var spawned = Instantiate(prefab, vertices[j] + transform.position,
                                             Quaternion.identity,
                                             transform);
-                                        
-                                        //if(spawned.GetComponent<>())
 
                                         spawned.transform.eulerAngles = euler;
                                         
