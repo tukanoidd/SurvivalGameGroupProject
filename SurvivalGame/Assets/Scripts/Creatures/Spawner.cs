@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
                 Vector3 euler = transform.eulerAngles;
                 euler.y = Random.Range(0f, 360f);
                 
-                var obj = Instantiate(spawnObject, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+                var obj = Instantiate(spawnObject, transform.position + Vector3.up * 5f, Quaternion.identity);
                 obj.transform.eulerAngles = euler;
                 
                 spawnGroup.Add(obj);

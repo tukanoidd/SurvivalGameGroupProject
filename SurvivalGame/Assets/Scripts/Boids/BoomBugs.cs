@@ -11,7 +11,7 @@ public class BoomBugs : Creature
     protected override void Start()
     {
         energy = 0;
-        energyThreshold = 3000;
+        energyThreshold = 1000;
         minimumEnergySourceTemp = 50f;
         base.Start();
     }
@@ -117,6 +117,10 @@ public class BoomBugs : Creature
                 mainEnergySource = vicinity[index];
             }
         } else {
+            if (mainEnergySource.gameObject == null)
+            {
+                findEnergySource();
+            }
             focalPoint = mainEnergySource.transform.position;
             if(Vector3.Distance(transform.position, focalPoint) < 1)
             {
