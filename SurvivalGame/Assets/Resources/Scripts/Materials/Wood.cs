@@ -26,13 +26,13 @@ public class Wood : Combustable
         {
             foreach (var childRenderer in GetComponentsInChildren<MeshRenderer>())
             {
-                childRenderer.material = (Material) AssetDatabase.LoadAssetAtPath("Assets/Materials/Wood.mat", typeof(Material));
+                childRenderer.material = Resources.Load<Material>("Materials/Wood");
                 color = childRenderer.material.color;
             }
         }
         else
         {
-            renderer.material = (Material) AssetDatabase.LoadAssetAtPath("Assets/Materials/Wood.mat", typeof(Material));
+            renderer.material = Resources.Load<Material>("Materials/Wood");
             color = renderer.material.color;
         }
     }
