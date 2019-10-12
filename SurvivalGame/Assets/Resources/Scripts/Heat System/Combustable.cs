@@ -56,8 +56,8 @@ public class Combustable : MonoBehaviour
 
         maxTemp = (heatResistance * 200) + (GetObjectVolume() * 50);
 
-        smokeObj = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefabs/TorchSmoke.prefab", typeof(GameObject));
-        flameObj = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefabs/FlameMain.prefab", typeof(GameObject));
+        smokeObj = Resources.Load<GameObject>("Prefabs/TorchSmoke");
+        flameObj = Resources.Load<GameObject>("Prefabs/FlameMain");
 
         if(preIgnited)
         {

@@ -7,90 +7,92 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
-        <e p="Editor" t="Include">
-          <e p="MapPreviewEditor.cs" t="Include" />
-          <e p="UpdatableDataEditor.cs" t="Include" />
-        </e>
-        <e p="Scripts" t="Include">
-          <e p="Advanced Procedural Generation" t="Include">
-            <e p="Data" t="Include">
-              <e p="HeightMapSettings.cs" t="Include" />
-              <e p="MeshSettings.cs" t="Include" />
-              <e p="TextureData.cs" t="Include" />
-              <e p="UpdatableData.cs" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="Editor" t="Include">
+            <e p="MapPreviewEditor.cs" t="Include" />
+            <e p="UpdatableDataEditor.cs" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Advanced Procedural Generation" t="Include">
+              <e p="Data" t="Include">
+                <e p="HeightMapSettings.cs" t="Include" />
+                <e p="MeshSettings.cs" t="Include" />
+                <e p="TextureData.cs" t="Include" />
+                <e p="UpdatableData.cs" t="Include" />
+              </e>
+              <e p="FalloffGenerator.cs" t="Include" />
+              <e p="HeightMapGenerator.cs" t="Include" />
+              <e p="HideOnPlay.cs" t="Include" />
+              <e p="MapPreview.cs" t="Include" />
+              <e p="MeshGenerator.cs" t="Include" />
+              <e p="Noise.cs" t="Include" />
+              <e p="ObjectPlacer.cs" t="Include" />
+              <e p="Terrain.shader" t="Include" />
+              <e p="TerrainChunk.cs" t="Include" />
+              <e p="TerrainGenerator.cs" t="Include" />
+              <e p="TextureGenerator.cs" t="Include" />
+              <e p="ThreadedDataRequester.cs" t="Include" />
             </e>
-            <e p="FalloffGenerator.cs" t="Include" />
-            <e p="HeightMapGenerator.cs" t="Include" />
-            <e p="HideOnPlay.cs" t="Include" />
-            <e p="MapPreview.cs" t="Include" />
-            <e p="MeshGenerator.cs" t="Include" />
-            <e p="Noise.cs" t="Include" />
-            <e p="ObjectPlacer.cs" t="Include" />
-            <e p="Terrain.shader" t="Include" />
-            <e p="TerrainChunk.cs" t="Include" />
-            <e p="TerrainGenerator.cs" t="Include" />
-            <e p="TextureGenerator.cs" t="Include" />
-            <e p="ThreadedDataRequester.cs" t="Include" />
-          </e>
-          <e p="Boids" t="Include">
-            <e p="BoidHelper.cs" t="Include" />
-            <e p="BoidSettings.cs" t="Include" />
-            <e p="BoomBugs.cs" t="Include" />
-          </e>
-          <e p="ChangeColors.cs" t="Include" />
-          <e p="Character" t="Include">
-            <e p="CharacterCamera.cs" t="Include" />
-            <e p="CharacterInventory.cs" t="Include" />
-            <e p="CharacterMovement.cs" t="Include" />
-            <e p="CharacterPickupItems.cs" t="Include" />
-          </e>
-          <e p="CheckPickedCollision.cs" t="Include" />
-          <e p="Creatures" t="Include">
-            <e p="Creature.cs" t="Include" />
-            <e p="FireFlies.cs" t="Include" />
-            <e p="Spawner.cs" t="Include" />
-          </e>
-          <e p="DayNight Cycle" t="Include">
-            <e p="AutoIntensity.cs" t="Include" />
-            <e p="SetSunLight.cs" t="Include" />
-          </e>
-          <e p="Flock-Bugs" t="Include">
-            <e p="Behaviour Scripts" t="Include">
-              <e p="AlignmentBehaviour.cs" t="Include" />
-              <e p="AvoidenceBehaviour.cs" t="Include" />
-              <e p="CohesionBehaviour.cs" t="Include" />
-              <e p="CompositeBehaviour.cs" t="Include" />
-              <e p="StayInRadiusBehaviour.cs" t="Include" />
-              <e p="SteeredCohesionBehaviour.cs" t="Include" />
+            <e p="Boids" t="Include">
+              <e p="BoidHelper.cs" t="Include" />
+              <e p="BoidSettings.cs" t="Include" />
+              <e p="BoomBugs.cs" t="Include" />
             </e>
-            <e p="ContextFilter.cs" t="Include" />
-            <e p="Filter Scripts" t="Include">
-              <e p="PhysicsLayerFilter.cs" t="Include" />
-              <e p="SameFlockFilter.cs" t="Include" />
+            <e p="ChangeColors.cs" t="Include" />
+            <e p="Character" t="Include">
+              <e p="CharacterCamera.cs" t="Include" />
+              <e p="CharacterInventory.cs" t="Include" />
+              <e p="CharacterMovement.cs" t="Include" />
+              <e p="CharacterPickupItems.cs" t="Include" />
             </e>
-            <e p="FilteredFlockBehaviour.cs" t="Include" />
-            <e p="Flock.cs" t="Include" />
-            <e p="FlockAgent.cs" t="Include" />
-            <e p="FlockBehaviour.cs" t="Include" />
+            <e p="CheckPickedCollision.cs" t="Include" />
+            <e p="Creatures" t="Include">
+              <e p="Creature.cs" t="Include" />
+              <e p="FireFlies.cs" t="Include" />
+              <e p="Spawner.cs" t="Include" />
+            </e>
+            <e p="DayNight Cycle" t="Include">
+              <e p="AutoIntensity.cs" t="Include" />
+              <e p="SetSunLight.cs" t="Include" />
+            </e>
+            <e p="Flock-Bugs" t="Include">
+              <e p="Behaviour Scripts" t="Include">
+                <e p="AlignmentBehaviour.cs" t="Include" />
+                <e p="AvoidenceBehaviour.cs" t="Include" />
+                <e p="CohesionBehaviour.cs" t="Include" />
+                <e p="CompositeBehaviour.cs" t="Include" />
+                <e p="StayInRadiusBehaviour.cs" t="Include" />
+                <e p="SteeredCohesionBehaviour.cs" t="Include" />
+              </e>
+              <e p="ContextFilter.cs" t="Include" />
+              <e p="Filter Scripts" t="Include">
+                <e p="PhysicsLayerFilter.cs" t="Include" />
+                <e p="SameFlockFilter.cs" t="Include" />
+              </e>
+              <e p="FilteredFlockBehaviour.cs" t="Include" />
+              <e p="Flock.cs" t="Include" />
+              <e p="FlockAgent.cs" t="Include" />
+              <e p="FlockBehaviour.cs" t="Include" />
+            </e>
+            <e p="Heat System" t="Include">
+              <e p="Combustable.cs" t="Include" />
+              <e p="CombustableGroup.cs" t="Include" />
+              <e p="Flame.cs" t="Include" />
+              <e p="HeatSource.cs" t="Include" />
+            </e>
+            <e p="Materials" t="Include">
+              <e p="Ash.cs" t="Include" />
+              <e p="BranchHead.cs" t="Include" />
+              <e p="Ember.cs" t="Include" />
+              <e p="Flint.cs" t="Include" />
+              <e p="Plant.cs" t="Include" />
+              <e p="Stone.cs" t="Include" />
+              <e p="Wood.cs" t="Include" />
+            </e>
           </e>
-          <e p="Heat System" t="Include">
-            <e p="Combustable.cs" t="Include" />
-            <e p="CombustableGroup.cs" t="Include" />
-            <e p="Flame.cs" t="Include" />
-            <e p="HeatSource.cs" t="Include" />
+          <e p="UrbanNightSky" t="Include">
+            <e p="Readme.txt" t="Include" />
           </e>
-          <e p="Materials" t="Include">
-            <e p="Ash.cs" t="Include" />
-            <e p="BranchHead.cs" t="Include" />
-            <e p="Ember.cs" t="Include" />
-            <e p="Flint.cs" t="Include" />
-            <e p="Plant.cs" t="Include" />
-            <e p="Stone.cs" t="Include" />
-            <e p="Wood.cs" t="Include" />
-          </e>
-        </e>
-        <e p="UrbanNightSky" t="Include">
-          <e p="Readme.txt" t="Include" />
         </e>
       </e>
       <e p="obj" t="ExcludeRecursive" />

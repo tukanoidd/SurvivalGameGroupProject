@@ -22,7 +22,7 @@ public class Flint : Stone
         glowTemp = 400;
         flashpoint = glowTemp;
         doesIgnite = false;
-        sparkObj = (GameObject) AssetDatabase.LoadAssetAtPath("Assets/Prefabs/Sparks.prefab", typeof(GameObject));
+        sparkObj = Resources.Load<GameObject>("Prefabs/Sparks");
         sparks = sparkObj.GetComponent<ParticleSystem>();
     }
 
