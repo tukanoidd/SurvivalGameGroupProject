@@ -5,10 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Material
-  - Portal1
-  - Portal2
   - Flock
   - terrain
+  - hammer
   layers:
   - Default
   - TransparentFX

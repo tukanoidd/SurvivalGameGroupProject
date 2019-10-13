@@ -94,8 +94,11 @@ public class Creature : MonoBehaviour
             SOI_Collider = GetComponent<SphereCollider>();
             SOI_Collider.radius = viewRadius;
         }
-        
-        GarbageMan.creatures.Add(gameObject);
+
+        if (GarbageMan.creatures != null)
+        {
+            GarbageMan.creatures.Add(gameObject);   
+        }
     }
 
     public void Initialize()
