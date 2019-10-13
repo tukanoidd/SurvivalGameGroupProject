@@ -123,7 +123,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6365196010681266399}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -7.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 272239887858213434}
@@ -163,6 +163,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   forward: {x: 0, y: 0, z: 0}
   energyThreshold: 0
+  particles: {fileID: 0}
 --- !u!54 &236716420778930181
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -315,7 +316,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 4.73
+      scalar: 12.1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4080,11 +4081,11 @@ ParticleSystem:
         m_PreInfinity: 2
         m_PostInfinity: 2
         m_RotationOrder: 4
-    minVertexDistance: 0.2
+    minVertexDistance: 0
     textureMode: 0
     ribbonCount: 1
     shadowBias: 0.5
-    worldSpace: 0
+    worldSpace: 1
     dieWithParticles: 1
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
@@ -4158,7 +4159,7 @@ ParticleSystem:
     widthOverTrail:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 3.17
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4910,11 +4911,11 @@ ParticleSystemForceField:
   m_Enabled: 1
   m_Parameters:
     m_Shape: 0
-    m_StartRange: 0.91
-    m_EndRange: 7.06
+    m_StartRange: 0.36
+    m_EndRange: 5.76
     m_Length: 1
-    m_GravityFocus: 0.4
-    m_RotationRandomness: {x: 1, y: 0.3}
+    m_GravityFocus: 0
+    m_RotationRandomness: {x: 0.22, y: 0}
     m_DirectionCurveX:
       serializedVersion: 2
       minMaxState: 0
@@ -5077,7 +5078,7 @@ ParticleSystemForceField:
     m_GravityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 9.47
+      scalar: 0
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -5130,7 +5131,7 @@ ParticleSystemForceField:
     m_RotationSpeedCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 24.3
+      scalar: 20
       minScalar: 0
       maxCurve:
         serializedVersion: 2
