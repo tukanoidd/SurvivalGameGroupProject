@@ -32,7 +32,10 @@ public class CharacterMovement : MonoBehaviour
 
     private void Update()
     {
-        stars.transform.position = transform.position;
+        if (stars != null)
+        {
+            stars.transform.position = transform.position;
+        }
         
         if (Input.GetKeyDown(KeyCode.R))
         {
