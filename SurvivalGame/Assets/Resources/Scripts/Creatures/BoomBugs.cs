@@ -6,13 +6,15 @@ public class BoomBugs : Creature
 {
     //public Light boidGlow;
     public float energyThreshold;
+    public ParticleSystemForceField particleForceField;
 
     // Start is called before the first frame update
     protected override void Start()
     {
         energy = 0;
-        energyThreshold = 1000;
+        energyThreshold = 3000;
         minimumEnergySourceTemp = 50f;
+        particleForceField = GetComponent<ParticleSystemForceField>();
         base.Start();
     }
 
@@ -69,8 +71,17 @@ public class BoomBugs : Creature
     void recharge()
     {
         var amount = 2;
-        mainEnergySource.GetComponent<Combustable>().temperature += amount;
-        mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;
+        particleForceField.rotationSpeed = 20;
+        particleForceField.gravity = 0;
+        if (mainEnergySource.gameObject != null)
+        {
+            mainEnergySource.GetComponent<Combustable>().temperature += amount;
+            mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;   
+        }
+        else
+        {
+            findEnergySource();
+        }
         energy -= amount;
         recharging = true;
         if (mainEnergySource.GetComponent<Combustable>().isBurning || energy < 1f)
@@ -78,6 +89,7 @@ public class BoomBugs : Creature
             vicinity.Remove(mainEnergySource);
             recharging = false;
             mainEnergySource = null;
+            particleForceField.gravity = 3;
         }
     }
     
@@ -100,15 +112,18 @@ public class BoomBugs : Creature
                 
                 for (int i = vicinity.Count - 1; i >= 0; i--)
                 {
-                    smallest = Vector3.Distance(transform.position, vicinity[i].transform.position);
-                    index = i;
-
-                    if (i > 0)
+                    if (vicinity[i] != null)
                     {
-                        if (Vector3.Distance(transform.position, vicinity[i-1].transform.position) < smallest)
+                        smallest = Vector3.Distance(transform.position, vicinity[i].transform.position);
+                        index = i;
+
+                        if (i > 0 && vicinity[i - 1] != null)
                         {
-                            smallest = Vector3.Distance(transform.position, vicinity[i-1].transform.position);
-                            index = i-1;
+                            if (Vector3.Distance(transform.position, vicinity[i-1].transform.position) < smallest)
+                            {
+                                smallest = Vector3.Distance(transform.position, vicinity[i-1].transform.position);
+                                index = i-1;
+                            }
                         }
                     }
                 }
@@ -117,12 +132,8 @@ public class BoomBugs : Creature
                 mainEnergySource = vicinity[index];
             }
         } else {
-            if (mainEnergySource.gameObject == null)
-            {
-                findEnergySource();
-            }
             focalPoint = mainEnergySource.transform.position;
-            if(Vector3.Distance(transform.position, focalPoint) < 1)
+            if(Vector3.Distance(transform.position, focalPoint) < 3)
             {
                 recharge();
             }

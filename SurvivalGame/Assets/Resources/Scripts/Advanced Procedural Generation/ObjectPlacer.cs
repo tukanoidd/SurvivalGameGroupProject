@@ -19,36 +19,39 @@ public class ObjectPlacer : MonoBehaviour
 
     public void PlaceObjects(Vector3[] vertices)
     {
-        if (vertices != null && occupiedVertices.Count == 0 && !hasSpawned)
+        if (vertices != null)
         {
-            for (int i = terrainLayers.Length - 1; i >= 0; i--)
+            if (occupiedVertices.Count == 0 && !hasSpawned)
             {
-                for (int j = 0; j < vertices.Length; j += skipIncrement)
+                for (int i = terrainLayers.Length - 1; i >= 0; i--)
                 {
-                    skipIncrement = Random.Range(100, 500);
-                    if (j + skipIncrement < vertices.Length)
+                    for (int j = 0; j < vertices.Length; j += skipIncrement)
                     {
-                        if (terrainLayers[i].startHeight <= vertices[j].y)
+                        skipIncrement = Random.Range(100, 500);
+                        if (j + skipIncrement < vertices.Length)
                         {
-                            TextureData.SpawnableObject obj =
-                                terrainLayers[i].objects[Random.Range(0, 3)];
-                            if (obj.prefabs.Length > 0)
+                            if (terrainLayers[i].startHeight <= vertices[j].y)
                             {
-                                if (Random.Range(0f, 1f) <= obj.chance)
+                                TextureData.SpawnableObject obj =
+                                    terrainLayers[i].objects[Random.Range(0, 3)];
+                                if (obj.prefabs.Length > 0)
                                 {
-                                    if (!occupiedVertices.ContainsKey(vertices[j]))
+                                    if (Random.Range(0f, 1f) <= obj.chance)
                                     {
-                                        var prefab = obj.prefabs[Random.Range(0, obj.prefabs.Length)];
-                                        Vector3 euler = transform.eulerAngles;
-                                        euler.y = Random.Range(0f, 360f);
+                                        if (!occupiedVertices.ContainsKey(vertices[j]))
+                                        {
+                                            var prefab = obj.prefabs[Random.Range(0, obj.prefabs.Length)];
+                                            Vector3 euler = transform.eulerAngles;
+                                            euler.y = Random.Range(0f, 360f);
 
-                                        var spawned = Instantiate(prefab, vertices[j] + transform.position,
-                                            Quaternion.identity,
-                                            transform);
+                                            var spawned = Instantiate(prefab, vertices[j] + transform.position,
+                                                Quaternion.identity,
+                                                transform);
 
-                                        spawned.transform.eulerAngles = euler;
+                                            spawned.transform.eulerAngles = euler;
                                         
-                                        occupiedVertices.Add(vertices[j], prefab);
+                                            occupiedVertices.Add(vertices[j], prefab);
+                                        }
                                     }
                                 }
                             }
@@ -56,7 +59,6 @@ public class ObjectPlacer : MonoBehaviour
                     }
                 }
             }
-
             hasSpawned = true;
         }
     }

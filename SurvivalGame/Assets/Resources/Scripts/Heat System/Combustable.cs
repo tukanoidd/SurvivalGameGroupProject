@@ -91,7 +91,6 @@ public class Combustable : MonoBehaviour
         {
             float ratio = Mathf.Abs(temperature/tempInitial)*30;
             float clamp = Mathf.Clamp(ratio,0,255f);
-            Debug.Log("Ratio: " + ratio + " - Clamp: " + clamp);
 
             Color blu = new Color(0,0,clamp,1);
             renderer.material.color = blu; //Color.Lerp(renderer.material.color,blu, 0.001f);

@@ -58,6 +58,17 @@ public class Creature : MonoBehaviour
                 }
             }
         }
+        else
+        {
+            if(other.gameObject != null)
+            {
+                if(!vicinity.Contains(other.gameObject) && other.GetComponent<Combustable>() != null)
+                {
+                    vicinity.RemoveAt(0);
+                    vicinity.Add(other.gameObject);
+                }
+            }
+        }
     }
 
     // Start is called before the first frame update
@@ -83,6 +94,8 @@ public class Creature : MonoBehaviour
             SOI_Collider = GetComponent<SphereCollider>();
             SOI_Collider.radius = viewRadius;
         }
+        
+        GarbageMan.creatures.Add(gameObject);
     }
 
     public void Initialize()

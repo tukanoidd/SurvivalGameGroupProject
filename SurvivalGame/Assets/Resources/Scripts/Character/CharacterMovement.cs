@@ -58,8 +58,8 @@ public class CharacterMovement : MonoBehaviour
             movementSpeed = normalSpeed;
         }
 
-        float vertInput = Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;
-        float horizInput = Input.GetAxis("Horizontal") * movementSpeed * Time.deltaTime;
+        float vertInput = Input.GetAxis("Vertical") * movementSpeed * Time.fixedDeltaTime;
+        float horizInput = Input.GetAxis("Horizontal") * movementSpeed * Time.fixedDeltaTime;
 
         Vector3 forwardMovement = transform.forward * vertInput;
         Vector3 rightMovement = transform.right * horizInput;
@@ -86,8 +86,8 @@ public class CharacterMovement : MonoBehaviour
         do
         {
             float jumpForce = jumpFallOff.Evaluate(timeInAir);
-            charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.deltaTime);
-            timeInAir += Time.deltaTime;
+            charController.Move(Vector3.up * jumpForce * jumpMultiplier * Time.fixedDeltaTime);
+            timeInAir += Time.fixedDeltaTime;
 
             yield return null;
         } while (!charController.isGrounded && charController.collisionFlags != CollisionFlags.Above);
