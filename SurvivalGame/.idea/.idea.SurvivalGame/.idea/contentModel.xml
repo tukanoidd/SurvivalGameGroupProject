@@ -27,7 +27,6 @@
               <e p="MeshGenerator.cs" t="Include" />
               <e p="Noise.cs" t="Include" />
               <e p="ObjectPlacer.cs" t="Include" />
-              <e p="Terrain.shader" t="Include" />
               <e p="TerrainChunk.cs" t="Include" />
               <e p="TerrainGenerator.cs" t="Include" />
               <e p="TextureGenerator.cs" t="Include" />
@@ -76,6 +75,7 @@
               <e p="FlockBehaviour.cs" t="Include" />
             </e>
             <e p="GarbageMan.cs" t="Include" />
+            <e p="GrassShaderManager.cs" t="Include" />
             <e p="Heat System" t="Include">
               <e p="Combustable.cs" t="Include" />
               <e p="CombustableGroup.cs" t="Include" />
@@ -95,6 +95,10 @@
             <e p="Tools" t="Include">
               <e p="Hammer.cs" t="Include" />
             </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Grass.shader" t="Include" />
+            <e p="Terrain.shader" t="Include" />
           </e>
           <e p="UrbanNightSky" t="Include">
             <e p="Readme.txt" t="Include" />
