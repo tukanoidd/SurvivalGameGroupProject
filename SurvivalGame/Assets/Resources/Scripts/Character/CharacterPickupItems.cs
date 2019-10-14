@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Policy;
 using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class CharacterPickupItems : MonoBehaviour
@@ -11,6 +11,7 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private GameObject shoulder;
     [SerializeField] private GameObject hammer;
     [SerializeField] private Camera _camera;
+    private Animator animator;
 
     public GameObject hammerPrefab;
     
@@ -19,12 +20,15 @@ public class CharacterPickupItems : MonoBehaviour
     private bool lookingAtObj = false;
     private string pickupName;
     private float pickupTemp;
-    private bool pickedHammer = true;
+    [HideInInspector] public bool pickedHammer = false;
 
     private RaycastHit planeHit;
 
     [SerializeField] private float rayLength;
     [SerializeField] private float throwForce;
+    [SerializeField] private float hitRayLength;
+    [SerializeField] private float hitForce;
+    
 
     [HideInInspector] public GameObject hitGameObject;
     private GameObject pickedObject;
@@ -35,6 +39,7 @@ public class CharacterPickupItems : MonoBehaviour
     void Start()
     {
         origShoulderRot = shoulder.transform.rotation;
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -80,7 +85,7 @@ public class CharacterPickupItems : MonoBehaviour
                         shoulder.SetActive(false);
                         pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
                         pickedObject.GetComponent<Rigidbody>()
-                            .AddForce(_camera.transform.forward * throwForce, ForceMode.Impulse);
+                            .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
                         pickedObject.GetComponent<Combustable>().isThrown = true;
 
                         pickedHammer = false;
@@ -89,7 +94,7 @@ public class CharacterPickupItems : MonoBehaviour
                     {
                         pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                         pickedObject.GetComponent<Rigidbody>()
-                            .AddForce(_camera.transform.forward * throwForce, ForceMode.Impulse);
+                            .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
                         pickedObject.GetComponent<Combustable>().isThrown = true;
                         
                         pickedObject.transform.parent = null;
@@ -111,6 +116,7 @@ public class CharacterPickupItems : MonoBehaviour
                         shoulder.SetActive(false);
                         pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
                         pickedObject.GetComponent<Hammer>().isThrown = true;
+                        pickedHammer = false;
                     }
                     else
                     {
@@ -122,6 +128,20 @@ public class CharacterPickupItems : MonoBehaviour
                         pickedObject.transform.localScale = scale;
                     }
                 }
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (pickedHammer)
+                {
+                    animator.SetBool("HammerSwing", true);
+
+                    CheckHitObject(playerHeadPosition, playerForwardDirection);
+                }
+            }
+            else
+            {
+                animator.SetBool("HammerSwing", false);
             }
         }
 
@@ -143,6 +163,54 @@ public class CharacterPickupItems : MonoBehaviour
             catch
             {
             }
+        }
+    }
+
+    void CheckHitObject(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
+    {
+        int counter = 0;
+        int maxFrames = 50;
+        
+        Ray rayHitObject = new Ray(playerHeadPosition, playerForwardDirection);
+        RaycastHit rayHitObjectHit = new RaycastHit();
+
+        while (counter < maxFrames)
+        {
+            if (Physics.Raycast(rayHitObject, out rayHitObjectHit, hitRayLength))
+            {
+                var hitObj = rayHitObjectHit.transform.gameObject;
+                if (hitObj.transform.parent != null)
+                {
+                    var parent = hitObj.transform.parent;
+                    var children = new List<Rigidbody>();
+
+                    for (int i = 0; i < parent.childCount; i++)
+                    {
+                        children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
+                    }
+                    
+                    hitObj.transform.parent.DetachChildren();
+
+                    foreach (var child in children)
+                    {
+                        child.isKinematic = false;
+                        child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
+                    }
+                }
+                else
+                {
+                    if (hitObj.GetComponent<Rigidbody>() != null)
+                    {
+                        var rigBody = hitObj.GetComponent<Rigidbody>();
+                        rigBody.isKinematic = false;
+                        rigBody.AddForce(playerForwardDirection * hitForce);   
+                    }
+                }
+                
+                return;
+            }
+
+            counter++;
         }
     }
 
