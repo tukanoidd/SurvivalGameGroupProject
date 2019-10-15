@@ -101,9 +101,7 @@ public class BoomBugs : Creature
         {
             if(vicinity.Count == 0)
             {
-                var dist = Random.Range(0f,(float) viewRadius);
-                focalPoint = GetPointOnUnitSphereCap(transform.rotation, viewAngle)*dist;
-                move(focalPoint);
+                GetRandomFocalPoint();
             }
             else
             {
@@ -127,9 +125,16 @@ public class BoomBugs : Creature
                         }
                     }
                 }
-                
-                focalPoint = vicinity[index].transform.position;
-                mainEnergySource = vicinity[index];
+
+                if (vicinity[index] != null)
+                {
+                    focalPoint = vicinity[index].transform.position;
+                    mainEnergySource = vicinity[index];
+                }
+                else
+                {
+                    GetRandomFocalPoint();
+                }
             }
         } else {
             focalPoint = mainEnergySource.transform.position;

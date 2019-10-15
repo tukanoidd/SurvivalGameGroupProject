@@ -50,7 +50,6 @@ public class GarbageMan : MonoBehaviour
         {
             Destroy(ashTray[0]);
             ashTray.RemoveAt(0);
-            Debug.Log("GarbageMan: Ashing...");
         }
 
         ashParticlesInScene = ashTray.Count;

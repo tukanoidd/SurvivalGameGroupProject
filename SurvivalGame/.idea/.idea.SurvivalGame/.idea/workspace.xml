@@ -24,153 +24,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4131256f-929b-4b0d-a2fc-dfbfc285eabf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Skybox.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Skybox.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/BoomBugs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/BoomBugs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/FlameMain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/FlameMain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Sandbox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Sandbox.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Test Advanced World Generation.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Test Advanced World Generation.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidObjects/Boid Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidObjects/Boid Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidObjects/Boid Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidObjects/Boid Settings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidSettings.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoidSettings.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoomBugs.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Boids/BoomBugs.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/ChangeColors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/ChangeColors.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/ChangeColors.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/ChangeColors.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterCamera.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterCamera.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterCamera.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterCamera.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterInventory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterInventory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterInventory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterInventory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/CheckPickedCollision.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/CheckPickedCollision.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/CheckPickedCollision.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/CheckPickedCollision.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/FireFlies.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/FireFlies.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/FireFlies.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/FireFlies.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Spawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Spawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Spawner.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Spawner.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/AutoIntensity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/AutoIntensity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/AutoIntensity.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/AutoIntensity.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/SetSunLight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/SetSunLight.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/SetSunLight.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/DayNight Cycle/SetSunLight.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Alignment.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Alignment.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Alignment.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Alignment.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoid Obstacles.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoid Obstacles.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoid Obstacles.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoid Obstacles.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoidence.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoidence.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoidence.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Avoidence.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Centered Flock Behaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Centered Flock Behaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Centered Flock Behaviour.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Centered Flock Behaviour.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Cohesion.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Cohesion.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Cohesion.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Cohesion.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Default Flock Behaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Default Flock Behaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Default Flock Behaviour.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Default Flock Behaviour.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Stay In Radius.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Stay In Radius.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Stay In Radius.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Stay In Radius.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Steered Cohesion.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Steered Cohesion.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Steered Cohesion.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Objects/Steered Cohesion.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AlignmentBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AlignmentBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AlignmentBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AlignmentBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AvoidenceBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AvoidenceBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AvoidenceBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/AvoidenceBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CohesionBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CohesionBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CohesionBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CohesionBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CompositeBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CompositeBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CompositeBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/CompositeBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/StayInRadiusBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/StayInRadiusBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/StayInRadiusBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/StayInRadiusBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/SteeredCohesionBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/SteeredCohesionBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/SteeredCohesionBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Behaviour Scripts/SteeredCohesionBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/ContextFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/ContextFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/ContextFilter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/ContextFilter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Obstacle Layer Filter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Obstacle Layer Filter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Obstacle Layer Filter.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Obstacle Layer Filter.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Same Flock Filter.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Same Flock Filter.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Same Flock Filter.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Objects/Same Flock Filter.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/PhysicsLayerFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/PhysicsLayerFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/PhysicsLayerFilter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/PhysicsLayerFilter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/SameFlockFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/SameFlockFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/SameFlockFilter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Filter Scripts/SameFlockFilter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FilteredFlockBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FilteredFlockBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FilteredFlockBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FilteredFlockBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Flock.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Flock.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Flock.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/Flock.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockAgent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockAgent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockAgent.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockAgent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Flock-Bugs/FlockBehaviour.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/CombustableGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/CombustableGroup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/CombustableGroup.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/CombustableGroup.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Flame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Flame.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Flame.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Flame.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ash.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ash.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ash.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ash.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/BranchHead.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/BranchHead.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/BranchHead.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/BranchHead.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ember.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ember.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ember.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ember.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Flint.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Flint.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Flint.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Flint.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Plant.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Plant.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Plant.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Plant.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Stone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Stone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Stone.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Stone.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Wood.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Wood.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Wood.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Wood.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Height Map Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Height Map Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Height Map Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Height Map Settings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Mesh Settings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Mesh Settings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Mesh Settings.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Mesh Settings.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Texture.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Texture.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Texture.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Texture.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Grass.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Grass.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Noise.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Noise.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Rocks 1.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Rocks 1.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Rocks 2.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Rocks 2.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Sandy grass.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Sandy grass.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Snow.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Snow.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Stony ground.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Stony ground.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Water.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Textures/TerrainTextures/Water.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/BoomBugs.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/BoomBugs.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/GarbageMan.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/GarbageMan.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/71bd6d-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/71bd6d-mainStage.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/f732a8-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/f732a8-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/9f/9fc0d4010bbf28b4594072e72b8655ab" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9f/9fc0d4010bbf28b4594072e72b8655ab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/9f/9fc0d4010bbf28b4594072e72b8655ab.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/9f/9fc0d4010bbf28b4594072e72b8655ab.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c99e620987794ac43a3742585a86e331" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c9/c99e620987794ac43a3742585a86e331" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/metadata/c9/c99e620987794ac43a3742585a86e331.info" beforeDir="false" afterPath="$PROJECT_DIR$/Library/metadata/c9/c99e620987794ac43a3742585a86e331.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -248,13 +113,13 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GarbageMan.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/BoomBugs.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Player.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Hammer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Bush.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GarbageMan.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/BoomBugs.cs" />
       </list>
     </option>
   </component>
@@ -336,7 +201,7 @@
       <workItem from="1570884771377" duration="698000" />
       <workItem from="1570969922727" duration="3743000" />
       <workItem from="1570974033833" duration="897000" />
-      <workItem from="1570975622881" duration="1306000" />
+      <workItem from="1570975622881" duration="2816000" />
     </task>
     <servers />
   </component>
