@@ -1,35 +1,47 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class CharacterPickupItems : MonoBehaviour
 {
     [SerializeField] private GameObject head;
-    [SerializeField] private GameObject palm;
+    [SerializeField] private GameObject shoulder;
+    [SerializeField] private GameObject hammer;
     [SerializeField] private Camera _camera;
+    private Animator animator;
 
+    public GameObject hammerPrefab;
+    
     private bool showPickup = false;
     private bool pickedUp = false;
     private bool lookingAtObj = false;
     private string pickupName;
     private float pickupTemp;
+    [HideInInspector] public bool pickedHammer = false;
 
     private RaycastHit planeHit;
 
     [SerializeField] private float rayLength;
     [SerializeField] private float throwForce;
+    [SerializeField] private float hitRayLength;
+    [SerializeField] private float hitForce;
+    
 
-    public GameObject hitGameObject;
+    [HideInInspector] public GameObject hitGameObject;
     private GameObject pickedObject;
     private Vector3 scale;
 
-    // Start is called before the first frame update
+    private Quaternion origShoulderRot;
+
     void Start()
     {
+        origShoulderRot = shoulder.transform.rotation;
+        animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 playerHeadPosition = head.transform.position;
@@ -46,22 +58,49 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = true;
                     showPickup = false;
                     pickedObject = hitGameObject;
-                    pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = false;
-                    pickedObject.GetComponent<Combustable>().isGrounded = false;
-                    scale = pickedObject.transform.lossyScale;
-                    pickedObject.GetComponent<Rigidbody>().isKinematic = true;
-                    pickedObject.transform.parent = _camera.transform;
+
+                    if (hitGameObject.CompareTag("hammer"))
+                    {
+                        Destroy(pickedObject);
+                        pickedHammer = true;
+                        shoulder.SetActive(true);
+                    }
+                    else
+                    {
+                        pickedHammer = false;
+                        scale = pickedObject.transform.lossyScale;
+                        pickedObject.GetComponent<Rigidbody>().isKinematic = true;
+                        pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = false;
+                        pickedObject.GetComponent<Combustable>().isGrounded = false;
+                        pickedObject.transform.parent = _camera.transform;
+                    }
                 }
                 else
                 {
-                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
-                    pickedObject.GetComponent<Rigidbody>().AddForce(_camera.transform.forward * throwForce, ForceMode.Impulse);
-                    pickedObject.GetComponent<Combustable>().isThrown = true;
-
+                    showPickup = false;
                     pickedUp = false;
-                    pickedObject.transform.parent = null;
+                    
+                    if (pickedHammer)
+                    {
+                        shoulder.SetActive(false);
+                        pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
+                        pickedObject.GetComponent<Rigidbody>()
+                            .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
+                        pickedObject.GetComponent<Combustable>().isThrown = true;
 
-                    pickedObject.transform.localScale = scale;
+                        pickedHammer = false;
+                    }
+                    else
+                    {
+                        pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                        pickedObject.GetComponent<Rigidbody>()
+                            .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
+                        pickedObject.GetComponent<Combustable>().isThrown = true;
+                        
+                        pickedObject.transform.parent = null;
+
+                        pickedObject.transform.localScale = scale;   
+                    }
                 }
             }
 
@@ -72,16 +111,43 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = false;
                     showPickup = false;
 
-                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
-                    pickedObject.GetComponent<Combustable>().isThrown = true;
-                    pickedObject.transform.parent = null;
+                    if (pickedHammer)
+                    {
+                        shoulder.SetActive(false);
+                        pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
+                        pickedObject.GetComponent<Hammer>().isThrown = true;
+                        pickedHammer = false;
+                    }
+                    else
+                    {
+                        pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                        pickedObject.GetComponent<Combustable>().isThrown = true;
+                        
+                        pickedObject.transform.parent = null;
 
-                    pickedObject.transform.localScale = scale;
+                        pickedObject.transform.localScale = scale;
+                    }
                 }
+            }
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (pickedHammer)
+                {
+                    animator.SetBool("HammerSwing", true);
+
+                    CheckHitObject(playerHeadPosition, playerForwardDirection);
+                }
+            }
+            else
+            {
+                animator.SetBool("HammerSwing", false);
             }
         }
 
-        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded && pickedObject.GetComponent<Combustable>().isThrown && !pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow)
+        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded &&
+            pickedObject.GetComponent<Combustable>().isThrown &&
+            !pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow)
         {
             try
             {
@@ -89,13 +155,62 @@ public class CharacterPickupItems : MonoBehaviour
                 var size = pickedObject.GetComponent<Renderer>().bounds.size;
                 if (pos.y < planeHit.point.y)
                 {
-                    pickedObject.transform.position = new Vector3(pos.x, planeHit.point.y + Mathf.Max(size.x, size.y, size.z), pos.z);
+                    pickedObject.transform.position = new Vector3(pos.x,
+                        planeHit.point.y + Mathf.Max(size.x, size.y, size.z), pos.z);
                     pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = true;
                 }
             }
             catch
             {
             }
+        }
+    }
+
+    void CheckHitObject(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
+    {
+        int counter = 0;
+        int maxFrames = 50;
+        
+        Ray rayHitObject = new Ray(playerHeadPosition, playerForwardDirection);
+        RaycastHit rayHitObjectHit = new RaycastHit();
+
+        while (counter < maxFrames)
+        {
+            if (Physics.Raycast(rayHitObject, out rayHitObjectHit, hitRayLength))
+            {
+                var hitObj = rayHitObjectHit.transform.gameObject;
+                if (hitObj.transform.parent != null)
+                {
+                    var parent = hitObj.transform.parent;
+                    var children = new List<Rigidbody>();
+
+                    for (int i = 0; i < parent.childCount; i++)
+                    {
+                        children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
+                    }
+                    
+                    hitObj.transform.parent.DetachChildren();
+
+                    foreach (var child in children)
+                    {
+                        child.isKinematic = false;
+                        child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
+                    }
+                }
+                else
+                {
+                    if (hitObj.GetComponent<Rigidbody>() != null)
+                    {
+                        var rigBody = hitObj.GetComponent<Rigidbody>();
+                        rigBody.isKinematic = false;
+                        rigBody.AddForce(playerForwardDirection * hitForce);   
+                    }
+                }
+                
+                return;
+            }
+
+            counter++;
         }
     }
 
@@ -124,8 +239,9 @@ public class CharacterPickupItems : MonoBehaviour
             GUI.Label(new Rect(Screen.width / 50, Screen.height * 8 / 10, 50, 50),
                 pickupName + " - (Temp: " + pickupTemp + ")",
                 interactionStyle);
-            
-            GUI.Label(new Rect(Screen.width * 15 / 20, Screen.height * 9 / 10, 300, 50), "MRB: Show Information About Object");
+
+            GUI.Label(new Rect(Screen.width * 15 / 20, Screen.height * 9 / 10, 300, 50),
+                "MRB: Show Information About Object");
         }
     }
 
@@ -136,7 +252,7 @@ public class CharacterPickupItems : MonoBehaviour
 
         Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
         RaycastHit rayPickupHit;
-        
+
         float distToObj = 0;
 
         if (Physics.Raycast(pickupRay, out rayPickupHit, rayLength))
@@ -147,7 +263,7 @@ public class CharacterPickupItems : MonoBehaviour
 
                 distToObj = rayPickupHit.distance;
 
-                if (hitGameObject.GetComponent<Combustable>() != null)
+                if (hitGameObject.GetComponent<Combustable>() != null || hitGameObject.CompareTag("hammer"))
                 {
                     lookingAtObj = true;
 
@@ -156,20 +272,27 @@ public class CharacterPickupItems : MonoBehaviour
                         showPickup = true;
                     }
 
-                    pickupName = hitGameObject.GetComponent<Combustable>().name;
-
-                    if (hitGameObject.GetComponent<Combustable>().fuel <= 0 &&
-                        hitGameObject.GetComponent<Combustable>().name == "Wood")
+                    if (hitGameObject.GetComponent<Combustable>() != null)
                     {
-                        pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burnt)";
-                    }
+                        pickupName = hitGameObject.GetComponent<Combustable>().name;
 
-                    if (hitGameObject.GetComponent<Combustable>().isBurning)
+                        if (hitGameObject.GetComponent<Combustable>().fuel <= 0 &&
+                            hitGameObject.GetComponent<Combustable>().name == "Wood")
+                        {
+                            pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burnt)";
+                        }
+
+                        if (hitGameObject.GetComponent<Combustable>().isBurning)
+                        {
+                            pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burning)";
+                        }
+
+                        pickupTemp = hitGameObject.GetComponent<Combustable>().temperature;
+                    }
+                    else if (hitGameObject.CompareTag("hammer"))
                     {
-                        pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burning)";
+                        pickupName = hitGameObject.name;
                     }
-
-                    pickupTemp = hitGameObject.GetComponent<Combustable>().temperature;
                 }
                 else
                 {

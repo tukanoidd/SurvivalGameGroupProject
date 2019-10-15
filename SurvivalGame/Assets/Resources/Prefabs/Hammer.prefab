@@ -147,9 +147,10 @@ GameObject:
   - component: {fileID: 4049646193942200694}
   - component: {fileID: 7636076307991758988}
   - component: {fileID: 2719948758426954249}
+  - component: {fileID: 4792899508857066473}
   m_Layer: 0
   m_Name: Hammer
-  m_TagString: Untagged
+  m_TagString: hammer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,6 +267,25 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!95 &4792899508857066473
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866171068424727323}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: eec8dfe4ffe51374da5d4fce5c463a1a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7872922152762348087
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Brandon\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Brandon\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_SurvivalGame.1010530122.00" t="ExcludeRecursive" />
-    <e p="C:\Users\Brandon\Documents\GitHub\SurvivalGameGroupProject\SurvivalGame" t="IncludeRecursive">
+    <e p="C:\Users\tukan\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\tukan\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_SurvivalGame.1859547958.00" t="ExcludeRecursive" />
+    <e p="E:\GitHub\SurvivalGameGroupProject\SurvivalGame" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -27,7 +27,6 @@
               <e p="MeshGenerator.cs" t="Include" />
               <e p="Noise.cs" t="Include" />
               <e p="ObjectPlacer.cs" t="Include" />
-              <e p="Terrain.shader" t="Include" />
               <e p="TerrainChunk.cs" t="Include" />
               <e p="TerrainGenerator.cs" t="Include" />
               <e p="TextureGenerator.cs" t="Include" />
@@ -76,6 +75,7 @@
               <e p="FlockBehaviour.cs" t="Include" />
             </e>
             <e p="GarbageMan.cs" t="Include" />
+            <e p="GrassShaderManager.cs" t="Include" />
             <e p="Heat System" t="Include">
               <e p="Combustable.cs" t="Include" />
               <e p="CombustableGroup.cs" t="Include" />
@@ -95,6 +95,10 @@
             <e p="Tools" t="Include">
               <e p="Hammer.cs" t="Include" />
             </e>
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Grass.shader" t="Include" />
+            <e p="Terrain.shader" t="Include" />
           </e>
           <e p="UrbanNightSky" t="Include">
             <e p="Readme.txt" t="Include" />

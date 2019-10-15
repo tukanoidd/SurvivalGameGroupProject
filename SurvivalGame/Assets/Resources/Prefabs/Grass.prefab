@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6653360931095553435}
   - component: {fileID: 4462815005284534477}
   - component: {fileID: 2490007225443789018}
+  - component: {fileID: 7812793434807300856}
   m_Layer: 0
-  m_Name: Plane.003
+  m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3127839689812470812}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: -0.3879234, y: 0.006684926, z: 0.07358394}
   m_LocalScale: {x: 88.936005, y: 88.936005, z: 88.936005}
   m_Children: []
   m_Father: {fileID: 144625431939975388}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &5335591712626607667
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbb505ea4ada7d647b5aaecd1a331952, type: 2}
+  - {fileID: 2100000, guid: 88f31c14783af8b4fbab59b4a59ef020, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -135,6 +136,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.073451266, y: 0.07996039, z: 0.08586777}
   m_Center: {x: -0.021735948, y: -0.015043296, z: 0.04291999}
+--- !u!114 &7812793434807300856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3127839689812470812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6625722346206645b3a6eb3ac8abed4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3772479132241492687
 GameObject:
   m_ObjectHideFlags: 0
