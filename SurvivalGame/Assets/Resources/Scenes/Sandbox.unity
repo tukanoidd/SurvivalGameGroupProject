@@ -136,9 +136,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -200,9 +200,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -633,8 +633,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sharedProfile: {fileID: 11400000, guid: 04acf441e83b20d4cbb560c043f9932d, type: 2}
   isGlobal: 1
   blendDistance: 0
@@ -729,22 +729,22 @@ PrefabInstance:
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parent
-      value: 
+      value:
       objectReference: {fileID: 29189554}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: particleSystemMain
-      value: 
+      value:
       objectReference: {fileID: 971207401}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parentObj
-      value: 
+      value:
       objectReference: {fileID: 29189554}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: flameObj
-      value: 
+      value:
       objectReference: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
@@ -879,9 +879,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1036,9 +1036,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1192,9 +1192,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1348,9 +1348,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1760,9 +1760,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1876,22 +1876,22 @@ PrefabInstance:
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parent
-      value: 
+      value:
       objectReference: {fileID: 594006184}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: particleSystemMain
-      value: 
+      value:
       objectReference: {fileID: 90123981}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parentObj
-      value: 
+      value:
       objectReference: {fileID: 594006184}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: flameObj
-      value: 
+      value:
       objectReference: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
@@ -1953,8 +1953,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sharedProfile: {fileID: 11400000, guid: 66123b766c8558c4ea86eb40c2486fa7, type: 2}
   isGlobal: 1
   blendDistance: 0
@@ -2005,9 +2005,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -2162,9 +2162,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: 
+  m_Name:
+  m_EditorClassIdentifier:
+  name:
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -2669,22 +2669,22 @@ PrefabInstance:
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parent
-      value: 
+      value:
       objectReference: {fileID: 1246511198}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: particleSystemMain
-      value: 
+      value:
       objectReference: {fileID: 1644757277}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parentObj
-      value: 
+      value:
       objectReference: {fileID: 1246511198}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: flameObj
-      value: 
+      value:
       objectReference: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
@@ -2746,8 +2746,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5874dc25377c4930ac4b491fb8575a6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   spawnObject: {fileID: 5669992536431206071, guid: f4e69930c0ad24de8bee07e48346068d,
     type: 3}
   spawnGroup: []
@@ -2984,22 +2984,22 @@ PrefabInstance:
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parent
-      value: 
+      value:
       objectReference: {fileID: 324532951}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: particleSystemMain
-      value: 
+      value:
       objectReference: {fileID: 811568764}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parentObj
-      value: 
+      value:
       objectReference: {fileID: 324532951}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: flameObj
-      value: 
+      value:
       objectReference: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,
@@ -3479,8 +3479,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   sharedProfile: {fileID: 11400000, guid: 297da7b634a065b4589e05dacfd1b125, type: 2}
   isGlobal: 1
   blendDistance: 0
@@ -4042,22 +4042,22 @@ PrefabInstance:
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parent
-      value: 
+      value:
       objectReference: {fileID: 1258452129}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: particleSystemMain
-      value: 
+      value:
       objectReference: {fileID: 1972807066}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parentObj
-      value: 
+      value:
       objectReference: {fileID: 1258452129}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: flameObj
-      value: 
+      value:
       objectReference: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
     - target: {fileID: 7006076942597300157, guid: 0f3e7ca37a5252d478087b09fac6e968,

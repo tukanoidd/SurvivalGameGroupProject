@@ -37,7 +37,7 @@
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Shaders/Grass.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Shaders/Grass.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Texture.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Terrain Assets/Default Texture.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" beforeDir="false" afterPath="$PROJECT_DIR$/Library/ShaderCache/EditorEncounteredVariants" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/Hierarchy/71bd6d-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/Hierarchy/71bd6d-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/StateCache/SceneView/f732a8-mainStage.json" beforeDir="false" afterPath="$PROJECT_DIR$/Library/StateCache/SceneView/f732a8-mainStage.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
@@ -81,7 +81,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/HeightMapGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/Noise.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/Data/HeightMapSettings.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Advanced Procedural Generation/ThreadedDataRequestor.cs" />
@@ -119,19 +118,23 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Flint.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/FireFlies.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Player.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Shaders/Grass.shader" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Hammer.cs" />
         <option value="$PROJECT_DIR$/Assets/ShaderDebugger/debugger.cginc" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Bush.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/GrassShaderManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/BoomBugs.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/Data/TextureData.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/Data/TextureData.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Food.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Berry.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Bush.cs" />
       </list>
     </option>
   </component>

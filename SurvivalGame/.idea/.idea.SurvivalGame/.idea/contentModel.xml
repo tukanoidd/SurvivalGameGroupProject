@@ -84,10 +84,12 @@
             </e>
             <e p="Materials" t="Include">
               <e p="Ash.cs" t="Include" />
+              <e p="Berry.cs" t="Include" />
               <e p="BranchHead.cs" t="Include" />
               <e p="Bush.cs" t="Include" />
               <e p="Ember.cs" t="Include" />
               <e p="Flint.cs" t="Include" />
+              <e p="Food.cs" t="Include" />
               <e p="Plant.cs" t="Include" />
               <e p="Stone.cs" t="Include" />
               <e p="Wood.cs" t="Include" />
