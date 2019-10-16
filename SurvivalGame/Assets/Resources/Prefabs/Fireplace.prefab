@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 473732827157738914}
   - component: {fileID: 4118123587817568120}
   - component: {fileID: 8541348207190372718}
+  - component: {fileID: 1361459582805627069}
   m_Layer: 0
   m_Name: Cylinder (14)
   m_TagString: Material
@@ -138,6 +139,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &1361459582805627069
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247112441171802183}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &314726071320001437
 GameObject:
   m_ObjectHideFlags: 0
@@ -151,6 +170,7 @@ GameObject:
   - component: {fileID: 2877686991665726998}
   - component: {fileID: 7301566113975518574}
   - component: {fileID: 2282195074750577658}
+  - component: {fileID: 3264461656430584888}
   m_Layer: 0
   m_Name: Cylinder (16)
   m_TagString: Material
@@ -276,6 +296,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &3264461656430584888
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314726071320001437}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970048061337044
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,6 +327,7 @@ GameObject:
   - component: {fileID: 4439970048061337128}
   - component: {fileID: 4439970048061337131}
   - component: {fileID: 4439970048061337045}
+  - component: {fileID: 4022013857981501630}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Material
@@ -414,6 +453,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &4022013857981501630
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970048061337044}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970048239056149
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +484,7 @@ GameObject:
   - component: {fileID: 4439970048239056233}
   - component: {fileID: 4439970048239056232}
   - component: {fileID: 4439970048239056234}
+  - component: {fileID: 6580362624451025572}
   m_Layer: 0
   m_Name: Cylinder (10)
   m_TagString: Material
@@ -552,6 +610,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &6580362624451025572
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970048239056149}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970048394551514
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,6 +641,7 @@ GameObject:
   - component: {fileID: 4439970048394551518}
   - component: {fileID: 4439970048394551513}
   - component: {fileID: 4439970048394551515}
+  - component: {fileID: 3993589484282992713}
   m_Layer: 0
   m_Name: Cylinder (9)
   m_TagString: Material
@@ -690,6 +767,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &3993589484282992713
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970048394551514}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970048491480153
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +798,7 @@ GameObject:
   - component: {fileID: 4439970048491480157}
   - component: {fileID: 4439970048491480156}
   - component: {fileID: 4439970048491480158}
+  - component: {fileID: 2800886505364341537}
   m_Layer: 0
   m_Name: Cylinder (13)
   m_TagString: Material
@@ -828,6 +924,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &2800886505364341537
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970048491480153}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970048694059386
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +955,7 @@ GameObject:
   - component: {fileID: 4439970048694059390}
   - component: {fileID: 4439970048694059385}
   - component: {fileID: 4439970048694059387}
+  - component: {fileID: 302052815644173744}
   m_Layer: 0
   m_Name: Cylinder (11)
   m_TagString: Material
@@ -966,6 +1081,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &302052815644173744
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970048694059386}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970048991587419
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1112,7 @@ GameObject:
   - component: {fileID: 4439970048991587423}
   - component: {fileID: 4439970048991587422}
   - component: {fileID: 4439970048991587416}
+  - component: {fileID: 7369040808407735913}
   m_Layer: 0
   m_Name: Cylinder (8)
   m_TagString: Material
@@ -1104,6 +1238,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &7369040808407735913
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970048991587419}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &4439970049555524852
 GameObject:
   m_ObjectHideFlags: 0
@@ -1117,6 +1269,7 @@ GameObject:
   - component: {fileID: 4439970049555524808}
   - component: {fileID: 4439970049555524811}
   - component: {fileID: 4439970049555524853}
+  - component: {fileID: 3593718094989112116}
   m_Layer: 0
   m_Name: Cylinder (12)
   m_TagString: Material
@@ -1242,6 +1395,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &3593718094989112116
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4439970049555524852}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6014533325695782377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,6 +1426,7 @@ GameObject:
   - component: {fileID: 8271858373168770953}
   - component: {fileID: 5502088426997901630}
   - component: {fileID: 7321712796170961386}
+  - component: {fileID: 7341100461940274969}
   m_Layer: 0
   m_Name: Cylinder (18)
   m_TagString: Material
@@ -1380,6 +1552,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &7341100461940274969
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6014533325695782377}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &6985038852839663450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1393,6 +1583,7 @@ GameObject:
   - component: {fileID: 4191420221091500485}
   - component: {fileID: 6706577686834156638}
   - component: {fileID: 3053622900335262127}
+  - component: {fileID: 5274749701642067152}
   m_Layer: 0
   m_Name: Cylinder (17)
   m_TagString: Material
@@ -1518,6 +1709,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &5274749701642067152
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6985038852839663450}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7532849679300645831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1531,6 +1740,7 @@ GameObject:
   - component: {fileID: 6670509803957229621}
   - component: {fileID: 4949689056512068790}
   - component: {fileID: 5493003768258399007}
+  - component: {fileID: 3051379169626588945}
   m_Layer: 0
   m_Name: Cylinder (15)
   m_TagString: Material
@@ -1656,6 +1866,24 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &3051379169626588945
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7532849679300645831}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &7857654821838204845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,7 +1941,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -1759,6 +1987,8 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
 --- !u!1 &8038030073796136562
 GameObject:
   m_ObjectHideFlags: 0
@@ -1772,6 +2002,7 @@ GameObject:
   - component: {fileID: 6631305487554591337}
   - component: {fileID: 839445071498038447}
   - component: {fileID: 3221032790593153996}
+  - component: {fileID: 8820118249310340817}
   m_Layer: 0
   m_Name: Cylinder (19)
   m_TagString: Material
@@ -1897,3 +2128,21 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &8820118249310340817
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8038030073796136562}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

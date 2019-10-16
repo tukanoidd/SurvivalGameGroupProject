@@ -95,6 +95,7 @@
               <e p="Wood.cs" t="Include" />
             </e>
             <e p="Tools" t="Include">
+              <e p="Axe.cs" t="Include" />
               <e p="Hammer.cs" t="Include" />
             </e>
           </e>
