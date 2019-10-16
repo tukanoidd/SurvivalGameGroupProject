@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5474041287154750088}
   - component: {fileID: 3229033826335168275}
   - component: {fileID: 6610717106782157538}
+  - component: {fileID: 5704254634874711808}
   m_Layer: 0
   m_Name: Cylinder (17)
   m_TagString: Material
@@ -112,15 +113,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5474041287154750088}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -128,6 +135,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &5704254634874711808
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1239209131373323287}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1826024006470553738
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,6 +170,7 @@ GameObject:
   - component: {fileID: 3264881738073217912}
   - component: {fileID: 3849885054744940539}
   - component: {fileID: 4460331806130866258}
+  - component: {fileID: 5692235427183168591}
   m_Layer: 0
   m_Name: Cylinder (15)
   m_TagString: Material
@@ -240,15 +270,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 3264881738073217912}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -256,6 +292,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &5692235427183168591
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826024006470553738}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2078031460168576224
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +370,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -329,6 +387,7 @@ GameObject:
   - component: {fileID: 3304086056867477796}
   - component: {fileID: 8825673389406801890}
   - component: {fileID: 6732373152817653889}
+  - component: {fileID: 1450805608047578280}
   m_Layer: 0
   m_Name: Cylinder (19)
   m_TagString: Material
@@ -428,15 +487,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 3304086056867477796}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -444,6 +509,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &1450805608047578280
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184677052960247103}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2498006610072997540
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +544,7 @@ GameObject:
   - component: {fileID: 222596861825035460}
   - component: {fileID: 4433232748380777075}
   - component: {fileID: 1461043185799250599}
+  - component: {fileID: 7522434652957747404}
   m_Layer: 0
   m_Name: Cylinder (18)
   m_TagString: Material
@@ -556,15 +644,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 222596861825035460}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -572,6 +666,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &7522434652957747404
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2498006610072997540}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577137414026840
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +701,7 @@ GameObject:
   - component: {fileID: 5494577137414026788}
   - component: {fileID: 5494577137414026789}
   - component: {fileID: 5494577137414026791}
+  - component: {fileID: 4063155297672127206}
   m_Layer: 0
   m_Name: Cylinder (10)
   m_TagString: Material
@@ -684,15 +801,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577137414026788}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -700,6 +823,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &4063155297672127206
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577137414026840}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577137569260439
 GameObject:
   m_ObjectHideFlags: 0
@@ -713,6 +858,7 @@ GameObject:
   - component: {fileID: 5494577137569260435}
   - component: {fileID: 5494577137569260436}
   - component: {fileID: 5494577137569260438}
+  - component: {fileID: 781706631187590805}
   m_Layer: 0
   m_Name: Cylinder (9)
   m_TagString: Material
@@ -812,15 +958,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577137569260435}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -828,6 +980,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &781706631187590805
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577137569260439}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577137666451220
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,6 +1015,7 @@ GameObject:
   - component: {fileID: 5494577137666451216}
   - component: {fileID: 5494577137666451217}
   - component: {fileID: 5494577137666451219}
+  - component: {fileID: 6781939799494534848}
   m_Layer: 0
   m_Name: Cylinder (13)
   m_TagString: Material
@@ -940,15 +1115,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577137666451216}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -956,6 +1137,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &6781939799494534848
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577137666451220}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577137873224247
 GameObject:
   m_ObjectHideFlags: 0
@@ -969,6 +1172,7 @@ GameObject:
   - component: {fileID: 5494577137873224243}
   - component: {fileID: 5494577137873224244}
   - component: {fileID: 5494577137873224246}
+  - component: {fileID: 8904938685811728172}
   m_Layer: 0
   m_Name: Cylinder (11)
   m_TagString: Material
@@ -1068,15 +1272,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577137873224243}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -1084,6 +1294,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &8904938685811728172
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577137873224247}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577138314243737
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1329,7 @@ GameObject:
   - component: {fileID: 5494577138314243429}
   - component: {fileID: 5494577138314243430}
   - component: {fileID: 5494577138314243736}
+  - component: {fileID: 7035852843158832192}
   m_Layer: 0
   m_Name: Cylinder (2)
   m_TagString: Material
@@ -1196,15 +1429,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577138314243429}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -1212,6 +1451,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &7035852843158832192
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577138314243737}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577138730495929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,6 +1486,7 @@ GameObject:
   - component: {fileID: 5494577138730495877}
   - component: {fileID: 5494577138730495878}
   - component: {fileID: 5494577138730495928}
+  - component: {fileID: 5431960001713307663}
   m_Layer: 0
   m_Name: Cylinder (12)
   m_TagString: Material
@@ -1324,15 +1586,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577138730495877}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -1340,6 +1608,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &5431960001713307663
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577138730495929}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5494577139244494614
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1643,7 @@ GameObject:
   - component: {fileID: 5494577139244494610}
   - component: {fileID: 5494577139244494611}
   - component: {fileID: 5494577139244494613}
+  - component: {fileID: 4094568012291058319}
   m_Layer: 0
   m_Name: Cylinder (8)
   m_TagString: Material
@@ -1452,15 +1743,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 5494577139244494610}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -1468,6 +1765,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &4094568012291058319
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494577139244494614}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8264301592400755466
 GameObject:
   m_ObjectHideFlags: 0
@@ -1481,6 +1800,7 @@ GameObject:
   - component: {fileID: 8596897286713226991}
   - component: {fileID: 5259037105285755957}
   - component: {fileID: 528520977506791971}
+  - component: {fileID: 7375434953219009343}
   m_Layer: 0
   m_Name: Cylinder (14)
   m_TagString: Material
@@ -1580,15 +1900,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 8596897286713226991}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -1596,6 +1922,28 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &7375434953219009343
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8264301592400755466}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &8467743968085883088
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1957,7 @@ GameObject:
   - component: {fileID: 6211238926428767579}
   - component: {fileID: 1479720851890259491}
   - component: {fileID: 7959731513380403383}
+  - component: {fileID: 7437540303057267509}
   m_Layer: 0
   m_Name: Cylinder (16)
   m_TagString: Material
@@ -1708,15 +2057,21 @@ MonoBehaviour:
   tempExternal: 0
   flashpoint: 150
   fuel: 1000
+  glowTemp: 1100
   heatTransfer: 2
+  heatResistance: 5
   maxTemp: 1000
   burnRate: 7
+  doesIgnite: 1
   isBurning: 0
   heatGlow: 0
+  impactForce: 0
+  impactedObject: {fileID: 0}
   red: {r: 255, g: 0, b: 0, a: 1}
   blue: {r: 0, g: 0, b: 255, a: 1}
   color: {r: 0, g: 0, b: 0, a: 0}
   renderer: {fileID: 6211238926428767579}
+  collider: {fileID: 0}
   flameObj: {fileID: 3644319998427560886, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   smokeObj: {fileID: 1751734804245860947, guid: e367997a6d8cbec4bbac4c9e407bbfd6,
@@ -1724,3 +2079,25 @@ MonoBehaviour:
   groupParent: {fileID: 0}
   heatedBy: {fileID: 0}
   vaporized: 0
+  preIgnited: 0
+  isGrounded: 0
+  isThrown: 0
+  hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+--- !u!54 &7437540303057267509
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8467743968085883088}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

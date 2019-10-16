@@ -13,17 +13,21 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject shoulder;
     [SerializeField] private GameObject hammer;
+    [SerializeField] private GameObject axe;
     [SerializeField] private Camera _camera;
     private Animator animator;
 
     public GameObject hammerPrefab;
+    public GameObject axePrefab;
 
     private bool showPickup = false;
     private bool pickedUp = false;
     private bool lookingAtObj = false;
     private string pickupName;
     private float pickupTemp;
-    [HideInInspector] public bool pickedHammer;
+
+    [HideInInspector] public bool pickedHammer = false;
+    [HideInInspector] public bool pickedAxe = false;
 
     private RaycastHit planeHit;
 
@@ -35,7 +39,7 @@ public class CharacterPickupItems : MonoBehaviour
     [HideInInspector] public GameObject hitGameObject;
     private GameObject pickedObject;
     private Vector3 scale;
-    
+
     [SerializeField] private GameObject[] logsPrefabs;
     [SerializeField] private int numLogsPerTrunk = 2;
 
@@ -44,15 +48,25 @@ public class CharacterPickupItems : MonoBehaviour
     private Vector3 stickYOffset;
     [SerializeField] private int numSticksPerLog = 4;
 
+    private GameObject plankPrefab;
+    private Vector3 plankSize;
+    private Vector3 plankYOffset;
+    [SerializeField] private int numPlanksPerLog = 2;
+
     void Start()
     {
         animator = GetComponent<Animator>();
 
         pickedHammer = false;
+        pickedAxe = false;
 
         stickPrefab = Resources.Load<GameObject>("Prefabs/Stick");
         stickSize = stickPrefab.GetComponent<Renderer>().bounds.size;
         stickYOffset = Vector3.up * Mathf.Min(stickSize.x, stickSize.y, stickSize.z);
+
+        plankPrefab = Resources.Load<GameObject>("Prefabs/Plank");
+        plankSize = plankPrefab.GetComponent<Renderer>().bounds.size;
+        plankYOffset = Vector3.up * Mathf.Min(plankSize.x, plankSize.y, plankSize.z);
     }
 
     void Update()
@@ -72,15 +86,26 @@ public class CharacterPickupItems : MonoBehaviour
                     showPickup = false;
                     pickedObject = hitGameObject;
 
-                    if (hitGameObject.CompareTag("hammer"))
+                    if (hitGameObject.CompareTag("tool"))
                     {
                         Destroy(pickedObject);
-                        pickedHammer = true;
+                        if (hitGameObject.GetComponent<Combustable>().name == "Hammer")
+                        {
+                            pickedHammer = true;
+                            hammer.SetActive(true);
+                        }
+                        else if (hitGameObject.GetComponent<Combustable>().name == "Axe")
+                        {
+                            pickedAxe = true;
+                            axe.SetActive(true);
+                        }
+
                         shoulder.SetActive(true);
                     }
                     else
                     {
                         pickedHammer = false;
+                        pickedAxe = false;
                         scale = pickedObject.transform.lossyScale;
                         pickedObject.GetComponent<Rigidbody>().isKinematic = true;
                         pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = false;
@@ -93,27 +118,35 @@ public class CharacterPickupItems : MonoBehaviour
                     showPickup = false;
                     pickedUp = false;
 
-                    if (pickedHammer)
+                    if (pickedHammer || pickedAxe)
                     {
                         shoulder.SetActive(false);
-                        pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
-                        pickedObject.GetComponent<Rigidbody>()
-                            .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
-                        pickedObject.GetComponent<Combustable>().isThrown = true;
+
+                        if (pickedHammer)
+                        {
+                            hammer.SetActive(false);
+                            pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
+                        }
+                        else if (pickedAxe)
+                        {
+                            axe.SetActive(false);
+                            pickedObject = Instantiate(axePrefab, axe.transform.position, Quaternion.identity);
+                        }
 
                         pickedHammer = false;
+                        pickedAxe = false;
                     }
                     else
                     {
-                        pickedObject.GetComponent<Rigidbody>().isKinematic = false;
-                        pickedObject.GetComponent<Rigidbody>()
-                            .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
-                        pickedObject.GetComponent<Combustable>().isThrown = true;
-
                         pickedObject.transform.parent = null;
 
                         pickedObject.transform.localScale = scale;
                     }
+
+                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    pickedObject.GetComponent<Rigidbody>()
+                        .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
+                    pickedObject.GetComponent<Combustable>().isThrown = true;
                 }
             }
 
@@ -124,37 +157,48 @@ public class CharacterPickupItems : MonoBehaviour
                     pickedUp = false;
                     showPickup = false;
 
-                    if (pickedHammer)
+                    if (pickedHammer || pickedAxe)
                     {
                         shoulder.SetActive(false);
-                        pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
-                        pickedObject.GetComponent<Hammer>().isThrown = true;
+
+                        if (pickedHammer)
+                        {
+                            hammer.SetActive(false);
+                            pickedObject = Instantiate(hammerPrefab, hammer.transform.position, Quaternion.identity);
+                        }
+                        else if (pickedAxe)
+                        {
+                            axe.SetActive(false);
+                            pickedObject = Instantiate(axePrefab, hammer.transform.position, Quaternion.identity);
+                        }
+
                         pickedHammer = false;
+                        pickedAxe = false;
                     }
                     else
                     {
-                        pickedObject.GetComponent<Rigidbody>().isKinematic = false;
-                        pickedObject.GetComponent<Combustable>().isThrown = true;
-
                         pickedObject.transform.parent = null;
 
                         pickedObject.transform.localScale = scale;
                     }
+
+                    pickedObject.GetComponent<Rigidbody>().isKinematic = false;
+                    pickedObject.GetComponent<Combustable>().isThrown = true;
                 }
             }
 
             if (Input.GetMouseButtonDown(0))
             {
-                if (pickedHammer)
+                if (pickedHammer || pickedAxe)
                 {
-                    animator.SetBool("HammerSwing", true);
+                    animator.SetBool("ToolSwing", true);
 
                     CheckHitObject(playerHeadPosition, playerForwardDirection);
                 }
             }
             else
             {
-                animator.SetBool("HammerSwing", false);
+                animator.SetBool("ToolSwing", false);
             }
         }
 
@@ -195,58 +239,97 @@ public class CharacterPickupItems : MonoBehaviour
 
                 if (hitObj.GetComponent<Combustable>() != null)
                 {
-                    if (!hitObj.GetComponent<Combustable>().hasBeenHitByHammer)
+                    Debug.Log(hitObj.GetComponent<Combustable>().hasBeenHitByAxe);
+                    Debug.Log(pickedAxe);
+                    
+                    Debug.Log(hitObj.GetComponent<Combustable>().hasBeenHitByHammer);
+                    Debug.Log(pickedHammer);
+                    
+                    if (!hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
+                        !hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                     {
-                        hitObj.GetComponent<Combustable>().hasBeenHitByHammer = true;
-
-                        if (hitObj.transform.parent != null)
+                        if (pickedHammer)
                         {
-                            var parent = hitObj.transform.parent;
-                            var children = new List<Rigidbody>();
-
-                            for (int i = 0; i < parent.childCount; i++)
-                            {
-                                children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
-                            }
-
-                            hitObj.transform.parent.DetachChildren();
-
-                            foreach (var child in children)
-                            {
-                                child.isKinematic = false;
-                                child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
-                            }
+                            hitObj.GetComponent<Combustable>().hasBeenHitByHammer = true;
                         }
-                        else
+                        else if (pickedAxe)
                         {
-                            if (hitObj.GetComponent<Rigidbody>() != null)
+                            hitObj.GetComponent<Combustable>().hasBeenHitByAxe = true;
+                        }
+
+                        if (pickedAxe && hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
+                        {
+                            if (hitObj.transform.parent != null)
                             {
-                                var rigBody = hitObj.GetComponent<Rigidbody>();
-                                rigBody.isKinematic = false;
-                                rigBody.AddForce(playerForwardDirection * hitForce);
+                                var parent = hitObj.transform.parent;
+                                var children = new List<Rigidbody>();
+
+                                for (int i = 0; i < parent.childCount; i++)
+                                {
+                                    children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
+                                }
+
+                                hitObj.transform.parent.DetachChildren();
+
+                                foreach (var child in children)
+                                {
+                                    child.isKinematic = false;
+                                    child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
+                                }
+                            }
+                            else
+                            {
+                                if (hitObj.GetComponent<Rigidbody>() != null)
+                                {
+                                    var rigBody = hitObj.GetComponent<Rigidbody>();
+                                    rigBody.isKinematic = false;
+                                    rigBody.AddForce(playerForwardDirection * hitForce);
+                                }
                             }
                         }
                     }
-                    else
+                    if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
+                             hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                     {
-                        if (hitObj.CompareTag("Trunk"))
+                        Debug.Log("hasbeenhit");
+                        if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer && pickedHammer)
                         {
-                            Destroy(hitObj);
-
-                            for (int i = 0; i < numLogsPerTrunk; i++)
+                            if (hitObj.CompareTag("Log"))
                             {
-                                var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
-                                var logSize = logPrefab.GetComponentsInChildren<Renderer>()[0].bounds.size;
-                                var yOffset = Vector3.up * Mathf.Min(logSize.x, logSize.y, logSize.z);
-                                Instantiate(logPrefab, hitObj.transform.position + yOffset, hitObj.transform.rotation);
+                                Destroy(hitObj);
+
+                                for (int i = 0; i < numSticksPerLog; i++)
+                                {
+                                    Instantiate(stickPrefab, hitObj.transform.position + stickYOffset,
+                                        hitObj.transform.rotation);
+                                }
                             }
-                        } else if (hitObj.CompareTag("Log"))
+                        }
+                        else if (hitObj.GetComponent<Combustable>().hasBeenHitByAxe && pickedAxe)
                         {
-                            Destroy(hitObj);
-
-                            for (int i = 0; i < numSticksPerLog; i++)
+                            Debug.Log("axe");
+                            if (hitObj.CompareTag("Trunk"))
                             {
-                                Instantiate(stickPrefab, hitObj.transform.position + stickYOffset, hitObj.transform.rotation);
+                                Destroy(hitObj);
+
+                                for (int i = 0; i < numLogsPerTrunk; i++)
+                                {
+                                    var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
+                                    var logSize = logPrefab.GetComponentsInChildren<Renderer>()[0].bounds.size;
+                                    var yOffset = Vector3.up * Mathf.Min(logSize.x, logSize.y, logSize.z);
+                                    Instantiate(logPrefab, hitObj.transform.position + yOffset,
+                                        hitObj.transform.rotation);
+                                }
+                            }
+                            else if (hitObj.CompareTag("Log"))
+                            {
+                                Destroy(hitObj);
+
+                                for (int i = 0; i < numPlanksPerLog; i++)
+                                {
+                                    Instantiate(plankPrefab, hitObj.transform.position + plankYOffset,
+                                        hitObj.transform.rotation);
+                                }
                             }
                         }
                     }
