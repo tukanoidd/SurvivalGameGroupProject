@@ -206,6 +206,7 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -364,6 +365,7 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -386,7 +388,7 @@ GameObject:
   - component: {fileID: 7759007911333316531}
   m_Layer: 8
   m_Name: Trunk
-  m_TagString: Untagged
+  m_TagString: Trunk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -629,6 +631,7 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
 --- !u!1 &8975036368881689608
 GameObject:
   m_ObjectHideFlags: 0
@@ -784,6 +787,7 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}

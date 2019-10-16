@@ -8,6 +8,8 @@ TagManager:
   - Flock
   - terrain
   - hammer
+  - Trunk
+  - Log
   layers:
   - Default
   - TransparentFX

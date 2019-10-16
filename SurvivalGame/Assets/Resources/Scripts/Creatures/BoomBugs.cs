@@ -70,26 +70,33 @@ public class BoomBugs : Creature
 
     void recharge()
     {
-        var amount = 2;
-        particleForceField.rotationSpeed = 20;
-        particleForceField.gravity = 0;
-        if (mainEnergySource.gameObject != null)
+        if (mainEnergySource != null)
         {
-            mainEnergySource.GetComponent<Combustable>().temperature += amount;
-            mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;   
+            var amount = 2;
+            particleForceField.rotationSpeed = 20;
+            particleForceField.gravity = 0;
+            if (mainEnergySource.gameObject != null)
+            {
+                mainEnergySource.GetComponent<Combustable>().temperature += amount;
+                mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;   
+            }
+            else
+            {
+                findEnergySource();
+            }
+            energy -= amount;
+            recharging = true;
+            if (mainEnergySource.GetComponent<Combustable>().isBurning || energy < 1f)
+            {
+                vicinity.Remove(mainEnergySource);
+                recharging = false;
+                mainEnergySource = null;
+                particleForceField.gravity = 3;
+            }    
         }
         else
         {
             findEnergySource();
-        }
-        energy -= amount;
-        recharging = true;
-        if (mainEnergySource.GetComponent<Combustable>().isBurning || energy < 1f)
-        {
-            vicinity.Remove(mainEnergySource);
-            recharging = false;
-            mainEnergySource = null;
-            particleForceField.gravity = 3;
         }
     }
     
