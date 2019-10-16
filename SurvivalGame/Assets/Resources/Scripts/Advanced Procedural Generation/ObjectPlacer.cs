@@ -33,7 +33,7 @@ public class ObjectPlacer : MonoBehaviour
                             if (terrainLayers[i].startHeight <= vertices[j].y)
                             {
                                 TextureData.SpawnableObject obj =
-                                    terrainLayers[i].objects[Random.Range(0, 3)];
+                                    terrainLayers[i].objects[Random.Range(0, terrainLayers[i].objects.Length)];
                                 if (obj.prefabs.Length > 0)
                                 {
                                     if (Random.Range(0f, 1f) <= obj.chance)
