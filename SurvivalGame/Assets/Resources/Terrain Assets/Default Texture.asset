@@ -17,7 +17,7 @@ MonoBehaviour:
   - name: Grass
     objects:
     - name: Trees
-      chance: 0.95
+      chance: 0.84
       prefabs:
       - {fileID: 2014225656627745115, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}
       - {fileID: 4653429078422814110, guid: 74cedef3a93d6e04492b5a19eca86967, type: 3}

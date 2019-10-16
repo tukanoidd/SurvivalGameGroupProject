@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEditor.Animations;
 #endif
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class CharacterPickupItems : MonoBehaviour
 {
@@ -16,13 +17,13 @@ public class CharacterPickupItems : MonoBehaviour
     private Animator animator;
 
     public GameObject hammerPrefab;
-    
+
     private bool showPickup = false;
     private bool pickedUp = false;
     private bool lookingAtObj = false;
     private string pickupName;
     private float pickupTemp;
-    [HideInInspector] public bool pickedHammer = false;
+    [HideInInspector] public bool pickedHammer;
 
     private RaycastHit planeHit;
 
@@ -30,18 +31,28 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private float throwForce;
     [SerializeField] private float hitRayLength;
     [SerializeField] private float hitForce;
-    
 
     [HideInInspector] public GameObject hitGameObject;
     private GameObject pickedObject;
     private Vector3 scale;
+    
+    [SerializeField] private GameObject[] logsPrefabs;
+    [SerializeField] private int numLogsPerTrunk = 2;
 
-    private Quaternion origShoulderRot;
+    private GameObject stickPrefab;
+    private Vector3 stickSize;
+    private Vector3 stickYOffset;
+    [SerializeField] private int numSticksPerLog = 4;
 
     void Start()
     {
-        origShoulderRot = shoulder.transform.rotation;
         animator = GetComponent<Animator>();
+
+        pickedHammer = false;
+
+        stickPrefab = Resources.Load<GameObject>("Prefabs/Stick");
+        stickSize = stickPrefab.GetComponent<Renderer>().bounds.size;
+        stickYOffset = Vector3.up * Mathf.Min(stickSize.x, stickSize.y, stickSize.z);
     }
 
     void Update()
@@ -81,7 +92,7 @@ public class CharacterPickupItems : MonoBehaviour
                 {
                     showPickup = false;
                     pickedUp = false;
-                    
+
                     if (pickedHammer)
                     {
                         shoulder.SetActive(false);
@@ -98,10 +109,10 @@ public class CharacterPickupItems : MonoBehaviour
                         pickedObject.GetComponent<Rigidbody>()
                             .AddForce(playerForwardDirection * throwForce, ForceMode.Impulse);
                         pickedObject.GetComponent<Combustable>().isThrown = true;
-                        
+
                         pickedObject.transform.parent = null;
 
-                        pickedObject.transform.localScale = scale;   
+                        pickedObject.transform.localScale = scale;
                     }
                 }
             }
@@ -124,7 +135,7 @@ public class CharacterPickupItems : MonoBehaviour
                     {
                         pickedObject.GetComponent<Rigidbody>().isKinematic = false;
                         pickedObject.GetComponent<Combustable>().isThrown = true;
-                        
+
                         pickedObject.transform.parent = null;
 
                         pickedObject.transform.localScale = scale;
@@ -172,7 +183,7 @@ public class CharacterPickupItems : MonoBehaviour
     {
         int counter = 0;
         int maxFrames = 50;
-        
+
         Ray rayHitObject = new Ray(playerHeadPosition, playerForwardDirection);
         RaycastHit rayHitObjectHit = new RaycastHit();
 
@@ -181,34 +192,66 @@ public class CharacterPickupItems : MonoBehaviour
             if (Physics.Raycast(rayHitObject, out rayHitObjectHit, hitRayLength))
             {
                 var hitObj = rayHitObjectHit.transform.gameObject;
-                if (hitObj.transform.parent != null)
+
+                if (hitObj.GetComponent<Combustable>() != null)
                 {
-                    var parent = hitObj.transform.parent;
-                    var children = new List<Rigidbody>();
-
-                    for (int i = 0; i < parent.childCount; i++)
+                    if (!hitObj.GetComponent<Combustable>().hasBeenHitByHammer)
                     {
-                        children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
+                        hitObj.GetComponent<Combustable>().hasBeenHitByHammer = true;
+
+                        if (hitObj.transform.parent != null)
+                        {
+                            var parent = hitObj.transform.parent;
+                            var children = new List<Rigidbody>();
+
+                            for (int i = 0; i < parent.childCount; i++)
+                            {
+                                children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
+                            }
+
+                            hitObj.transform.parent.DetachChildren();
+
+                            foreach (var child in children)
+                            {
+                                child.isKinematic = false;
+                                child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
+                            }
+                        }
+                        else
+                        {
+                            if (hitObj.GetComponent<Rigidbody>() != null)
+                            {
+                                var rigBody = hitObj.GetComponent<Rigidbody>();
+                                rigBody.isKinematic = false;
+                                rigBody.AddForce(playerForwardDirection * hitForce);
+                            }
+                        }
                     }
-                    
-                    hitObj.transform.parent.DetachChildren();
-
-                    foreach (var child in children)
+                    else
                     {
-                        child.isKinematic = false;
-                        child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
+                        if (hitObj.CompareTag("Trunk"))
+                        {
+                            Destroy(hitObj);
+
+                            for (int i = 0; i < numLogsPerTrunk; i++)
+                            {
+                                var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
+                                var logSize = logPrefab.GetComponentsInChildren<Renderer>()[0].bounds.size;
+                                var yOffset = Vector3.up * Mathf.Min(logSize.x, logSize.y, logSize.z);
+                                Instantiate(logPrefab, hitObj.transform.position + yOffset, hitObj.transform.rotation);
+                            }
+                        } else if (hitObj.CompareTag("Log"))
+                        {
+                            Destroy(hitObj);
+
+                            for (int i = 0; i < numSticksPerLog; i++)
+                            {
+                                Instantiate(stickPrefab, hitObj.transform.position + stickYOffset, hitObj.transform.rotation);
+                            }
+                        }
                     }
                 }
-                else
-                {
-                    if (hitObj.GetComponent<Rigidbody>() != null)
-                    {
-                        var rigBody = hitObj.GetComponent<Rigidbody>();
-                        rigBody.isKinematic = false;
-                        rigBody.AddForce(playerForwardDirection * hitForce);   
-                    }
-                }
-                
+
                 return;
             }
 

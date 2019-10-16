@@ -51,7 +51,7 @@
         UNITY_INSTANCING_BUFFER_END(Props)
 
         void vert(inout appdata_full data) {        
-            float amplitude = (1 - (_Height - data.vertex.y)/_Height) * _Amplitude;
+            float amplitude = (1 - (_Height - data.vertex.z)/_Height) * _Amplitude;
 
             float4 modifiedPos = data.vertex;
             modifiedPos.y += sin(data.vertex.x * _Frequency + _Time.y * _AnimationSpeed) * amplitude;

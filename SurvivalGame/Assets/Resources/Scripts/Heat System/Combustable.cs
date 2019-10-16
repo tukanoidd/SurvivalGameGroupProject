@@ -37,6 +37,7 @@ public class Combustable : MonoBehaviour
     public bool isGrounded;
     public bool isThrown = false;
     public bool hasBeenMovedAfterThrow = false;
+    public bool hasBeenHitByHammer = false;
     
     // Start is called before the first frame update
     protected virtual void Start()

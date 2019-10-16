@@ -327,7 +327,14 @@ MonoBehaviour:
   pickedHammer: 1
   rayLength: 10
   throwForce: 1000
+  hitRayLength: 0
+  hitForce: 0
   hitGameObject: {fileID: 0}
+  logsPrefabs:
+  - {fileID: 3296426128621719765, guid: 92dba01e17fb48642a2897851c39b4ee, type: 3}
+  - {fileID: 5037954490345171100, guid: 6ad6715341bc0654ea4d76384b76eb95, type: 3}
+  numLogsPerTrunk: 2
+  numSticksPerLog: 4
 --- !u!114 &5194478966582594388
 MonoBehaviour:
   m_ObjectHideFlags: 0
