@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 501593244}
-  m_IndirectSpecularColor: {r: 0.17736508, g: 0.25092334, b: 0.3529858, a: 1}
+  m_IndirectSpecularColor: {r: 0.17559245, g: 0.24887775, b: 0.35132074, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -556,7 +556,7 @@ PrefabInstance:
     - target: {fileID: 5194478966582594378, guid: 57517eb58446fa444a6154d049798b31,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5194478966582594378, guid: 57517eb58446fa444a6154d049798b31,
         type: 3}
@@ -577,6 +577,16 @@ PrefabInstance:
         type: 3}
       propertyPath: throwForce
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194478966582594391, guid: 57517eb58446fa444a6154d049798b31,
+        type: 3}
+      propertyPath: hitRayLength
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194478966582594391, guid: 57517eb58446fa444a6154d049798b31,
+        type: 3}
+      propertyPath: hitForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5194478966582594376, guid: 57517eb58446fa444a6154d049798b31,
         type: 3}
@@ -827,7 +837,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1545034847}
-  m_Mesh: {fileID: 1672947589}
+  m_Mesh: {fileID: 1816319567}
 --- !u!4 &1545034850
 Transform:
   m_ObjectHideFlags: 0
@@ -914,10 +924,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
   health: 0
   hunger: 0
   hungerRate: 0.005
---- !u!43 &1672947589
+--- !u!43 &1816319567
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1110,7 +1122,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1860010325
 MonoBehaviour:
