@@ -36,6 +36,9 @@ MonoBehaviour:
       - {fileID: 657705998050976320, guid: cda6e321695dfe942b0e4e201794e29c, type: 3}
       - {fileID: 6365196010681266399, guid: 707c31eb11e720e479335aeafe4c7a40, type: 3}
       - {fileID: 704925163847726216, guid: a57e31ff0aedf334c9c59c48b198b984, type: 3}
+      - {fileID: 296279758293829307, guid: fcfcb4035a6911248ba62fcbced3ed88, type: 3}
+      - {fileID: 296279758293829307, guid: fcfcb4035a6911248ba62fcbced3ed88, type: 3}
+      - {fileID: 296279758293829307, guid: fcfcb4035a6911248ba62fcbced3ed88, type: 3}
     - name: Vegetation
       chance: 0.648
       prefabs:

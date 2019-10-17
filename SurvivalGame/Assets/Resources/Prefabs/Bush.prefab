@@ -190,6 +190,8 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
 --- !u!54 &5730795334243333070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -290,7 +292,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7559335965341907891}
   - component: {fileID: -4765276433665542962}
-  - component: {fileID: 2697771456679412781}
   m_Layer: 0
   m_Name: Bush
   m_TagString: Untagged
@@ -356,23 +357,9 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
   berry: {fileID: 0}
---- !u!54 &2697771456679412781
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6823923043788589472}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &7903903576048250030
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,6 +543,8 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
 --- !u!54 &2237907765787695182
 Rigidbody:
   m_ObjectHideFlags: 0

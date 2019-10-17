@@ -64,7 +64,7 @@ Material:
     - _DstBlend: 0
     - _Frequency: 7.18
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.249
     - _GlossyReflections: 1
     - _Height: 1.4802291
     - _Metallic: 0

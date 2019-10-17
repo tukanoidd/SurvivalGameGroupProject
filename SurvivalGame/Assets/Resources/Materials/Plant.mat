@@ -72,7 +72,7 @@ Material:
     - _DstBlend: 0
     - _Frequency: 2.67
     - _GlossMapScale: 1
-    - _Glossiness: 0.5
+    - _Glossiness: 0.11
     - _GlossyReflections: 1
     - _Height: -7.49
     - _HeightCutoff: 0.33

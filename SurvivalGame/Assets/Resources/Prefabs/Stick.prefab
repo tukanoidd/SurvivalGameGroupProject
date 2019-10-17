@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 8398560840442085940}
   m_LocalRotation: {x: -0.6731253, y: -0.2165695, z: 0.21656947, w: 0.6731254}
   m_LocalPosition: {x: 6.657, y: -2.1525853e-16, z: 9.694383}
-  m_LocalScale: {x: 85.508675, y: 85.508675, z: 22.232254}
+  m_LocalScale: {x: 25.221405, y: 25.221405, z: 6.5575643}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   isThrown: 0
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
 --- !u!54 &952902235690593144
 Rigidbody:
   m_ObjectHideFlags: 0

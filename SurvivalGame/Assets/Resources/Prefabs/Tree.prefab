@@ -207,6 +207,7 @@ MonoBehaviour:
   isThrown: 0
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -366,6 +367,7 @@ MonoBehaviour:
   isThrown: 0
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -611,7 +613,7 @@ MonoBehaviour:
   maxTemp: 1000
   burnRate: 7
   doesIgnite: 1
-  isBurning: 1
+  isBurning: 0
   heatGlow: 0
   impactForce: 0
   impactedObject: {fileID: 0}
@@ -632,6 +634,7 @@ MonoBehaviour:
   isThrown: 0
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
 --- !u!1 &8975036368881689608
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +791,7 @@ MonoBehaviour:
   isThrown: 0
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
