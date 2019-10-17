@@ -149,7 +149,7 @@ MonoBehaviour:
   heatResistance: 5
   maxTemp: 0
   burnRate: 7
-  doesIgnite: 1
+  doesIgnite: 0
   isBurning: 0
   heatGlow: 0
   impactForce: 0
