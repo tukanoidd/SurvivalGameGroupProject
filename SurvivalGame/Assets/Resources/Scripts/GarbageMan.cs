@@ -48,16 +48,18 @@ public class GarbageMan : MonoBehaviour
         
         if (ashTray.Count >= maximumAshParticles)
         {
-            Destroy(ashTray[0]);
+            var objToDest = ashTray[0];
             ashTray.RemoveAt(0);
+            Destroy(objToDest);
         }
 
         ashParticlesInScene = ashTray.Count;
 
         if (creatures.Count >= creatureCap)
         {
-            Destroy(creatures[0]);
+            var objToDest = creatures[0];
             creatures.RemoveAt(0);
+            Destroy(objToDest);
         }
 
         numberOfCreaturesInScene = creatures.Count;

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 
 public static class Noise
@@ -112,5 +113,7 @@ public class NoiseSettings
         octaves = Mathf.Max(octaves, 1);
         lacunarity = Mathf.Max(lacunarity, 1);
         persistance = Mathf.Clamp01(persistance);
+
+        seed = UnityEngine.Random.Range(-Int32.MaxValue, Int32.MaxValue);
     }
 }

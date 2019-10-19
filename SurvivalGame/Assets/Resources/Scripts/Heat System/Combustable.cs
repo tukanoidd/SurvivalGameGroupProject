@@ -39,6 +39,7 @@ public class Combustable : MonoBehaviour
     public bool hasBeenMovedAfterThrow = false;
     public bool hasBeenHitByHammer = false;
     public bool hasBeenHitByAxe = false;
+    public bool isPlayer = false; 
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -79,7 +80,14 @@ public class Combustable : MonoBehaviour
             {
                 if(!vaporized)
                 {
-                    vaporize();
+                    if (isPlayer)
+                    {
+                        Application.LoadLevel(Application.loadedLevel);
+                    }
+                    else
+                    {
+                        vaporize();   
+                    }
                 }
             }
         }
@@ -184,7 +192,7 @@ public class Combustable : MonoBehaviour
         {
             var ashGroupObj = Instantiate(ashGroup, transform.position, Quaternion.identity);
         }
-
+        
         Destroy(gameObject);
     }
 

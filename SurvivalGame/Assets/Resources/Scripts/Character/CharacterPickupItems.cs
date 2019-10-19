@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEditor.Animations;
 #endif
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 public class CharacterPickupItems : MonoBehaviour
@@ -52,6 +53,11 @@ public class CharacterPickupItems : MonoBehaviour
     private Vector3 plankSize;
     private Vector3 plankYOffset;
     [SerializeField] private int numPlanksPerLog = 2;
+
+    [SerializeField] private GameObject lookingAtObjectUIText;
+    [SerializeField] private GameObject pickUpItemUIText;
+    [SerializeField] private GameObject pickedUpItemUIText;
+    [SerializeField] private GameObject pickedUpToolUIText;
 
     void Start()
     {
@@ -221,6 +227,19 @@ public class CharacterPickupItems : MonoBehaviour
             {
             }
         }
+
+        CheckGUI();
+    }
+
+    private void CheckGUI()
+    {
+        lookingAtObjectUIText.GetComponent<Text>().text =
+            lookingAtObj ? pickupName + " - (Temp: " + pickupTemp + ")" : "";
+
+        lookingAtObjectUIText.SetActive(lookingAtObj);
+        pickUpItemUIText.SetActive(showPickup);
+        pickedUpItemUIText.SetActive(pickedUp);
+        pickedUpToolUIText.SetActive(lookingAtObj && (pickedAxe || pickedHammer));
     }
 
     void CheckHitObject(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
@@ -239,12 +258,6 @@ public class CharacterPickupItems : MonoBehaviour
 
                 if (hitObj.GetComponent<Combustable>() != null)
                 {
-                    Debug.Log(hitObj.GetComponent<Combustable>().hasBeenHitByAxe);
-                    Debug.Log(pickedAxe);
-                    
-                    Debug.Log(hitObj.GetComponent<Combustable>().hasBeenHitByHammer);
-                    Debug.Log(pickedHammer);
-                    
                     if (!hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
                         !hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                     {
@@ -259,117 +272,91 @@ public class CharacterPickupItems : MonoBehaviour
 
                         if (pickedAxe && hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                         {
-                            if (hitObj.transform.parent != null)
-                            {
-                                var parent = hitObj.transform.parent;
-                                var children = new List<Rigidbody>();
-
-                                for (int i = 0; i < parent.childCount; i++)
-                                {
-                                    children.Add(parent.GetChild(i).GetComponent<Rigidbody>());
-                                }
-
-                                hitObj.transform.parent.DetachChildren();
-
-                                foreach (var child in children)
-                                {
-                                    child.isKinematic = false;
-                                    child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
-                                }
-                            }
-                            else
-                            {
-                                if (hitObj.GetComponent<Rigidbody>() != null)
-                                {
-                                    var rigBody = hitObj.GetComponent<Rigidbody>();
-                                    rigBody.isKinematic = false;
-                                    rigBody.AddForce(playerForwardDirection * hitForce);
-                                }
-                            }
+                            Debug.Log("detachment");
+                            DetachChildren(hitObj.transform.parent, playerForwardDirection);
                         }
-                    }
-                    if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
-                             hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
-                    {
-                        Debug.Log("hasbeenhit");
-                        if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer && pickedHammer)
+                        else
                         {
-                            if (hitObj.CompareTag("Log"))
+                            if (hitObj.GetComponent<Rigidbody>() != null)
                             {
-                                Destroy(hitObj);
-
-                                for (int i = 0; i < numSticksPerLog; i++)
-                                {
-                                    Instantiate(stickPrefab, hitObj.transform.position + stickYOffset,
-                                        hitObj.transform.rotation);
-                                }
-                            }
-                        }
-                        else if (hitObj.GetComponent<Combustable>().hasBeenHitByAxe && pickedAxe)
-                        {
-                            Debug.Log("axe");
-                            if (hitObj.CompareTag("Trunk"))
-                            {
-                                Destroy(hitObj);
-
-                                for (int i = 0; i < numLogsPerTrunk; i++)
-                                {
-                                    var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
-                                    var logSize = logPrefab.GetComponentsInChildren<Renderer>()[0].bounds.size;
-                                    var yOffset = Vector3.up * Mathf.Min(logSize.x, logSize.y, logSize.z);
-                                    Instantiate(logPrefab, hitObj.transform.position + yOffset,
-                                        hitObj.transform.rotation);
-                                }
-                            }
-                            else if (hitObj.CompareTag("Log"))
-                            {
-                                Destroy(hitObj);
-
-                                for (int i = 0; i < numPlanksPerLog; i++)
-                                {
-                                    Instantiate(plankPrefab, hitObj.transform.position + plankYOffset,
-                                        hitObj.transform.rotation);
-                                }
+                                var rigBody = hitObj.GetComponent<Rigidbody>();
+                                rigBody.isKinematic = false;
+                                rigBody.AddForce(playerForwardDirection * hitForce);
                             }
                         }
                     }
                 }
 
-                return;
+                if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
+                    hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
+                {
+                    if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer && pickedHammer)
+                    {
+                        if (hitObj.CompareTag("Log"))
+                        {
+                            Destroy(hitObj);
+
+                            for (int i = 0; i < numSticksPerLog; i++)
+                            {
+                                Instantiate(stickPrefab, hitObj.transform.position + stickYOffset,
+                                    hitObj.transform.rotation);
+                            }
+                        }
+                    }
+                    else if (hitObj.GetComponent<Combustable>().hasBeenHitByAxe && pickedAxe)
+                    {
+                        if (hitObj.CompareTag("Trunk"))
+                        {
+                            Destroy(hitObj);
+
+                            for (int i = 0; i < numLogsPerTrunk; i++)
+                            {
+                                var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
+                                var logSize = logPrefab.GetComponentsInChildren<Renderer>()[0].bounds.size;
+                                var yOffset = Vector3.up * Mathf.Min(logSize.x, logSize.y, logSize.z);
+                                Instantiate(logPrefab, hitObj.transform.position + yOffset,
+                                    hitObj.transform.rotation);
+                            }
+                        }
+                        else if (hitObj.CompareTag("Log"))
+                        {
+                            Destroy(hitObj);
+
+                            for (int i = 0; i < numPlanksPerLog; i++)
+                            {
+                                Instantiate(plankPrefab, hitObj.transform.position + plankYOffset,
+                                    hitObj.transform.rotation);
+                            }
+                        }
+                    }
+                }
             }
 
-            counter++;
+            return;
         }
+
+        counter++;
     }
 
-    private void OnGUI()
+    void DetachChildren(Transform parent, Vector3 playerForwardDirection)
     {
-        var interactionStyle = new GUIStyle();
-        interactionStyle.fontSize = 20;
-        interactionStyle.normal.textColor = Color.white;
-
-        if (showPickup)
+        if (parent.childCount > 0)
         {
-            GUI.Label(new Rect(Screen.width / 20, Screen.height * 9 / 10, 50, 50),
-                "E: Pickup Item",
-                interactionStyle);
-        }
+            var children = new List<Rigidbody>();
+            
+            for (int i = 0; i < parent.childCount; i++)
+            {
+                Debug.Log(parent.transform.GetChild(i).name);
+                children.Add(parent.transform.GetChild(i).GetComponent<Rigidbody>());
+            }
 
-        if (pickedUp)
-        {
-            GUI.Label(new Rect(Screen.width / 20, Screen.height * 9 / 10, 50, 50),
-                "E: Throw Item\nF: Let Go Of Item",
-                interactionStyle);
-        }
-
-        if (lookingAtObj)
-        {
-            GUI.Label(new Rect(Screen.width / 50, Screen.height * 8 / 10, 50, 50),
-                pickupName + " - (Temp: " + pickupTemp + ")",
-                interactionStyle);
-
-            GUI.Label(new Rect(Screen.width * 15 / 20, Screen.height * 9 / 10, 300, 50),
-                "MRB: Show Information About Object");
+            parent.DetachChildren();
+            
+            foreach (var child in children)
+            {
+                child.isKinematic = false;
+                child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
+            }
         }
     }
 
@@ -377,15 +364,13 @@ public class CharacterPickupItems : MonoBehaviour
     {
         playerHeadPosition = head.transform.position;
         playerForwardDirection = _camera.transform.forward;
-
         Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
         RaycastHit rayPickupHit;
 
         float distToObj = 0;
-
         if (Physics.Raycast(pickupRay, out rayPickupHit, rayLength))
         {
-            if (rayPickupHit.transform.gameObject != null)
+            if (rayPickupHit.transform.gameObject != null && rayPickupHit.transform.gameObject.name != "Player")
             {
                 hitGameObject = rayPickupHit.transform.gameObject;
 
@@ -435,6 +420,7 @@ public class CharacterPickupItems : MonoBehaviour
         }
 
         Ray checkTerrainRay = new Ray(playerHeadPosition, playerForwardDirection);
+
         RaycastHit terrainRayHit;
         if (Physics.Raycast(checkTerrainRay, out terrainRayHit, distToObj))
         {

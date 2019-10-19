@@ -11,6 +11,7 @@ public class BoomBugs : Creature
     // Start is called before the first frame update
     protected override void Start()
     {
+        name = "BoomBug";
         energy = 0;
         energyThreshold = 3000;
         minimumEnergySourceTemp = 50f;
