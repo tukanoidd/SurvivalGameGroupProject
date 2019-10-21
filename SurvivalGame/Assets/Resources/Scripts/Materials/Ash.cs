@@ -17,7 +17,10 @@ public class Ash : Combustable
         burnRate = -1;   
         renderer = GetComponent<MeshRenderer>();
         color = renderer.material.color;
-        GarbageMan.ashTray.Add(gameObject);
+        if (GarbageMan.ashTray != null)
+        {
+            GarbageMan.ashTray.Add(gameObject);   
+        }
     }
 
     // Update is called once per frame

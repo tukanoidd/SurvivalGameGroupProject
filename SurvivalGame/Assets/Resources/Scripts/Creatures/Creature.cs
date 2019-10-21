@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = System.Object;
 using Random = UnityEngine.Random;
 
 public class Creature : MonoBehaviour
@@ -12,6 +13,8 @@ public class Creature : MonoBehaviour
         FireFlies,
         BoomBugs
     }
+
+    public string name;
 
     public Type type;
     public float energy;
@@ -30,7 +33,7 @@ public class Creature : MonoBehaviour
     public List<GameObject> vicinity;
     public SphereCollider SOI_Collider;
     public GameObject mainEnergySource;
-    
+
     public BoidSettings settings;
 
     [HideInInspector] public Vector3 position;
@@ -45,35 +48,12 @@ public class Creature : MonoBehaviour
     {
         _cachedTransform = transform;
     }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if(vicinity.Count < 11)
-        {
-            if(other.gameObject != null)
-            {
-                if(!vicinity.Contains(other.gameObject) && other.GetComponent<Combustable>() != null)
-                {
-                    vicinity.Add(other.gameObject);
-                }
-            }
-        }
-        else
-        {
-            if(other.gameObject != null)
-            {
-                if(!vicinity.Contains(other.gameObject) && other.GetComponent<Combustable>() != null)
-                {
-                    vicinity.RemoveAt(0);
-                    vicinity.Add(other.gameObject);
-                }
-            }
-        }
-    }
 
     // Start is called before the first frame update
     protected virtual void Start()
     {
+        var objectPlacer = gameObject.AddComponent<ObjectPlacer>();
+        
         GetRandomFocalPoint();
         Initialize();
         alive = true;
@@ -97,7 +77,34 @@ public class Creature : MonoBehaviour
 
         if (GarbageMan.creatures != null)
         {
-            GarbageMan.creatures.Add(gameObject);   
+            GarbageMan.creatures.Add(gameObject);
+        }
+
+        objectPlacer.PlaceMinimapSphere(transform, 20);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (vicinity.Count < 11)
+        {
+            if (other.gameObject != null)
+            {
+                if (!vicinity.Contains(other.gameObject) && other.GetComponent<Combustable>() != null)
+                {
+                    vicinity.Add(other.gameObject);
+                }
+            }
+        }
+        else
+        {
+            if (other.gameObject != null)
+            {
+                if (!vicinity.Contains(other.gameObject) && other.GetComponent<Combustable>() != null)
+                {
+                    vicinity.RemoveAt(0);
+                    vicinity.Add(other.gameObject);
+                }
+            }
         }
     }
 
@@ -109,21 +116,21 @@ public class Creature : MonoBehaviour
             forward = _cachedTransform.forward;
 
             float startSpeed = (settings.minSpeed + settings.maxSpeed) / 2;
-            _velocity = transform.forward * startSpeed;   
+            _velocity = transform.forward * startSpeed;
         }
     }
-    
+
     Vector3 SteerTowards(Vector3 vector)
     {
         if (settings != null)
         {
             Vector3 v = vector.normalized * settings.maxSpeed - _velocity;
-            return Vector3.ClampMagnitude(v, settings.maxSteerForce);   
+            return Vector3.ClampMagnitude(v, settings.maxSteerForce);
         }
 
         return Vector3.zero;
     }
-    
+
     bool isHeadingForCollision()
     {
         RaycastHit hit;
@@ -155,10 +162,10 @@ public class Creature : MonoBehaviour
 
     public static Vector3 GetPointOnUnitSphereCap(Quaternion targetDirection, float angle)
     {
-        var angleInRad = Random.Range(0.0f,angle) * Mathf.Deg2Rad;
-        var PointOnCircle = (Random.insideUnitCircle.normalized)*Mathf.Sin(angleInRad);
-        var V = new Vector3(PointOnCircle.x,PointOnCircle.y,Mathf.Cos(angleInRad));
-        return targetDirection*V;
+        var angleInRad = Random.Range(0.0f, angle) * Mathf.Deg2Rad;
+        var PointOnCircle = (Random.insideUnitCircle.normalized) * Mathf.Sin(angleInRad);
+        var V = new Vector3(PointOnCircle.x, PointOnCircle.y, Mathf.Cos(angleInRad));
+        return targetDirection * V;
     }
 
     protected virtual void GetRandomFocalPoint()
@@ -194,7 +201,7 @@ public class Creature : MonoBehaviour
         */
         if (settings != null)
         {
-            if(Vector3.Distance(transform.position, focalPoint) < 1 && recharging)
+            if (Vector3.Distance(transform.position, focalPoint) < 1 && recharging)
             {
                 moving = false;
             }
@@ -226,7 +233,7 @@ public class Creature : MonoBehaviour
                 position = _cachedTransform.position;
                 forward = dir;
                 moving = true;
-            }   
+            }
         }
     }
 
@@ -234,10 +241,9 @@ public class Creature : MonoBehaviour
     {
         if (type == Type.FireFlies)
         {
-            
-        } else if (type == Type.BoomBugs)
+        }
+        else if (type == Type.BoomBugs)
         {
-  
         }
     }
 }

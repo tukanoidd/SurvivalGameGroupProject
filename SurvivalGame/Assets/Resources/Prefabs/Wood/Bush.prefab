@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 1017828350260250487}
   m_Layer: 0
   m_Name: Leaves
-  m_TagString: Untagged
+  m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,6 +192,7 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
 --- !u!54 &5730795334243333070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -359,6 +360,7 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
   berry: {fileID: 0}
 --- !u!1 &7903903576048250030
 GameObject:
@@ -436,7 +438,7 @@ GameObject:
   - component: {fileID: 3766676148060748221}
   m_Layer: 0
   m_Name: Stem
-  m_TagString: Untagged
+  m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -545,6 +547,7 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
 --- !u!54 &2237907765787695182
 Rigidbody:
   m_ObjectHideFlags: 0

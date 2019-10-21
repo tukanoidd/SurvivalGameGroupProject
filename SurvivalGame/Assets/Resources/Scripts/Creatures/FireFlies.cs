@@ -9,6 +9,7 @@ public class FireFlies : Creature
     // Start is called before the first frame update
     protected override void Start()
     {
+        name = "FireFly";
         energy = 1000;
         minimumEnergySourceTemp = 0f;
         base.Start();
