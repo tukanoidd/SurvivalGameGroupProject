@@ -96,7 +96,6 @@ public class ObjectPlacer : MonoBehaviour
         }
         else if (parent.GetComponent<Human>() != null)
         {
-            Debug.Log("Human");
             minimapSphere.GetComponent<Renderer>().material.color = Color.green;
         }
     }

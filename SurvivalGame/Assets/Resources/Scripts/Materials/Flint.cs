@@ -22,7 +22,7 @@ public class Flint : Stone
         glowTemp = 400;
         flashpoint = glowTemp;
         doesIgnite = false;
-        sparkObj = Resources.Load<GameObject>("Prefabs/Sparks");
+        sparkObj = Resources.Load<GameObject>("Prefabs/Effects/Sparks");
         sparks = sparkObj.GetComponent<ParticleSystem>();
     }
 
@@ -38,24 +38,27 @@ public class Flint : Stone
         contactPoints = collision.contacts;
         impactedObject = collision.gameObject;
 
-        if(impactForce >= 8)
+        if (impactForce >= 8)
         {
-            if(impactedObject != null && impactedObject.GetComponent<Stone>() != null)
+            if (impactedObject != null && impactedObject.GetComponent<Stone>() != null)
             {
                 var contactVector = contactPoints[0].point;
-                float random = Random.Range(0,1);
-
-                sparkInstance = Instantiate(sparkObj, contactVector, Quaternion.identity);
-                sparkInstance.transform.parent = gameObject.transform;
-
-                //if(random > 0.75f)
-                //{
-                    var obj = Resources.Load<GameObject>("Prefabs/Ember");
-                    var ember = Instantiate(obj, contactVector, Quaternion.identity);
-               // }
-
-                Destroy(sparkInstance, sparks.duration);
+                float random = Random.Range(0, 1);
+                
+                SparksAndAmber(contactVector);
             }
         }
+    }
+
+    public void SparksAndAmber(Vector3 position)
+    {
+        sparkInstance = Instantiate(sparkObj, position, Quaternion.identity);
+        sparkInstance.transform.parent = gameObject.transform;
+
+        var obj = Resources.Load<GameObject>("Prefabs/Effects/Ember");
+        var ember = Instantiate(obj, position, Quaternion.identity);
+
+
+        Destroy(sparkInstance, sparks.duration);
     }
 }

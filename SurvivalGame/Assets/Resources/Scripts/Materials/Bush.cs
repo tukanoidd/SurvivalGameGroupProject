@@ -10,7 +10,7 @@ public class Bush : Combustable
     {
         base.Start();
         name = "Bush";
-        berry = Resources.Load<GameObject>("Prefabs/RedBerry");
+        berry = Resources.Load<GameObject>("Prefabs/Food/RedBerry");
         populateBush();
     }
 

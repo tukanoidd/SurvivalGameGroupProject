@@ -15,6 +15,7 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private GameObject shoulder;
     [SerializeField] private GameObject hammer;
     [SerializeField] private GameObject axe;
+    [SerializeField] private GameObject axeHead;
     [SerializeField] private Camera _camera;
     private Animator animator;
 
@@ -45,19 +46,30 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private int numLogsPerTrunk = 2;
 
     private GameObject stickPrefab;
-    private Vector3 stickSize;
     private Vector3 stickYOffset;
-    [SerializeField] private int numSticksPerLog = 4;
+    [SerializeField] private int numSticksPerBranchOrBush = 4;
 
     private GameObject plankPrefab;
-    private Vector3 plankSize;
     private Vector3 plankYOffset;
     [SerializeField] private int numPlanksPerLog = 2;
+
+    [SerializeField] private GameObject[] largeRocksPrefabs;
+    [SerializeField] private GameObject[] largeRedRocksPrefabs;
+    [SerializeField] private GameObject[] mediumRocksPrefabs;
+    [SerializeField] private GameObject[] mediumRedRocksPrefabs;
+    [SerializeField] private GameObject[] smallRocksPrefabs;
+    [SerializeField] private GameObject[] smallRedRocksPrefabs;
+
+    [SerializeField] private int numMedRocksPerLargeRock = 2;
+    [SerializeField] private int numSmallRocksPerMedRock = 2;
 
     [SerializeField] private GameObject lookingAtObjectUIText;
     [SerializeField] private GameObject pickUpItemUIText;
     [SerializeField] private GameObject pickedUpItemUIText;
     [SerializeField] private GameObject pickedUpToolUIText;
+
+    private GameObject sparkObj;
+    private ParticleSystem sparks;
 
     void Start()
     {
@@ -66,13 +78,14 @@ public class CharacterPickupItems : MonoBehaviour
         pickedHammer = false;
         pickedAxe = false;
 
-        stickPrefab = Resources.Load<GameObject>("Prefabs/Stick");
-        stickSize = stickPrefab.GetComponent<Renderer>().bounds.size;
-        stickYOffset = Vector3.up * Mathf.Min(stickSize.x, stickSize.y, stickSize.z);
+        stickPrefab = Resources.Load<GameObject>("Prefabs/Wood/Stick");
+        stickYOffset = GetYOffset(stickPrefab);
 
-        plankPrefab = Resources.Load<GameObject>("Prefabs/Plank");
-        plankSize = plankPrefab.GetComponent<Renderer>().bounds.size;
-        plankYOffset = Vector3.up * Mathf.Min(plankSize.x, plankSize.y, plankSize.z);
+        plankPrefab = Resources.Load<GameObject>("Prefabs/Wood/Plank");
+        plankYOffset = GetYOffset(plankPrefab);
+
+        sparkObj = Resources.Load<GameObject>("Prefabs/Effects/Sparks");
+        sparks = sparkObj.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -256,7 +269,7 @@ public class CharacterPickupItems : MonoBehaviour
             {
                 var hitObj = rayHitObjectHit.transform.gameObject;
 
-                if (hitObj.GetComponent<Combustable>() != null)
+                if (hitObj.GetComponent<Combustable>() != null && !hitObj.GetComponent<Human>())
                 {
                     if (!hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
                         !hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
@@ -264,16 +277,30 @@ public class CharacterPickupItems : MonoBehaviour
                         if (pickedHammer)
                         {
                             hitObj.GetComponent<Combustable>().hasBeenHitByHammer = true;
+                            hitObj.GetComponent<Rigidbody>().isKinematic = false;
                         }
                         else if (pickedAxe)
                         {
                             hitObj.GetComponent<Combustable>().hasBeenHitByAxe = true;
+                            hitObj.GetComponent<Rigidbody>().isKinematic = false;
                         }
 
                         if (pickedAxe && hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                         {
-                            Debug.Log("detachment");
-                            DetachChildren(hitObj.transform.parent, playerForwardDirection);
+                            if (hitObj.GetComponent<Wood>() != null || hitObj.GetComponent<Plant>() != null)
+                            {
+                                if (hitObj.transform.parent != null)
+                                {
+                                    if (!hitObj.transform.parent.name.Contains("Terrain"))
+                                    {
+                                        DetachChildren(hitObj.transform.parent, playerForwardDirection);
+                                    }
+                                }
+                                else
+                                {
+                                    DetachChildren(hitObj.transform, playerForwardDirection);
+                                }
+                            }
                         }
                         else
                         {
@@ -285,47 +312,134 @@ public class CharacterPickupItems : MonoBehaviour
                             }
                         }
                     }
-                }
 
-                if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
-                    hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
-                {
-                    if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer && pickedHammer)
+                    if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
+                        hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                     {
-                        if (hitObj.CompareTag("Log"))
+                        if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer && pickedHammer)
                         {
-                            Destroy(hitObj);
-
-                            for (int i = 0; i < numSticksPerLog; i++)
+                            if (hitObj.CompareTag("Rock Large"))
                             {
-                                Instantiate(stickPrefab, hitObj.transform.position + stickYOffset,
-                                    hitObj.transform.rotation);
+                                hitObj.SetActive(false);
+
+                                for (int i = 0; i < numMedRocksPerLargeRock; i++)
+                                {
+                                    var medRockPrefab =
+                                        mediumRocksPrefabs[Random.Range(0, mediumRocksPrefabs.Length - 1)];
+                                    var yOffset = GetYOffset(medRockPrefab);
+
+                                    var medRock = Instantiate(medRockPrefab,
+                                        hitObj.transform.position + yOffset, hitObj.transform.rotation);
+                                    medRock.GetComponent<Rigidbody>().isKinematic = false;
+                                }
+
+                                Destroy(hitObj);
+                            }
+                            else if (hitObj.CompareTag("Rock Medium"))
+                            {
+                                hitObj.SetActive(false);
+
+                                for (int i = 0; i < numSmallRocksPerMedRock; i++)
+                                {
+                                    var smallRockPrefab =
+                                        smallRocksPrefabs[Random.Range(0, smallRocksPrefabs.Length - 1)];
+                                    var yOffset = GetYOffset(smallRockPrefab);
+
+                                    var smallRock = Instantiate(smallRockPrefab, hitObj.transform.position + yOffset,
+                                        hitObj.transform.rotation);
+                                    smallRock.GetComponent<Rigidbody>().isKinematic = false;
+                                }
+
+                                Destroy(hitObj);
+                            }
+                            else if (hitObj.CompareTag("Red Rock Large"))
+                            {
+                                hitObj.SetActive(false);
+
+                                for (int i = 0; i < numMedRocksPerLargeRock; i++)
+                                {
+                                    var medRedRockPrefab =
+                                        mediumRedRocksPrefabs[Random.Range(0, mediumRedRocksPrefabs.Length - 1)];
+
+                                    var yOffset = GetYOffset(medRedRockPrefab);
+
+                                    var medRedRock = Instantiate(medRedRockPrefab, hitObj.transform.position + yOffset,
+                                        hitObj.transform.rotation);
+                                    medRedRock.GetComponent<Rigidbody>().isKinematic = false;
+                                }
+
+                                Destroy(hitObj);
+                            }
+                            /*else if (hitObj.CompareTag("Red Rock Medium"))
+                            {
+                                hitObj.SetActive(false);
+    
+                                for (int i = 0; i < numSmallRocksPerMedRock; i++)
+                                {
+                                    Instantiate(smallRedRocksPrefabs[Random.Range(0, smallRedRocksPrefabs.Length - 1)],
+                                        hitObj.transform.position, hitObj.transform.rotation);
+                                }
+    
+                                Destroy(hitObj);
+                            } */
+                            else if (hitObj.CompareTag("Flint"))
+                            {
+                                SparksAndAmber(rayHitObjectHit.point);
                             }
                         }
-                    }
-                    else if (hitObj.GetComponent<Combustable>().hasBeenHitByAxe && pickedAxe)
-                    {
-                        if (hitObj.CompareTag("Trunk"))
+                        else if (hitObj.GetComponent<Combustable>().hasBeenHitByAxe && pickedAxe)
                         {
-                            Destroy(hitObj);
-
-                            for (int i = 0; i < numLogsPerTrunk; i++)
+                            if (hitObj.CompareTag("Trunk"))
                             {
-                                var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
-                                var logSize = logPrefab.GetComponentsInChildren<Renderer>()[0].bounds.size;
-                                var yOffset = Vector3.up * Mathf.Min(logSize.x, logSize.y, logSize.z);
-                                Instantiate(logPrefab, hitObj.transform.position + yOffset,
-                                    hitObj.transform.rotation);
+                                hitObj.SetActive(false);
+
+                                for (int i = 0; i < numLogsPerTrunk; i++)
+                                {
+                                    var logPrefab = logsPrefabs[Random.Range(0, logsPrefabs.Length)];
+
+                                    var yOffset = GetYOffset(logPrefab);
+
+                                    var log = Instantiate(logPrefab, hitObj.transform.position + yOffset,
+                                        hitObj.transform.rotation);
+                                    log.GetComponentInChildren<Rigidbody>().isKinematic = false;
+                                }
+
+                                Destroy(hitObj);
                             }
-                        }
-                        else if (hitObj.CompareTag("Log"))
-                        {
-                            Destroy(hitObj);
-
-                            for (int i = 0; i < numPlanksPerLog; i++)
+                            else if (hitObj.CompareTag("Log"))
                             {
-                                Instantiate(plankPrefab, hitObj.transform.position + plankYOffset,
-                                    hitObj.transform.rotation);
+                                hitObj.SetActive(false);
+
+                                for (int i = 0; i < numPlanksPerLog; i++)
+                                {
+                                    var plank = Instantiate(plankPrefab, hitObj.transform.position + plankYOffset,
+                                        hitObj.transform.rotation);
+                                    plank.GetComponent<Rigidbody>().isKinematic = false;
+                                }
+
+                                Destroy(hitObj);
+                            }
+                            else if (hitObj.CompareTag("Branch") || hitObj.CompareTag("Bush"))
+                            {
+                                if (hitObj.CompareTag("Bush"))
+                                {
+                                    DetachChildren(hitObj.transform, playerForwardDirection);
+                                }
+
+                                hitObj.SetActive(false);
+
+                                for (int i = 0; i < numSticksPerBranchOrBush; i++)
+                                {
+                                    var stick = Instantiate(stickPrefab, hitObj.transform.position + stickYOffset,
+                                        hitObj.transform.rotation);
+                                    stick.GetComponent<Rigidbody>().isKinematic = false;
+                                }
+
+                                Destroy(hitObj);
+                            }
+                            else if (hitObj.tag.Contains("Rock"))
+                            {
+                                SparksAndAmber(axeHead.transform.position);
                             }
                         }
                     }
@@ -338,20 +452,43 @@ public class CharacterPickupItems : MonoBehaviour
         counter++;
     }
 
+    Vector3 GetYOffset(GameObject obj)
+    {
+        Renderer rend;
+
+        if (obj.GetComponent<Renderer>() != null)
+        {
+            rend = obj.GetComponent<Renderer>();
+        }
+        else
+        {
+            rend = obj.GetComponentInChildren<Renderer>();
+        }
+
+        var size = rend.bounds.size;
+        return Vector3.up * Mathf.Min(size.x, size.y, size.z);
+    }
+
     void DetachChildren(Transform parent, Vector3 playerForwardDirection)
     {
         if (parent.childCount > 0)
         {
             var children = new List<Rigidbody>();
-            
+
             for (int i = 0; i < parent.childCount; i++)
             {
-                Debug.Log(parent.transform.GetChild(i).name);
-                children.Add(parent.transform.GetChild(i).GetComponent<Rigidbody>());
+                if (parent.transform.GetChild(i).GetComponent<Rigidbody>() != null)
+                {
+                    children.Add(parent.transform.GetChild(i).GetComponent<Rigidbody>());
+                }
+                else
+                {
+                    children.Add(parent.transform.GetChild(i).GetComponentInChildren<Rigidbody>());
+                }
             }
 
             parent.DetachChildren();
-            
+
             foreach (var child in children)
             {
                 child.isKinematic = false;
@@ -429,5 +566,17 @@ public class CharacterPickupItems : MonoBehaviour
                 planeHit = rayPickupHit;
             }
         }
+    }
+
+    public void SparksAndAmber(Vector3 position)
+    {
+        var sparkInstance = Instantiate(sparkObj, position, Quaternion.identity);
+        sparkInstance.transform.parent = gameObject.transform;
+
+        var obj = Resources.Load<GameObject>("Prefabs/Effects/Ember");
+        var ember = Instantiate(obj, position, Quaternion.identity);
+
+
+        Destroy(sparkInstance, sparks.duration);
     }
 }

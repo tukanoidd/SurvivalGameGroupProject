@@ -11,6 +11,15 @@ TagManager:
   - Trunk
   - Log
   - tool
+  - Flint
+  - Rock Large
+  - Red Rock Large
+  - Rock Medium
+  - Red Rock Medium
+  - Rock Small
+  - Red Rock Small
+  - Branch
+  - Bush
   layers:
   - Default
   - TransparentFX
