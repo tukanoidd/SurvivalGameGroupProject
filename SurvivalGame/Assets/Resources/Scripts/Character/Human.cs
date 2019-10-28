@@ -71,6 +71,15 @@ public class Human : Combustable
 
     void Eat(Food food)
     {
-        
+        if (GetComponent<CharacterPickupItems>() != null)
+        {
+            if (GetComponent<CharacterPickupItems>().pickedObject != null)
+            {
+                if (GetComponent<CharacterPickupItems>().pickedObject.GetComponent<Food>())
+                {
+                    
+                }
+            }
+        }
     }
 }

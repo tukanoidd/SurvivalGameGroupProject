@@ -39,7 +39,8 @@ public class Combustable : MonoBehaviour
     public bool hasBeenMovedAfterThrow = false;
     public bool hasBeenHitByHammer = false;
     public bool hasBeenHitByAxe = false;
-    public bool isPlayer = false; 
+    public bool isPlayer = false;
+    public bool isPicked = false;
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -183,7 +184,7 @@ public class Combustable : MonoBehaviour
     {
         vaporized = true;
         var ashGroup = Resources.Load<GameObject>("Prefabs/CombustableGroup");
-        ashGroup.GetComponent<CombustableGroup>().groupObject = Resources.Load<GameObject>("Prefabs/Ash");
+        ashGroup.GetComponent<CombustableGroup>().groupObject = Resources.Load<GameObject>("Prefabs/Effects/Ash");
         ashGroup.GetComponent<CombustableGroup>().spawnRadius = getLargestSide(renderer.bounds.size);
 
         var amount = Mathf.RoundToInt(Mathf.Clamp(GetObjectVolume(),1,10));

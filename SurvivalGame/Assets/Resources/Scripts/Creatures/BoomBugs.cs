@@ -6,7 +6,7 @@ public class BoomBugs : Creature
 {
     //public Light boidGlow;
     public float energyThreshold;
-    public ParticleSystemForceField particleForceField;
+   
 
     // Start is called before the first frame update
     protected override void Start()
@@ -15,7 +15,6 @@ public class BoomBugs : Creature
         energy = 0;
         energyThreshold = 3000;
         minimumEnergySourceTemp = 50f;
-        particleForceField = GetComponent<ParticleSystemForceField>();
         base.Start();
     }
 
@@ -74,8 +73,6 @@ public class BoomBugs : Creature
         if (mainEnergySource != null)
         {
             var amount = 2;
-            particleForceField.rotationSpeed = 20;
-            particleForceField.gravity = 0;
             if (mainEnergySource.gameObject != null)
             {
                 mainEnergySource.GetComponent<Combustable>().temperature += amount;
@@ -92,7 +89,6 @@ public class BoomBugs : Creature
                 vicinity.Remove(mainEnergySource);
                 recharging = false;
                 mainEnergySource = null;
-                particleForceField.gravity = 3;
             }    
         }
         else

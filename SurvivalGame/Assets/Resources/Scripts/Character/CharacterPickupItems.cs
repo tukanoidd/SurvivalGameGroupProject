@@ -39,7 +39,7 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private float hitForce;
 
     [HideInInspector] public GameObject hitGameObject;
-    private GameObject pickedObject;
+    public GameObject pickedObject;
     private Vector3 scale;
 
     [SerializeField] private GameObject[] logsPrefabs;
@@ -125,6 +125,7 @@ public class CharacterPickupItems : MonoBehaviour
                     {
                         pickedHammer = false;
                         pickedAxe = false;
+                        pickedObject.GetComponent<Combustable>().isPicked = true;  
                         scale = pickedObject.transform.lossyScale;
                         pickedObject.GetComponent<Rigidbody>().isKinematic = true;
                         pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = false;
@@ -136,6 +137,7 @@ public class CharacterPickupItems : MonoBehaviour
                 {
                     showPickup = false;
                     pickedUp = false;
+                    
 
                     if (pickedHammer || pickedAxe)
                     {
@@ -155,10 +157,10 @@ public class CharacterPickupItems : MonoBehaviour
                         pickedHammer = false;
                         pickedAxe = false;
                     }
-                    else
+                    else if (!pickedAxe && !pickedHammer)
                     {
                         pickedObject.transform.parent = null;
-
+                        pickedObject.GetComponent<Combustable>().isPicked = false;
                         pickedObject.transform.localScale = scale;
                     }
 
@@ -194,10 +196,10 @@ public class CharacterPickupItems : MonoBehaviour
                         pickedHammer = false;
                         pickedAxe = false;
                     }
-                    else
+                    else if (!pickedAxe && !pickedHammer)
                     {
                         pickedObject.transform.parent = null;
-
+                        pickedObject.GetComponent<Combustable>().isPicked = false;
                         pickedObject.transform.localScale = scale;
                     }
 
@@ -439,7 +441,7 @@ public class CharacterPickupItems : MonoBehaviour
                             }
                             else if (hitObj.tag.Contains("Rock"))
                             {
-                                SparksAndAmber(axeHead.transform.position);
+                                SparksAndAmber(rayHitObjectHit.point);
                             }
                         }
                     }
