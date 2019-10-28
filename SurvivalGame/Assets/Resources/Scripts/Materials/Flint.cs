@@ -44,7 +44,7 @@ public class Flint : Stone
             {
                 var contactVector = contactPoints[0].point;
                 float random = Random.Range(0, 1);
-                
+
                 SparksAndAmber(contactVector);
             }
         }

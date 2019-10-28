@@ -10,7 +10,7 @@ public class UpdatableDataEditor : Editor
     {
         base.OnInspectorGUI();
 
-        UpdatableData data = (UpdatableData)target;
+        UpdatableData data = (UpdatableData) target;
 
         if (GUILayout.Button("Update"))
         {

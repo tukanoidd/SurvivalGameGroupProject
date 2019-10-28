@@ -9,8 +9,7 @@ public class SnappingPoint : MonoBehaviour
     public GameObject parent;
     public Joint joint;
     public Rigidbody rigidbody;
-    
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +17,7 @@ public class SnappingPoint : MonoBehaviour
         joint = GetComponent<Joint>();
         rigidbody = GetComponent<Rigidbody>();
     }
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<SnappingPoint>() != null)
@@ -27,28 +26,24 @@ public class SnappingPoint : MonoBehaviour
             {
                 if (Vector3.Distance(other.transform.position, transform.position) < 0.8f)
                 {
-                    other.transform.parent.position -= other.transform.position - transform.position;
-                    
+                    Debug.Log("triggered");
                     var otherSnappingPoint = other.GetComponent<SnappingPoint>();
-                
-                    /*
-                    otherSnappingPoint.joint.connectedAnchor = transform.position;
-                    otherSnappingPoint.joint.connectedBody = otherSnappingPoint.transform.parent.GetComponent<Rigidbody>();
-                    */
-                
-                    joint.connectedAnchor = otherSnappingPoint.transform.position;
-                    joint.connectedBody = otherSnappingPoint.transform.parent.GetComponent<Rigidbody>();
-                
-                    isAvailable = false;
-                    other.gameObject.GetComponent<SnappingPoint>().isAvailable = false;
+                    
+                    if (transform.parent.GetComponent<Combustable>().isPicked)
+                    {
+                        Debug.Log("hello");
+                        other.transform.parent.position -= other.transform.position - transform.position;
+                        
+                        joint.connectedAnchor = otherSnappingPoint.transform.position;
+                        joint.connectedBody = otherSnappingPoint.transform.parent.GetComponent<Rigidbody>();
+
+                        transform.parent.GetComponent<Craftable>().isSnappingPointParent = true;
+                        
+                        isAvailable = false;
+                        other.gameObject.GetComponent<SnappingPoint>().isAvailable = false;
+                    }
                 }
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

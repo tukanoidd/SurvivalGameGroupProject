@@ -20,14 +20,16 @@ public class HeatSource : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        if(parent != null)
+        if (parent != null)
         {
             burn(parent);
-            size = heat/maximumHeat;
-            SOI_Collider.radius = (size*maxRange);        
-        } else {
-            size = heat/maximumHeat;
-            SOI_Collider.radius = (size*maxRange);
+            size = heat / maximumHeat;
+            SOI_Collider.radius = (size * maxRange);
+        }
+        else
+        {
+            size = heat / maximumHeat;
+            SOI_Collider.radius = (size * maxRange);
         }
     }
 
@@ -38,7 +40,7 @@ public class HeatSource : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.GetComponent<Combustable>() != null)
+        if (other.gameObject.GetComponent<Combustable>() != null)
         {
             heatOther(other);
         }
@@ -48,8 +50,9 @@ public class HeatSource : MonoBehaviour
     {
         GameObject go = other.gameObject;
         float distance = Vector3.Distance(go.transform.position, transform.position);
-        float intensity = 1/(Mathf.Pow(distance,2f));
-        go.GetComponent<Combustable>().temperature += ((parent.GetComponent<Combustable>().temperature * intensity)/(go.GetComponent<Combustable>().heatTransfer))/100;
+        float intensity = 1 / (Mathf.Pow(distance, 2f));
+        go.GetComponent<Combustable>().temperature += ((parent.GetComponent<Combustable>().temperature * intensity) /
+                                                       (go.GetComponent<Combustable>().heatTransfer)) / 100;
         go.GetComponent<Combustable>().heatedBy = parent;
     }
 
@@ -60,21 +63,27 @@ public class HeatSource : MonoBehaviour
         float burnRate = parentObj.GetComponent<Combustable>().burnRate;
         float objHeatTransfer = parentObj.GetComponent<Combustable>().heatTransfer;
 
-        if(parentFuel > 0)
+        if (parentFuel > 0)
         {
-            parentObj.GetComponent<Combustable>().fuel = (parentObj.GetComponent<Combustable>().fuel - (burnRate/10f));
-            if(heat < maximumHeat)
+            parentObj.GetComponent<Combustable>().fuel =
+                (parentObj.GetComponent<Combustable>().fuel - (burnRate / 10f));
+            if (heat < maximumHeat)
             {
                 heat++;
             }
-            if(parentObj.GetComponent<Combustable>().temperature < maximumTemp)
+
+            if (parentObj.GetComponent<Combustable>().temperature < maximumTemp)
             {
-                parentObj.GetComponent<Combustable>().temperature += (heat * (objHeatTransfer/10))/1000;
-            } else {
+                parentObj.GetComponent<Combustable>().temperature += (heat * (objHeatTransfer / 10)) / 1000;
+            }
+            else
+            {
                 parentObj.GetComponent<Combustable>().vaporize();
             }
-        } else {
-            if(heat > 0)
+        }
+        else
+        {
+            if (heat > 0)
             {
                 heat -= 0.5f;
             }

@@ -25,11 +25,11 @@ public class CombustableGroup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(showGroupSumTemperature)
+        if (showGroupSumTemperature)
         {
             groupTempSum = 0;
 
-            for(int i = 0; i < groupSize; i++)
+            for (int i = 0; i < groupSize; i++)
             {
                 groupTempSum += group[i].GetComponent<Combustable>().temperature;
             }
@@ -38,20 +38,20 @@ public class CombustableGroup : MonoBehaviour
 
     void initialize()
     {
-        if(spawnRadius == null)
+        if (spawnRadius == null)
         {
             var objSize = groupObject.GetComponent<Renderer>().bounds.size;
-            spawnRadius = (getLargestSide(objSize)*groupSize);
+            spawnRadius = (getLargestSide(objSize) * groupSize);
         }
 
-        for(int i = 0; i < groupSize; i++)
+        for (int i = 0; i < groupSize; i++)
         {
             Vector3 random = transform.position + Random.insideUnitSphere * spawnRadius;
 
-            var obj = Instantiate(groupObject,random, Quaternion.identity);
+            var obj = Instantiate(groupObject, random, Quaternion.identity);
             obj.transform.parent = gameObject.transform;
 
-            if(setTemp)
+            if (setTemp)
             {
                 obj.GetComponent<Combustable>().temperature = setTempValue;
             }
@@ -64,9 +64,9 @@ public class CombustableGroup : MonoBehaviour
     {
         var max = -1f;
 
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if(sizeVector[i] > max)
+            if (sizeVector[i] > max)
             {
                 max = sizeVector[i];
             }

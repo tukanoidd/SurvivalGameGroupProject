@@ -22,35 +22,38 @@ public class FireFlies : Creature
     {
         if (alive)
         {
-            if(!recharging)
+            if (!recharging)
             {
                 energy -= 0.5f;
-                var speed = (energy/energyFull * movementSpeed);
+                var speed = (energy / energyFull * movementSpeed);
                 step += 1;
-                
-                if(energy > 0)
+
+                if (energy > 0)
                 {
-                    if(energy < (energyFull/2))
+                    if (energy < (energyFull / 2))
                     {
                         hungry = true;
                     }
 
-                    if(hungry)
+                    if (hungry)
                     {
                         findEnergySource();
                         move(focalPoint);
-                    } else {
+                    }
+                    else
+                    {
                         GetRandomFocalPoint();
                         move(focalPoint);
                         recharging = false;
                     }
-                            
-                } else {
+                }
+                else
+                {
                     alive = false;
                     if (GetComponent<Rigidbody>() != null)
                     {
                         GetComponent<Rigidbody>().useGravity = true;
-                        Destroy(gameObject, 10);   
+                        Destroy(gameObject, 10);
                     }
                 }
             }
@@ -62,7 +65,7 @@ public class FireFlies : Creature
 
         //boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
     }
-    
+
     void recharge()
     {
         particleForceField.rotationSpeed = 20;
@@ -70,7 +73,7 @@ public class FireFlies : Creature
         if (energy < energyFull)
         {
             var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
-            if(sourceTemp > 0)
+            if (sourceTemp > 0)
             {
                 var amount = 2;
                 mainEnergySource.GetComponent<Combustable>().temperature -= amount;
@@ -89,29 +92,29 @@ public class FireFlies : Creature
         {
             hungry = false;
             particleForceField.gravity = 3;
-        }   
+        }
     }
-    
+
     void findEnergySource()
     {
         var totalTemp = 0f;
 
         lookingForEnergy = true;
 
-        if(mainEnergySource == null)
+        if (mainEnergySource == null)
         {
-            if(vicinity.Count == 0)
+            if (vicinity.Count == 0)
             {
-                var dist = Random.Range(0f,(float) viewRadius);
-                focalPoint = GetPointOnUnitSphereCap(transform.rotation, viewAngle)*dist;
+                var dist = Random.Range(0f, (float) viewRadius);
+                focalPoint = GetPointOnUnitSphereCap(transform.rotation, viewAngle) * dist;
                 move(focalPoint);
             }
 
-            for(int i = 0; i < vicinity.Count; i++)
+            for (int i = 0; i < vicinity.Count; i++)
             {
-                if(vicinity[i] != null)
+                if (vicinity[i] != null)
                 {
-                    if(vicinity[i].GetComponent<Combustable>() != null)
+                    if (vicinity[i].GetComponent<Combustable>() != null)
                     {
                         var obj = vicinity[i];
                         var temp = obj.GetComponent<Combustable>().temperature;
@@ -122,15 +125,15 @@ public class FireFlies : Creature
 
             var random = Random.Range(minimumEnergySourceTemp, (float) totalTemp);
 
-            for(int j = 0; j < vicinity.Count; j++)
+            for (int j = 0; j < vicinity.Count; j++)
             {
-                if(vicinity[j] != null)
+                if (vicinity[j] != null)
                 {
-                    if(vicinity[j].GetComponent<Combustable>() != null)
+                    if (vicinity[j].GetComponent<Combustable>() != null)
                     {
                         var temp = vicinity[j].GetComponent<Combustable>().temperature;
-                        
-                        if(temp > random)
+
+                        if (temp > random)
                         {
                             focalPoint = vicinity[j].transform.position;
                             mainEnergySource = vicinity[j];
@@ -138,9 +141,11 @@ public class FireFlies : Creature
                     }
                 }
             }
-        } else {
+        }
+        else
+        {
             focalPoint = mainEnergySource.transform.position;
-            if(Vector3.Distance(transform.position, focalPoint) < 1)
+            if (Vector3.Distance(transform.position, focalPoint) < 1)
             {
                 recharge();
             }

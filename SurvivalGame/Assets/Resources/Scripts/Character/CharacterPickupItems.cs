@@ -71,6 +71,8 @@ public class CharacterPickupItems : MonoBehaviour
     private GameObject sparkObj;
     private ParticleSystem sparks;
 
+    [SerializeField] private RectTransform canvas;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -125,7 +127,7 @@ public class CharacterPickupItems : MonoBehaviour
                     {
                         pickedHammer = false;
                         pickedAxe = false;
-                        pickedObject.GetComponent<Combustable>().isPicked = true;  
+                        pickedObject.GetComponent<Combustable>().isPicked = true;
                         scale = pickedObject.transform.lossyScale;
                         pickedObject.GetComponent<Rigidbody>().isKinematic = true;
                         pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = false;
@@ -138,7 +140,6 @@ public class CharacterPickupItems : MonoBehaviour
                     showPickup = false;
                     pickedUp = false;
                     
-
                     if (pickedHammer || pickedAxe)
                     {
                         shoulder.SetActive(false);
@@ -255,6 +256,63 @@ public class CharacterPickupItems : MonoBehaviour
         pickUpItemUIText.SetActive(showPickup);
         pickedUpItemUIText.SetActive(pickedUp);
         pickedUpToolUIText.SetActive(lookingAtObj && (pickedAxe || pickedHammer));
+
+        if (hitGameObject != null)
+        {
+            if (lookingAtObj)
+            {
+                if (hitGameObject.GetComponent<SnappingPoint>() != null)
+                {
+                    var snappingPointUI = canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointUI.gameObject;
+                    if (hitGameObject.GetComponent<SnappingPoint>().isAvailable)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = hitGameObject;
+                        snappingPointUI.SetActive(true);
+                    }
+                    else
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = null;
+                        snappingPointUI.SetActive(false);
+                    }
+                }
+
+                if (hitGameObject.GetComponent<Craftable>() != null)
+                {
+                    var snappingPointParentUI =
+                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject;
+                    if (hitGameObject.GetComponent<Craftable>().isSnappingPointParent)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = hitGameObject;
+                        snappingPointParentUI.SetActive(true);
+                    }
+                    else
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
+                        snappingPointParentUI.SetActive(false);
+                    }
+                }
+            }
+            else
+            {
+                if (hitGameObject.GetComponent<SnappingPoint>() != null)
+                {
+                    if (hitGameObject.GetComponent<SnappingPoint>().isAvailable)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = null;
+                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointUI.gameObject.SetActive(false);
+                    }
+                }
+
+                if (hitGameObject.GetComponent<Craftable>() != null)
+                {
+                    if (hitGameObject.GetComponent<Craftable>().isSnappingPointParent)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
+                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject.SetActive(false);
+                    }
+                }
+            }
+        }
     }
 
     void CheckHitObject(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
@@ -507,6 +565,7 @@ public class CharacterPickupItems : MonoBehaviour
         RaycastHit rayPickupHit;
 
         float distToObj = 0;
+
         if (Physics.Raycast(pickupRay, out rayPickupHit, rayLength))
         {
             if (rayPickupHit.transform.gameObject != null && rayPickupHit.transform.gameObject.name != "Player")

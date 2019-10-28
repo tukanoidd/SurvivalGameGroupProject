@@ -46,7 +46,8 @@ public class MapPreview : MonoBehaviour
         else if (drawMode == DrawMode.FalloffMap)
         {
             DrawTexture(
-                TextureGenerator.TextureFromHeightMap(new HeightMap(FalloffGenerator.GenerateFalloffMap(meshSettings.numVertsPerLine), 0, 1)));
+                TextureGenerator.TextureFromHeightMap(
+                    new HeightMap(FalloffGenerator.GenerateFalloffMap(meshSettings.numVertsPerLine), 0, 1)));
         }
     }
 

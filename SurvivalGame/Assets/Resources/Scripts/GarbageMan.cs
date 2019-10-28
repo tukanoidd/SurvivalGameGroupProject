@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 #if UNITY_EDITOR
 using UnityEditorInternal;
+
 #endif
 
 public class GarbageMan : MonoBehaviour
@@ -14,7 +15,7 @@ public class GarbageMan : MonoBehaviour
     public int creatureCap = 50;
     public string[] tags;
     public int ashParticlesInScene;
-    public List<GameObject> gameObjectsInScene; 
+    public List<GameObject> gameObjectsInScene;
     public int numberOfGameObjectsInScene;
     public int numberOfCreaturesInScene;
 
@@ -28,9 +29,9 @@ public class GarbageMan : MonoBehaviour
 
     void Start()
     {
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         tags = UnityEditorInternal.InternalEditorUtility.tags;
-        #endif
+#endif
     }
 
     // Update is called once per frame
@@ -39,13 +40,13 @@ public class GarbageMan : MonoBehaviour
         numberOfGameObjectsInScene = 0;
         gameObjectsInScene.Clear();
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         for (int i = 0; i < UnityEditorInternal.InternalEditorUtility.tags.Length; i++)
         {
             numberOfGameObjectsInScene += GameObject.FindGameObjectsWithTag(tags[i]).Length;
         }
-        #endif
-        
+#endif
+
         if (ashTray.Count >= maximumAshParticles)
         {
             var objToDest = ashTray[0];

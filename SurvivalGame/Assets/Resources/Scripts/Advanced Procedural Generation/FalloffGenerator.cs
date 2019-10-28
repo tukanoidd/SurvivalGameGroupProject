@@ -6,8 +6,8 @@ public static class FalloffGenerator
 {
     public static float[,] GenerateFalloffMap(int size)
     {
-        float[,] map = new float[size,size];
-        
+        float[,] map = new float[size, size];
+
         for (int i = 0; i < size; i++)
         {
             for (int j = 0; j < size; j++)
