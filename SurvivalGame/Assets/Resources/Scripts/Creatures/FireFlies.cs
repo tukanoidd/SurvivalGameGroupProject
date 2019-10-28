@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireFlies : Creature
 {
     //public Light boidGlow;
+    public ParticleSystemForceField particleForceField;
 
     // Start is called before the first frame update
     protected override void Start()
@@ -12,6 +13,7 @@ public class FireFlies : Creature
         name = "FireFly";
         energy = 1000;
         minimumEnergySourceTemp = 0f;
+        particleForceField = GetComponent<ParticleSystemForceField>();
         base.Start();
     }
 
@@ -63,6 +65,8 @@ public class FireFlies : Creature
     
     void recharge()
     {
+        particleForceField.rotationSpeed = 20;
+        particleForceField.gravity = 0;
         if (energy < energyFull)
         {
             var sourceTemp = mainEnergySource.GetComponent<Combustable>().temperature;
@@ -84,6 +88,7 @@ public class FireFlies : Creature
         else
         {
             hungry = false;
+            particleForceField.gravity = 3;
         }   
     }
     

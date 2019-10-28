@@ -22,6 +22,17 @@ public class Berry : Food
     void Update()
     {
         base.Update();
+
+        if (transform.parent != null)
+        {
+            if (transform.parent.parent.GetComponent<Combustable>().isPicked && GetComponent<Rigidbody>().isKinematic)
+            {
+                GetComponent<Rigidbody>().isKinematic = false;
+                transform.parent.DetachChildren();
+            }
+        }
+        
+        
         if (temperature < burnedTemp || !burnt)
         {
             if (temperature > cookingTemp)
