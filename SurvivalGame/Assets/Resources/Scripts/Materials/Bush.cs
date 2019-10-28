@@ -10,7 +10,7 @@ public class Bush : Combustable
     {
         base.Start();
         name = "Bush";
-        berry = Resources.Load<GameObject>("Prefabs/RedBerry");
+        berry = Resources.Load<GameObject>("Prefabs/Food/RedBerry");
         populateBush();
     }
 
@@ -22,7 +22,7 @@ public class Bush : Combustable
 
     void populateBush()
     {
-        for (int i = 0; i < 7; i++)
+        for (int i = 1; i < 8; i++)
         {
             var slotName = "BerrySlot" + i;
             var child = transform.Find("Leaves").transform.Find(slotName);

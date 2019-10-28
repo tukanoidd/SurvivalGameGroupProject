@@ -39,6 +39,7 @@ public class Combustable : MonoBehaviour
     public bool hasBeenMovedAfterThrow = false;
     public bool hasBeenHitByHammer = false;
     public bool hasBeenHitByAxe = false;
+    public bool isPlayer = false; 
     
     // Start is called before the first frame update
     protected virtual void Start()
@@ -58,8 +59,8 @@ public class Combustable : MonoBehaviour
 
         maxTemp = (heatResistance * 200) + (GetObjectVolume() * 50);
 
-        smokeObj = Resources.Load<GameObject>("Prefabs/TorchSmoke");
-        flameObj = Resources.Load<GameObject>("Prefabs/FlameMain");
+        smokeObj = Resources.Load<GameObject>("Prefabs/Effects/TorchSmoke");
+        flameObj = Resources.Load<GameObject>("Prefabs/Effects/FlameMain");
 
         if(preIgnited)
         {
@@ -79,7 +80,14 @@ public class Combustable : MonoBehaviour
             {
                 if(!vaporized)
                 {
-                    vaporize();
+                    if (isPlayer)
+                    {
+                        Application.LoadLevel(Application.loadedLevel);
+                    }
+                    else
+                    {
+                        vaporize();   
+                    }
                 }
             }
         }
@@ -184,7 +192,7 @@ public class Combustable : MonoBehaviour
         {
             var ashGroupObj = Instantiate(ashGroup, transform.position, Quaternion.identity);
         }
-
+        
         Destroy(gameObject);
     }
 
