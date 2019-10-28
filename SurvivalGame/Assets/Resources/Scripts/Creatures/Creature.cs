@@ -53,7 +53,7 @@ public class Creature : MonoBehaviour
     protected virtual void Start()
     {
         var objectPlacer = gameObject.AddComponent<ObjectPlacer>();
-        
+
         GetRandomFocalPoint();
         Initialize();
         alive = true;

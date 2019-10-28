@@ -12,14 +12,14 @@ public class Wood : Combustable
     {
         base.Start();
         name = "Wood";
-        temperature = 25f;                             //Object temperature
-        tempInitial = 25f;                              //Needed for referencing
-        flashpoint = 150;                               //At what temperature will the object burst into flames
-        fuel = 300 * GetObjectVolume();                 //How long will the object continue to burn
+        temperature = 25f; //Object temperature
+        tempInitial = 25f; //Needed for referencing
+        flashpoint = 150; //At what temperature will the object burst into flames
+        fuel = 300 * GetObjectVolume(); //How long will the object continue to burn
         fuelInitial = fuel;
-        heatTransfer = 9;                               //On a scale of 1-10 how well does the object conduct heat
+        heatTransfer = 9; //On a scale of 1-10 how well does the object conduct heat
         heatResistance = 4;
-        burnRate = 5;     
+        burnRate = 5;
         renderer = GetComponent<MeshRenderer>();
 
         if (renderer == null)
@@ -42,7 +42,7 @@ public class Wood : Combustable
     {
         tempExternal = temperature - tempInitial;
         base.Update();
-        if(fuel <= 0)
+        if (fuel <= 0)
         {
             renderer.material.color = Color.black;
         }

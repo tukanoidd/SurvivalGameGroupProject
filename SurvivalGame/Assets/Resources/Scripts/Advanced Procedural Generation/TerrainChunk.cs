@@ -52,7 +52,7 @@ public class TerrainChunk
         meshObject = new GameObject("Terrain Chunk");
         meshObject.tag = "terrain";
         meshObject.layer = 9;
-        
+
         meshRenderer = meshObject.AddComponent<MeshRenderer>();
         meshFilter = meshObject.AddComponent<MeshFilter>();
         meshCollider = meshObject.AddComponent<MeshCollider>();

@@ -6,7 +6,7 @@ public class BoomBugs : Creature
 {
     //public Light boidGlow;
     public float energyThreshold;
-   
+
 
     // Start is called before the first frame update
     protected override void Start()
@@ -62,7 +62,6 @@ public class BoomBugs : Creature
             {
                 recharge();
             }
-
         }
 
         //boidGlow.intensity = Mathf.Clamp((float) energy,0,0.5f);
@@ -76,12 +75,13 @@ public class BoomBugs : Creature
             if (mainEnergySource.gameObject != null)
             {
                 mainEnergySource.GetComponent<Combustable>().temperature += amount;
-                mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;   
+                mainEnergySource.GetComponent<Combustable>().heatedBy = gameObject;
             }
             else
             {
                 findEnergySource();
             }
+
             energy -= amount;
             recharging = true;
             if (mainEnergySource.GetComponent<Combustable>().isBurning || energy < 1f)
@@ -89,21 +89,21 @@ public class BoomBugs : Creature
                 vicinity.Remove(mainEnergySource);
                 recharging = false;
                 mainEnergySource = null;
-            }    
+            }
         }
         else
         {
             findEnergySource();
         }
     }
-    
+
     void findEnergySource()
     {
         lookingForEnergy = true;
 
-        if(mainEnergySource == null)
+        if (mainEnergySource == null)
         {
-            if(vicinity.Count == 0)
+            if (vicinity.Count == 0)
             {
                 GetRandomFocalPoint();
             }
@@ -111,7 +111,7 @@ public class BoomBugs : Creature
             {
                 float smallest;
                 int index = 0;
-                
+
                 for (int i = vicinity.Count - 1; i >= 0; i--)
                 {
                     if (vicinity[i] != null)
@@ -121,10 +121,10 @@ public class BoomBugs : Creature
 
                         if (i > 0 && vicinity[i - 1] != null)
                         {
-                            if (Vector3.Distance(transform.position, vicinity[i-1].transform.position) < smallest)
+                            if (Vector3.Distance(transform.position, vicinity[i - 1].transform.position) < smallest)
                             {
-                                smallest = Vector3.Distance(transform.position, vicinity[i-1].transform.position);
-                                index = i-1;
+                                smallest = Vector3.Distance(transform.position, vicinity[i - 1].transform.position);
+                                index = i - 1;
                             }
                         }
                     }
@@ -140,9 +140,11 @@ public class BoomBugs : Creature
                     GetRandomFocalPoint();
                 }
             }
-        } else {
+        }
+        else
+        {
             focalPoint = mainEnergySource.transform.position;
-            if(Vector3.Distance(transform.position, focalPoint) < 3)
+            if (Vector3.Distance(transform.position, focalPoint) < 3)
             {
                 recharge();
             }

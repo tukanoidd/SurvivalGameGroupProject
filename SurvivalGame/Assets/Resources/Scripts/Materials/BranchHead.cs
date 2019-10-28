@@ -15,10 +15,10 @@ public class BranchHead : Plant
 
         HingeJoint[] treeJoints = trunk.GetComponents<HingeJoint>();
 
-        for(int i = 0; i < treeJoints.Length; i++)
+        for (int i = 0; i < treeJoints.Length; i++)
         {
             var connected = treeJoints[i].connectedBody;
-            if(connected == GetComponent<Rigidbody>())
+            if (connected == GetComponent<Rigidbody>())
             {
                 joint = treeJoints[i];
             }
@@ -30,20 +30,20 @@ public class BranchHead : Plant
     {
         base.Update();
 
-        if(temperature > tempInitial)
+        if (temperature > tempInitial)
         {
-            if(joint != null)
+            if (joint != null)
             {
-                var strength = (1/temperature)*10000;
+                var strength = (1 / temperature) * 10000;
                 var clamp = Mathf.Clamp(strength, 0, 100);
                 branchStrength = clamp;
 
-                if(branchStrength < 30)
+                if (branchStrength < 30)
                 {
                     joint.useSpring = false;
                 }
 
-                if(joint.useSpring)
+                if (joint.useSpring)
                 {
                     JointSpring jointSpring = joint.spring;
 

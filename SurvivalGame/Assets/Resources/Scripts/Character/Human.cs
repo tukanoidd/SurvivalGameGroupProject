@@ -11,27 +11,27 @@ public class Human : Combustable
 
     public GameObject healthBar;
     public GameObject hungerBar;
-    
+
     public GameObject tempBar;
     public GameObject tempFill;
-    
+
     // Start is called before the first frame update
     void Start()
     {
         var objectPlacer = gameObject.AddComponent<ObjectPlacer>();
-        
+
         base.Start();
         name = "Human";
-        flashpoint = 150;                              //At what temperature will the object burst into flames
-        heatTransfer = 6;                            //On a scale of 1-10 how well does the object conduct heat
+        flashpoint = 150; //At what temperature will the object burst into flames
+        heatTransfer = 6; //On a scale of 1-10 how well does the object conduct heat
         temperature = 37;
         tempInitial = temperature;
         hunger = 0;
         health = 100;
-        maxTemp = 200;                                 //At what temperature will the object vaporize
+        maxTemp = 200; //At what temperature will the object vaporize
         burnRate = 4;
         isPlayer = true;
-        
+
         objectPlacer.PlaceMinimapSphere(transform, 40);
     }
 
@@ -54,9 +54,10 @@ public class Human : Combustable
         {
             health -= 0.05f;
             tempFill.GetComponent<Image>().color = Color.red;
-        } else if (temperature >= 20 && temperature <= 70)
+        }
+        else if (temperature >= 20 && temperature <= 70)
         {
-               tempFill.GetComponent<Image>().color = Color.green;
+            tempFill.GetComponent<Image>().color = Color.green;
         }
         else if (temperature < 20)
         {
@@ -77,7 +78,6 @@ public class Human : Combustable
             {
                 if (GetComponent<CharacterPickupItems>().pickedObject.GetComponent<Food>())
                 {
-                    
                 }
             }
         }

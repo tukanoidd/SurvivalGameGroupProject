@@ -8,18 +8,18 @@ public class Ash : Combustable
     virtual protected void Start()
     {
         name = "Ash";
-        tempInitial = temperature;                    //Needed for referencing
-        flashpoint = -1;                              //At what temperature will the object burst into flames
-        fuel = 0;                                     //How long will the object continue to burn
-        heatTransfer = 10;                            //On a scale of 1-10 how well does the object conduct heat
-        maxTemp = -1;                                 //At what temperature will the object vaporize
+        tempInitial = temperature; //Needed for referencing
+        flashpoint = -1; //At what temperature will the object burst into flames
+        fuel = 0; //How long will the object continue to burn
+        heatTransfer = 10; //On a scale of 1-10 how well does the object conduct heat
+        maxTemp = -1; //At what temperature will the object vaporize
         glowTemp = 600;
-        burnRate = -1;   
+        burnRate = -1;
         renderer = GetComponent<MeshRenderer>();
         color = renderer.material.color;
         if (GarbageMan.ashTray != null)
         {
-            GarbageMan.ashTray.Add(gameObject);   
+            GarbageMan.ashTray.Add(gameObject);
         }
     }
 
@@ -28,7 +28,7 @@ public class Ash : Combustable
     {
         base.Update();
 
-        if(temperature > glowTemp)
+        if (temperature > glowTemp)
         {
             name = "Ember";
         }

@@ -15,13 +15,13 @@ public class TerrainGenerator : MonoBehaviour
     public MeshSettings meshSettings;
     public HeightMapSettings heightMapSettings;
     public TextureData textureSettings;
-    
+
     public Transform viewer;
     public Material mapMaterial;
 
     Vector2 viewerPosition;
     Vector2 viewerPositionOld;
-    
+
     float meshWorldSize;
     int chunksVisibleInViewDst;
 
@@ -84,7 +84,8 @@ public class TerrainGenerator : MonoBehaviour
                     }
                     else
                     {
-                        TerrainChunk newChunk = new TerrainChunk(viewedChunkCoord, heightMapSettings, meshSettings, detailLevels, colliderLODIndex, transform, viewer, mapMaterial);
+                        TerrainChunk newChunk = new TerrainChunk(viewedChunkCoord, heightMapSettings, meshSettings,
+                            detailLevels, colliderLODIndex, transform, viewer, mapMaterial);
                         newChunk.meshObject.AddComponent<ObjectPlacer>();
                         terrainChunkDictionary.Add(viewedChunkCoord, newChunk);
                         newChunk.onVisibilityChanged += OnTerrainChunkVisibilityChanged;
@@ -115,7 +116,7 @@ public struct LODInfo
     public int lod;
 
     public float visibleDstThreshold;
-    
+
     public float sqrVisibleDstThreshold
     {
         get { return visibleDstThreshold * visibleDstThreshold; }

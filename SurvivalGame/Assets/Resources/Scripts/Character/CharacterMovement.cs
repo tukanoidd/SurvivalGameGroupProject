@@ -7,7 +7,7 @@ public class CharacterMovement : MonoBehaviour
 {
     public GameObject stars;
     public GameObject minimapCamera;
-    
+
     private float movementSpeed;
 
     [SerializeField] private float normalSpeed;
@@ -36,12 +36,13 @@ public class CharacterMovement : MonoBehaviour
         if (stars != null)
         {
             stars.transform.position = transform.position;
-        } 
+        }
         else if (minimapCamera != null)
         {
-            minimapCamera.transform.position = new Vector3(transform.position.x, minimapCamera.transform.position.y, transform.position.z);    
+            minimapCamera.transform.position = new Vector3(transform.position.x, minimapCamera.transform.position.y,
+                transform.position.z);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             Application.LoadLevel(Application.loadedLevel);

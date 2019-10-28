@@ -29,7 +29,7 @@ public class ThreadedDataRequester : MonoBehaviour
             dataQueue.Enqueue(new ThreadInfo(callback, data));
         }
     }
-    
+
     void Update()
     {
         if (dataQueue.Count > 0)
@@ -41,7 +41,7 @@ public class ThreadedDataRequester : MonoBehaviour
             }
         }
     }
-    
+
     struct ThreadInfo
     {
         public readonly Action<object> callback;

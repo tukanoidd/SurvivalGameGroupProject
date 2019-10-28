@@ -5,7 +5,7 @@ using UnityEngine;
 public class Berry : Food
 {
     private GameObject berry;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,8 +31,8 @@ public class Berry : Food
                 transform.parent.DetachChildren();
             }
         }
-        
-        
+
+
         if (temperature < burnedTemp || !burnt)
         {
             if (temperature > cookingTemp)

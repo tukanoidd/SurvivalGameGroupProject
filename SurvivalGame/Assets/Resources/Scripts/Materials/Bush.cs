@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bush : Combustable
 {
     public GameObject berry;
+
     // Start is called before the first frame update
     void Start()
     {

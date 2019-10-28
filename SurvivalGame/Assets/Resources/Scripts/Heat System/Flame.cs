@@ -8,7 +8,9 @@ public class Flame : HeatSource
     public GameObject flameObj;
     public GameObject flameForceField;
     public Light flameLight;
+
     public ParticleSystem particleSystemMain;
+
     //public float maxFlameSizeRadius;
     public GameObject parentObj;
     //public Vector3 parentSizeVector;
@@ -24,17 +26,18 @@ public class Flame : HeatSource
         base.setMaxHeat(flameMaxHeat);
 
         Vector3 flameObjSize = GetComponent<Renderer>().bounds.size;
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + (flameObjSize.y/2), gameObject.transform.position.z);
+        gameObject.transform.position = new Vector3(gameObject.transform.position.x,
+            gameObject.transform.position.y + (flameObjSize.y / 2), gameObject.transform.position.z);
     }
 
     // Update is called once per frame
     protected override void Update()
     {
         base.Update();
-        transform.rotation = Quaternion.Euler(0,transform.rotation.eulerAngles.y,0);
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         var emitterMain = particleSystemMain.main;
         var emitterShape = particleSystemMain.shape;
-        var ratio = heat/maximumHeat;
+        var ratio = heat / maximumHeat;
 
 
         emitterShape.radius = size;
@@ -47,9 +50,9 @@ public class Flame : HeatSource
     {
         var max = -1f;
 
-        for(int i = 0; i < 3; i++)
+        for (int i = 0; i < 3; i++)
         {
-            if(sizeVector[i] > max)
+            if (sizeVector[i] > max)
             {
                 max = sizeVector[i];
             }
