@@ -25,10 +25,15 @@ public class Berry : Food
 
         if (transform.parent != null)
         {
-            if (transform.parent.parent.GetComponent<Combustable>().isPicked && GetComponent<Rigidbody>().isKinematic)
+            if (transform.parent.parent.GetComponent<Combustable>() != null)
             {
-                GetComponent<Rigidbody>().isKinematic = false;
-                transform.parent.DetachChildren();
+                if (transform.parent.parent.GetComponent<Combustable>().isPicked &&
+                    GetComponent<Rigidbody>().isKinematic)
+                {
+                    GetComponent<Rigidbody>().isKinematic = false;
+                    
+                    transform.parent = null;
+                }
             }
         }
 

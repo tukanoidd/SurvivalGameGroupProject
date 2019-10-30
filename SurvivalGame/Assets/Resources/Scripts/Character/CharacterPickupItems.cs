@@ -11,11 +11,21 @@ using Random = UnityEngine.Random;
 
 public class CharacterPickupItems : MonoBehaviour
 {
+    private struct ToolData
+    {
+        public Vector3 position;
+        public Quaternion rotation;
+        public Vector3 scale;
+    }
+    
     [SerializeField] private GameObject head;
     [SerializeField] private GameObject shoulder;
+    [SerializeField] private GameObject hand;
     [SerializeField] private GameObject hammer;
+    private ToolData hammerData;
     [SerializeField] private GameObject axe;
-    [SerializeField] private GameObject axeHead;
+    private ToolData axeData;
+    private GameObject backupAxe;
     [SerializeField] private Camera _camera;
     private Animator animator;
 
@@ -64,6 +74,7 @@ public class CharacterPickupItems : MonoBehaviour
     [SerializeField] private int numSmallRocksPerMedRock = 2;
 
     [SerializeField] private GameObject lookingAtObjectUIText;
+    [SerializeField] private GameObject lookingAtFoodUIText;
     [SerializeField] private GameObject pickUpItemUIText;
     [SerializeField] private GameObject pickedUpItemUIText;
     [SerializeField] private GameObject pickedUpToolUIText;
@@ -80,14 +91,55 @@ public class CharacterPickupItems : MonoBehaviour
         pickedHammer = false;
         pickedAxe = false;
 
-        stickPrefab = Resources.Load<GameObject>("Prefabs/Wood/Stick");
-        stickYOffset = GetYOffset(stickPrefab);
+        LoadPrefabs();
+        GetSomePrefabYOffsets();
+        SetToolsData();
 
-        plankPrefab = Resources.Load<GameObject>("Prefabs/Wood/Plank");
-        plankYOffset = GetYOffset(plankPrefab);
-
-        sparkObj = Resources.Load<GameObject>("Prefabs/Effects/Sparks");
         sparks = sparkObj.GetComponent<ParticleSystem>();
+    }
+
+    void LoadPrefabs()
+    {
+        stickPrefab = Resources.Load<GameObject>("Prefabs/Wood/Stick");
+        plankPrefab = Resources.Load<GameObject>("Prefabs/Wood/Plank");
+        sparkObj = Resources.Load<GameObject>("Prefabs/Effects/Sparks");
+    }
+
+    void GetSomePrefabYOffsets()
+    {
+        stickYOffset = GetYOffset(stickPrefab);
+        plankYOffset = GetYOffset(plankPrefab);
+    }
+    
+    Vector3 GetYOffset(GameObject obj)
+    {
+        Renderer rend;
+
+        if (obj.GetComponent<Renderer>() != null)
+        {
+            rend = obj.GetComponent<Renderer>();
+        }
+        else
+        {
+            rend = obj.GetComponentInChildren<Renderer>();
+        }
+
+        var size = rend.bounds.size;
+        return Vector3.up * Mathf.Min(size.x, size.y, size.z);
+    }
+
+    void SetToolsData()
+    {
+        SetToolData(axeData, axe);
+        SetToolData(hammerData, hammer);
+    }
+
+    void SetToolData(ToolData data, GameObject obj)
+    {
+        data = new ToolData();
+        data.position = obj.transform.position;
+        data.rotation = obj.transform.rotation;
+        data.scale = obj.transform.localScale;
     }
 
     void Update()
@@ -96,7 +148,127 @@ public class CharacterPickupItems : MonoBehaviour
         Vector3 playerForwardDirection = _camera.transform.forward;
 
         PickupRaycast(playerHeadPosition, playerForwardDirection);
+        CheckIfPickedItemStillExists();
+        ItemInteractions(playerHeadPosition, playerForwardDirection);
+        ClipItemOutOfTerrain();
+        CheckGUI();
+    }
+    
+    void PickupRaycast(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
+    {
+        playerHeadPosition = head.transform.position;
+        playerForwardDirection = _camera.transform.forward;
+        Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
+        RaycastHit rayPickupHit;
 
+        float distToObj = 0;
+
+        if (Physics.Raycast(pickupRay, out rayPickupHit, rayLength))
+        {
+            if (rayPickupHit.transform.gameObject != null && rayPickupHit.transform.gameObject.name != "Player")
+            {
+                hitGameObject = rayPickupHit.transform.gameObject;
+
+                distToObj = rayPickupHit.distance;
+
+                if (hitGameObject.GetComponent<Combustable>() != null || hitGameObject.CompareTag("hammer"))
+                {
+                    lookingAtObj = true;
+
+                    if (!pickedUp)
+                    {
+                        showPickup = true;
+                    }
+
+                    if (hitGameObject.GetComponent<Combustable>() != null)
+                    {
+                        pickupName = hitGameObject.GetComponent<Combustable>().name;
+
+                        if (hitGameObject.GetComponent<Combustable>().fuel <= 0 &&
+                            hitGameObject.GetComponent<Combustable>().name == "Wood")
+                        {
+                            pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burnt)";
+                        }
+
+                        if (hitGameObject.GetComponent<Combustable>().isBurning)
+                        {
+                            pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burning)";
+                        }
+
+                        pickupTemp = hitGameObject.GetComponent<Combustable>().temperature;
+                    }
+                    else if (hitGameObject.CompareTag("hammer"))
+                    {
+                        pickupName = hitGameObject.name;
+                    }
+                }
+                else
+                {
+                    showPickup = false;
+                }
+            }
+        }
+        else
+        {
+            showPickup = false;
+            lookingAtObj = false;
+        }
+
+        Ray checkTerrainRay = new Ray(playerHeadPosition, playerForwardDirection);
+
+        RaycastHit terrainRayHit;
+        if (Physics.Raycast(checkTerrainRay, out terrainRayHit, distToObj))
+        {
+            if (hitGameObject.CompareTag("terrain"))
+            {
+                planeHit = rayPickupHit;
+            }
+        }
+    }
+
+    void CheckIfPickedItemStillExists()
+    {
+        if (pickedUp)
+        {
+            var pickedExist = pickedObject != null;
+
+            if (!pickedExist)
+            {
+                pickedUp = false;
+
+                if (pickedAxe || pickedHammer)
+                {
+                    pickedAxe = false;
+                    pickedHammer = false;
+
+                    shoulder.SetActive(false);
+
+                    if (axe.gameObject == null)
+                    {
+                        ReinstantiateTool(axePrefab, axe, axeData);
+                    }
+                    else if (hammer.gameObject == null)
+                    {
+                        ReinstantiateTool(hammerPrefab, hammer, hammerData);
+                    }
+                }
+                else if (!pickedAxe && !pickedHammer)
+                {
+                    pickedObject = null;
+                }
+            }
+        }
+    }
+
+    void ReinstantiateTool(GameObject prefab, GameObject obj, ToolData data)
+    {
+        obj = Instantiate(prefab, data.position, data.rotation, hand.transform);
+        obj.transform.localScale = data.scale;
+        obj.SetActive(false);
+    }
+
+    void ItemInteractions(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
+    {
         if (showPickup || pickedUp)
         {
             if (Input.GetKeyDown(KeyCode.E))
@@ -139,7 +311,7 @@ public class CharacterPickupItems : MonoBehaviour
                 {
                     showPickup = false;
                     pickedUp = false;
-                    
+
                     if (pickedHammer || pickedAxe)
                     {
                         shoulder.SetActive(false);
@@ -209,6 +381,24 @@ public class CharacterPickupItems : MonoBehaviour
                 }
             }
 
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                if (pickedUp)
+                {
+                    if (pickedObject.GetComponent<Food>() != null)
+                    {
+                        GetComponent<Human>().Eat(pickedObject.GetComponent<Food>());
+                    }
+                }
+                else
+                {
+                    if (hitGameObject.GetComponent<Food>() != null)
+                    {
+                        GetComponent<Human>().Eat(hitGameObject.GetComponent<Food>());
+                    }
+                }
+            }
+
             if (Input.GetMouseButtonDown(0))
             {
                 if (pickedHammer || pickedAxe)
@@ -221,96 +411,6 @@ public class CharacterPickupItems : MonoBehaviour
             else
             {
                 animator.SetBool("ToolSwing", false);
-            }
-        }
-
-        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded &&
-            pickedObject.GetComponent<Combustable>().isThrown &&
-            !pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow)
-        {
-            try
-            {
-                var pos = pickedObject.transform.position;
-                var size = pickedObject.GetComponent<Renderer>().bounds.size;
-                if (pos.y < planeHit.point.y)
-                {
-                    pickedObject.transform.position = new Vector3(pos.x,
-                        planeHit.point.y + Mathf.Max(size.x, size.y, size.z), pos.z);
-                    pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = true;
-                }
-            }
-            catch
-            {
-            }
-        }
-
-        CheckGUI();
-    }
-
-    private void CheckGUI()
-    {
-        lookingAtObjectUIText.GetComponent<Text>().text =
-            lookingAtObj ? pickupName + " - (Temp: " + pickupTemp + ")" : "";
-
-        lookingAtObjectUIText.SetActive(lookingAtObj);
-        pickUpItemUIText.SetActive(showPickup);
-        pickedUpItemUIText.SetActive(pickedUp);
-        pickedUpToolUIText.SetActive(lookingAtObj && (pickedAxe || pickedHammer));
-
-        if (hitGameObject != null)
-        {
-            if (lookingAtObj)
-            {
-                if (hitGameObject.GetComponent<SnappingPoint>() != null)
-                {
-                    var snappingPointUI = canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointUI.gameObject;
-                    if (hitGameObject.GetComponent<SnappingPoint>().isAvailable)
-                    {
-                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = hitGameObject;
-                        snappingPointUI.SetActive(true);
-                    }
-                    else
-                    {
-                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = null;
-                        snappingPointUI.SetActive(false);
-                    }
-                }
-
-                if (hitGameObject.GetComponent<Craftable>() != null)
-                {
-                    var snappingPointParentUI =
-                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject;
-                    if (hitGameObject.GetComponent<Craftable>().isSnappingPointParent)
-                    {
-                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = hitGameObject;
-                        snappingPointParentUI.SetActive(true);
-                    }
-                    else
-                    {
-                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
-                        snappingPointParentUI.SetActive(false);
-                    }
-                }
-            }
-            else
-            {
-                if (hitGameObject.GetComponent<SnappingPoint>() != null)
-                {
-                    if (hitGameObject.GetComponent<SnappingPoint>().isAvailable)
-                    {
-                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = null;
-                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointUI.gameObject.SetActive(false);
-                    }
-                }
-
-                if (hitGameObject.GetComponent<Craftable>() != null)
-                {
-                    if (hitGameObject.GetComponent<Craftable>().isSnappingPointParent)
-                    {
-                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
-                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject.SetActive(false);
-                    }
-                }
             }
         }
     }
@@ -511,24 +611,7 @@ public class CharacterPickupItems : MonoBehaviour
 
         counter++;
     }
-
-    Vector3 GetYOffset(GameObject obj)
-    {
-        Renderer rend;
-
-        if (obj.GetComponent<Renderer>() != null)
-        {
-            rend = obj.GetComponent<Renderer>();
-        }
-        else
-        {
-            rend = obj.GetComponentInChildren<Renderer>();
-        }
-
-        var size = rend.bounds.size;
-        return Vector3.up * Mathf.Min(size.x, size.y, size.z);
-    }
-
+    
     void DetachChildren(Transform parent, Vector3 playerForwardDirection)
     {
         if (parent.childCount > 0)
@@ -556,79 +639,7 @@ public class CharacterPickupItems : MonoBehaviour
             }
         }
     }
-
-    void PickupRaycast(Vector3 playerHeadPosition, Vector3 playerForwardDirection)
-    {
-        playerHeadPosition = head.transform.position;
-        playerForwardDirection = _camera.transform.forward;
-        Ray pickupRay = new Ray(playerHeadPosition, playerForwardDirection);
-        RaycastHit rayPickupHit;
-
-        float distToObj = 0;
-
-        if (Physics.Raycast(pickupRay, out rayPickupHit, rayLength))
-        {
-            if (rayPickupHit.transform.gameObject != null && rayPickupHit.transform.gameObject.name != "Player")
-            {
-                hitGameObject = rayPickupHit.transform.gameObject;
-
-                distToObj = rayPickupHit.distance;
-
-                if (hitGameObject.GetComponent<Combustable>() != null || hitGameObject.CompareTag("hammer"))
-                {
-                    lookingAtObj = true;
-
-                    if (!pickedUp)
-                    {
-                        showPickup = true;
-                    }
-
-                    if (hitGameObject.GetComponent<Combustable>() != null)
-                    {
-                        pickupName = hitGameObject.GetComponent<Combustable>().name;
-
-                        if (hitGameObject.GetComponent<Combustable>().fuel <= 0 &&
-                            hitGameObject.GetComponent<Combustable>().name == "Wood")
-                        {
-                            pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burnt)";
-                        }
-
-                        if (hitGameObject.GetComponent<Combustable>().isBurning)
-                        {
-                            pickupName = hitGameObject.GetComponent<Combustable>().name + " (Burning)";
-                        }
-
-                        pickupTemp = hitGameObject.GetComponent<Combustable>().temperature;
-                    }
-                    else if (hitGameObject.CompareTag("hammer"))
-                    {
-                        pickupName = hitGameObject.name;
-                    }
-                }
-                else
-                {
-                    showPickup = false;
-                }
-            }
-        }
-        else
-        {
-            showPickup = false;
-            lookingAtObj = false;
-        }
-
-        Ray checkTerrainRay = new Ray(playerHeadPosition, playerForwardDirection);
-
-        RaycastHit terrainRayHit;
-        if (Physics.Raycast(checkTerrainRay, out terrainRayHit, distToObj))
-        {
-            if (hitGameObject.CompareTag("terrain"))
-            {
-                planeHit = rayPickupHit;
-            }
-        }
-    }
-
+    
     public void SparksAndAmber(Vector3 position)
     {
         var sparkInstance = Instantiate(sparkObj, position, Quaternion.identity);
@@ -637,7 +648,125 @@ public class CharacterPickupItems : MonoBehaviour
         var obj = Resources.Load<GameObject>("Prefabs/Effects/Ember");
         var ember = Instantiate(obj, position, Quaternion.identity);
 
-
         Destroy(sparkInstance, sparks.duration);
+    }
+    
+    void ClipItemOutOfTerrain()
+    {
+        if (pickedObject != null && !pickedUp && !pickedObject.GetComponent<Combustable>().isGrounded &&
+            pickedObject.GetComponent<Combustable>().isThrown &&
+            !pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow)
+        {
+            try
+            {
+                var pos = pickedObject.transform.position;
+                var size = pickedObject.GetComponent<Renderer>().bounds.size;
+                if (pos.y < planeHit.point.y)
+                {
+                    pickedObject.transform.position = new Vector3(pos.x,
+                        planeHit.point.y + Mathf.Max(size.x, size.y, size.z), pos.z);
+                    pickedObject.GetComponent<Combustable>().hasBeenMovedAfterThrow = true;
+                }
+            }
+            catch
+            {
+            }
+        }
+    }
+
+    private void CheckGUI()
+    {
+        CheckItemInteractionUI();
+        CheckSnappingPointsUI();
+    }
+
+    void CheckItemInteractionUI()
+    {
+        lookingAtObjectUIText.GetComponent<Text>().text =
+            lookingAtObj ? pickupName + " - (Temp: " + pickupTemp + ")" : "";
+
+        lookingAtObjectUIText.SetActive(lookingAtObj);
+        
+        if (pickedUp)
+        {
+            if (pickedObject != null)
+            {
+                lookingAtFoodUIText.SetActive(pickedObject.GetComponent<Food>() != null);   
+            }
+        }
+        else
+        {
+            if (hitGameObject != null)
+            {
+                lookingAtFoodUIText.SetActive(hitGameObject.GetComponent<Food>() != null);   
+            }
+        }
+
+        pickUpItemUIText.SetActive(showPickup);
+        pickedUpItemUIText.SetActive(pickedUp);
+        pickedUpToolUIText.SetActive(lookingAtObj && (pickedAxe || pickedHammer));
+    }
+
+    void CheckSnappingPointsUI()
+    {
+        if (hitGameObject != null)
+        {
+            if (hitGameObject.GetComponent<SnappingPoint>() != null || hitGameObject.GetComponent<Craftable>() != null)
+            {
+                if (hitGameObject.GetComponent<SnappingPoint>() != null)
+                {
+                    var snappingPointUI = canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointUI.gameObject;
+                    if (hitGameObject.GetComponent<SnappingPoint>().isAvailable)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = hitGameObject;
+                        snappingPointUI.SetActive(true);
+                    }
+                    else
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = null;
+                        snappingPointUI.SetActive(false);
+                    }
+                }
+
+                if (hitGameObject.GetComponent<Craftable>() != null)
+                {
+                    var snappingPointParentUI =
+                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject;
+                    if (hitGameObject.GetComponent<Craftable>().isSnappingPointParent)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = hitGameObject;
+                        snappingPointParentUI.SetActive(true);
+                    }
+                    else
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
+                        snappingPointParentUI.SetActive(false);
+                    }
+                }
+            }  
+            else
+            {
+                canvas.GetComponent<WorldToCanvasPlacer>().snappingPoint = null;
+                canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointUI.gameObject.SetActive(false);
+
+                canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
+                canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject.SetActive(false);
+            }
+        }
+
+        if (pickedObject != null)
+        {
+            if (!pickedUp)
+            {
+                if (pickedObject.GetComponent<Craftable>() != null)
+                {
+                    if (pickedObject.GetComponent<Craftable>().isSnappingPointParent)
+                    {
+                        canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
+                        canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject.SetActive(false);   
+                    }
+                }
+            }
+        }
     }
 }

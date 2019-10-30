@@ -11,6 +11,8 @@ public class Food : Combustable
     public float burnedTemp;
     public float cookingCounter;
     public float cookedPoint;
+    public float poisonDamage;
+    public float hungerRefill;
 
     // Start is called before the first frame update
     void Start()

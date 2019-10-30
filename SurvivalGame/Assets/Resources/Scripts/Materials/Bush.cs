@@ -5,6 +5,7 @@ using UnityEngine;
 public class Bush : Combustable
 {
     public GameObject berry;
+    [SerializeField] [Range(0f, 1f)] private float berrySpawnChance;
 
     // Start is called before the first frame update
     void Start()
@@ -25,9 +26,12 @@ public class Bush : Combustable
     {
         for (int i = 1; i < 8; i++)
         {
-            var slotName = "BerrySlot" + i;
-            var child = transform.Find("Leaves").transform.Find(slotName);
-            var b = Instantiate(berry, child);
+            if (Random.Range(0f, 1f) < berrySpawnChance)
+            {
+                var slotName = "BerrySlot" + i;
+                var child = transform.Find("Leaves").transform.Find(slotName);
+                var b = Instantiate(berry, child);   
+            }
         }
     }
 }

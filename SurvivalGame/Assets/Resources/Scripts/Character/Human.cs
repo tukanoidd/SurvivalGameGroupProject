@@ -70,16 +70,15 @@ public class Human : Combustable
         tempBar.GetComponent<Slider>().value = Mathf.Clamp(temperature, 0, 200);
     }
 
-    void Eat(Food food)
+    public void Eat(Food food)
     {
-        if (GetComponent<CharacterPickupItems>() != null)
+        if (food.poisonous)
         {
-            if (GetComponent<CharacterPickupItems>().pickedObject != null)
-            {
-                if (GetComponent<CharacterPickupItems>().pickedObject.GetComponent<Food>())
-                {
-                }
-            }
+            health -= food.poisonDamage;
         }
+
+        hunger = Mathf.Clamp(hunger -= food.hungerRefill, 0, 100);
+        
+        Destroy(food.gameObject);
     }
 }
