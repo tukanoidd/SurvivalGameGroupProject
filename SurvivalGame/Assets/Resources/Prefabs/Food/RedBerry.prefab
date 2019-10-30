@@ -126,6 +126,7 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
   poisonous: 0
   burnt: 0
   energy: 0
@@ -133,6 +134,8 @@ MonoBehaviour:
   burnedTemp: 0
   cookingCounter: 0
   cookedPoint: 0
+  poisonDamage: 25
+  hungerRefill: 25
 --- !u!54 &2310771446154721064
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -193,6 +193,8 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
 --- !u!54 &5730795334243333070
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -361,7 +363,10 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
   berry: {fileID: 0}
+  berrySpawnChance: 0.711
 --- !u!1 &7903903576048250030
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +553,8 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
 --- !u!54 &2237907765787695182
 Rigidbody:
   m_ObjectHideFlags: 0

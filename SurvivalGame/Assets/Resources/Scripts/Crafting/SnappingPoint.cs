@@ -26,12 +26,10 @@ public class SnappingPoint : MonoBehaviour
             {
                 if (Vector3.Distance(other.transform.position, transform.position) < 0.8f)
                 {
-                    Debug.Log("triggered");
                     var otherSnappingPoint = other.GetComponent<SnappingPoint>();
                     
-                    if (transform.parent.GetComponent<Combustable>().isPicked)
+                    if (transform.parent.GetComponent<Combustable>().isPicked || transform.parent.GetComponent<Combustable>().isConnected)
                     {
-                        Debug.Log("hello");
                         other.transform.parent.position -= other.transform.position - transform.position;
                         
                         joint.connectedAnchor = otherSnappingPoint.transform.position;
@@ -40,7 +38,10 @@ public class SnappingPoint : MonoBehaviour
                         transform.parent.GetComponent<Craftable>().isSnappingPointParent = true;
                         
                         isAvailable = false;
-                        other.gameObject.GetComponent<SnappingPoint>().isAvailable = false;
+                        other.GetComponent<SnappingPoint>().isAvailable = false;
+
+                        transform.parent.GetComponent<Combustable>().isConnected = true;
+                        other.transform.parent.GetComponent<Combustable>().isConnected = true;
                     }
                 }
             }

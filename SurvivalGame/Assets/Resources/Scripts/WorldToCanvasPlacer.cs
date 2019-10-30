@@ -23,7 +23,7 @@ public class WorldToCanvasPlacer : MonoBehaviour
 
     void SetUIToCanvas(GameObject obj, RectTransform UIElement)
     {
-        if (obj != null)
+        if (obj != null && Vector3.Distance(camera.transform.position, obj.transform.position) < 10)
         {
             canvasRect = GetComponent<RectTransform>();
 

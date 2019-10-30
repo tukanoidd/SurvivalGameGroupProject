@@ -45,6 +45,7 @@ public class Combustable : MonoBehaviour
     public bool hasBeenHitByAxe = false;
     public bool isPlayer = false;
     public bool isPicked = false;
+    public bool isConnected = false;
 
     // Start is called before the first frame update
     protected virtual void Start()
@@ -197,6 +198,12 @@ public class Combustable : MonoBehaviour
             var ashGroupObj = Instantiate(ashGroup, transform.position, Quaternion.identity);
         }
 
+        if (isPicked)
+        {
+            isPicked = false;
+            transform.parent = null;
+        }
+        
         Destroy(gameObject);
     }
 
