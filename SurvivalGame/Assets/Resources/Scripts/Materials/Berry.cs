@@ -30,6 +30,7 @@ public class Berry : Food
                 if (transform.parent.parent.GetComponent<Combustable>().isPicked &&
                     GetComponent<Rigidbody>().isKinematic)
                 {
+                    Debug.Log(transform.parent);
                     GetComponent<Rigidbody>().isKinematic = false;
                     
                     transform.parent = null;
