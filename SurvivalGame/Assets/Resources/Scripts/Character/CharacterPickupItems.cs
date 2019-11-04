@@ -171,7 +171,7 @@ public class CharacterPickupItems : MonoBehaviour
 
                 distToObj = rayPickupHit.distance;
 
-                if (hitGameObject.GetComponent<Combustable>() != null || hitGameObject.CompareTag("hammer"))
+                if (hitGameObject.GetComponent<Combustable>() != null || hitGameObject.CompareTag("tool"))
                 {
                     lookingAtObj = true;
 
@@ -197,13 +197,14 @@ public class CharacterPickupItems : MonoBehaviour
 
                         pickupTemp = hitGameObject.GetComponent<Combustable>().temperature;
                     }
-                    else if (hitGameObject.CompareTag("hammer"))
+                    else if (hitGameObject.CompareTag("tool"))
                     {
                         pickupName = hitGameObject.name;
                     }
                 }
                 else
                 {
+                    lookingAtObj = false;
                     showPickup = false;
                 }
             }

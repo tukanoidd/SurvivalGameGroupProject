@@ -306,6 +306,7 @@ RectTransform:
   - {fileID: 801180953}
   - {fileID: 980843933}
   - {fileID: 7268916785335869671}
+  - {fileID: 9034041678359893242}
   m_Father: {fileID: 5194478965943706208}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1523,6 +1524,81 @@ Transform:
   m_Father: {fileID: 5194478966582594378}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -73.1, y: 0, z: 0}
+--- !u!1 &2258093793571601340
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9034041678359893242}
+  - component: {fileID: 7615126136024092365}
+  - component: {fileID: 5094394687983071250}
+  m_Layer: 0
+  m_Name: Crosshair
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &9034041678359893242
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258093793571601340}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children: []
+  m_Father: {fileID: 553978936}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &7615126136024092365
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258093793571601340}
+  m_CullTransparentMesh: 0
+--- !u!114 &5094394687983071250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2258093793571601340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 21300000, guid: 23d21948527d10449863ed9d97d7dd9c, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &5194478965943706211
 GameObject:
   m_ObjectHideFlags: 0
@@ -1683,7 +1759,6 @@ GameObject:
   - component: {fileID: 5194478966582594376}
   - component: {fileID: 5194478966582594379}
   - component: {fileID: 5194478966582594377}
-  - component: {fileID: 5194478966582594390}
   - component: {fileID: 5194478966582594391}
   - component: {fileID: 4934719271957073646}
   - component: {fileID: 1581263766}
@@ -1828,9 +1903,6 @@ MonoBehaviour:
   mouseSensitivity: 100
   _camera: {fileID: 5194478965943706222}
   head: {fileID: 5194478966842633747}
-  crosshairBlack: {fileID: 2800000, guid: 23d21948527d10449863ed9d97d7dd9c, type: 3}
-  crosshairWhite: {fileID: 2800000, guid: 2a7a7839d43e3934b887d3069695753c, type: 3}
-  crosshairSize: 30
 --- !u!143 &5194478966582594377
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1849,19 +1921,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5194478966582594390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5194478966582594382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a41542a4dd15e44f95a185668aa93b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventory: []
 --- !u!114 &5194478966582594391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1984,6 +2043,7 @@ MonoBehaviour:
   hasBeenHitByAxe: 0
   isPlayer: 0
   isPicked: 0
+  isConnected: 0
   health: 0
   hunger: 0
   hungerRate: 0.005

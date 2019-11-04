@@ -56,13 +56,6 @@ public class Creature : MonoBehaviour
 
         GetRandomFocalPoint();
         Initialize();
-        alive = true;
-        energyFull = energy;
-        viewAngle = 45;
-        viewRadius = 20f;
-        movementSpeed = 7;
-        moving = true;
-        vicinity = new List<GameObject>();
 
         if (GetComponent<SphereCollider>() == null)
         {
@@ -110,6 +103,14 @@ public class Creature : MonoBehaviour
 
     public void Initialize()
     {
+        alive = true;
+        energyFull = energy;
+        viewAngle = 45;
+        viewRadius = 20f;
+        movementSpeed = 7;
+        moving = true;
+        vicinity = new List<GameObject>();
+        
         if (settings != null)
         {
             position = _cachedTransform.position;
@@ -177,28 +178,6 @@ public class Creature : MonoBehaviour
 
     protected virtual void move(Vector3 direction)
     {
-        /*
-        if(direction != null)
-        {
-            if(Vector3.Distance(transform.position, focalPoint) < 1)
-            {
-                moving = false;
-            } else {
-                var dir = (direction - transform.position).normalized;
-                var rot = Quaternion.LookRotation(dir);
-
-                transform.rotation = Quaternion.Slerp(transform.rotation, rot, Time.deltaTime * movementSpeed);
-                transform.position += transform.forward * Time.deltaTime * movementSpeed;
-                Debug.DrawRay(transform.position, direction, Color.red);
-                moving = true;
-            }
-        }
-        else
-        {
-            GetRandomFocalPoint();
-            moving = true;
-        }
-        */
         if (settings != null)
         {
             if (Vector3.Distance(transform.position, focalPoint) < 1 && recharging)
