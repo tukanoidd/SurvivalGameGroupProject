@@ -83,13 +83,6 @@ public class Human : Combustable
         Destroy(food.gameObject);
     }
 
-    protected override void OnCollisionEnter(Collision collision)
-    {
-        base.OnCollisionEnter(collision);
-
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Portal"))
