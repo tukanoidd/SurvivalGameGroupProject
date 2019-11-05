@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Stone : Combustable
+public class Stone : Craftable
 {
     public float hardness; //Hardness of the object
     public float breakForce; //Force required to break the object into pieces
+    public List<GameObject> brokenPrefabs;
 
     // Start is called before the first frame update
     void Start()
@@ -28,5 +29,47 @@ public class Stone : Combustable
     void Update()
     {
         base.Update();
+    }
+
+    public void Break()
+    {
+        if (brokenPrefabs.Count > 0)
+        {
+            var prevPos = transform.position;
+            for (int i = 0; i < brokenPrefabs.Count; i++)
+            {
+                var newStone = Instantiate(brokenPrefabs[i], prevPos + GetYOffset(brokenPrefabs[i]), transform.rotation);
+                if (newStone.GetComponent<Rigidbody>() != null)
+                {
+                    newStone.GetComponent<Rigidbody>().isKinematic = false;
+                } else if (newStone.GetComponentsInChildren<Rigidbody>().Length > 0)
+                {
+                    foreach (var rigidB in newStone.GetComponentsInChildren<Rigidbody>())
+                    {
+                        rigidB.isKinematic = false;
+                    }
+                }
+                prevPos += GetYOffset(brokenPrefabs[i]);
+            }
+            
+            Destroy(gameObject);
+        }
+    }
+    
+    Vector3 GetYOffset(GameObject obj)
+    {
+        Renderer rend;
+
+        if (obj.GetComponent<Renderer>() != null)
+        {
+            rend = obj.GetComponent<Renderer>();
+        }
+        else
+        {
+            rend = obj.GetComponentInChildren<Renderer>();
+        }
+
+        var size = rend.bounds.size;
+        return Vector3.up * Mathf.Min(size.x, size.y, size.z);
     }
 }

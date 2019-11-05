@@ -24,6 +24,7 @@ public class Food : Combustable
     void Update()
     {
         base.Update();
+        poisonous = energy < 0;
     }
 
     public void Cooking()

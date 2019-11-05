@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -127,6 +127,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &1361459582805627069
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -250,7 +255,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -284,6 +289,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &3264461656430584888
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -407,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -441,6 +451,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &4022013857981501630
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -564,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -598,6 +613,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &6580362624451025572
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -721,7 +741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -755,6 +775,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &3993589484282992713
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -878,7 +903,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -912,6 +937,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &2800886505364341537
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1035,7 +1065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1069,6 +1099,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &302052815644173744
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1192,7 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1226,6 +1261,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &7369040808407735913
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1349,7 +1389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1383,6 +1423,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &3593718094989112116
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1506,7 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1540,6 +1585,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &7341100461940274969
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1663,7 +1713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1697,6 +1747,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &5274749701642067152
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1820,7 +1875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -1854,6 +1909,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &3051379169626588945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1989,6 +2049,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!1 &8038030073796136562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -2116,6 +2181,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &8820118249310340817
 Rigidbody:
   m_ObjectHideFlags: 0

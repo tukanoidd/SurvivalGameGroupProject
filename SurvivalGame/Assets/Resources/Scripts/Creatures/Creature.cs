@@ -44,6 +44,10 @@ public class Creature : MonoBehaviour
 
     private Transform _cachedTransform;
 
+    [SerializeField] private GameObject tutorialText;
+    [SerializeField] private GameObject playerCam;
+    private float minimapScale;
+
     void Awake()
     {
         _cachedTransform = transform;
@@ -73,7 +77,16 @@ public class Creature : MonoBehaviour
             GarbageMan.creatures.Add(gameObject);
         }
 
-        objectPlacer.PlaceMinimapSphere(transform, 20);
+        if (tutorialText != null && playerCam != null)
+        {
+            minimapScale = 5;
+        }
+        else
+        {
+            minimapScale = 20f;
+        }
+        
+        objectPlacer.PlaceMinimapSphere(transform, minimapScale);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -223,6 +236,15 @@ public class Creature : MonoBehaviour
         }
         else if (type == Type.BoomBugs)
         {
+        }
+    }
+
+    protected virtual void Update()
+    {
+        if (tutorialText != null && playerCam != null)
+        {
+            tutorialText.transform.position = transform.position + Vector3.up * 3;
+            tutorialText.transform.rotation = playerCam.transform.rotation;
         }
     }
 }

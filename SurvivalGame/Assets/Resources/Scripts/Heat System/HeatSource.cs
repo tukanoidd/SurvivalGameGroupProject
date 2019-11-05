@@ -28,6 +28,7 @@ public class HeatSource : MonoBehaviour
         }
         else
         {
+            burn(gameObject);
             size = heat / maximumHeat;
             SOI_Collider.radius = (size * maxRange);
         }
@@ -49,11 +50,36 @@ public class HeatSource : MonoBehaviour
     void heatOther(Collider other)
     {
         GameObject go = other.gameObject;
-        float distance = Vector3.Distance(go.transform.position, transform.position);
-        float intensity = 1 / (Mathf.Pow(distance, 2f));
-        go.GetComponent<Combustable>().temperature += ((parent.GetComponent<Combustable>().temperature * intensity) /
-                                                       (go.GetComponent<Combustable>().heatTransfer)) / 100;
-        go.GetComponent<Combustable>().heatedBy = parent;
+
+        if (go.GetComponent<HeatSource>() == null)
+        {
+            float parentTemp = 0f;
+            GameObject heatSource = parent;
+        
+            float distance = Vector3.Distance(go.transform.position, transform.position);
+            float intensity = 1 / (Mathf.Pow(distance, 2f));
+
+            if (GetComponent<Combustable>() != null)
+            {
+                if (GetComponent<Combustable>().name == "Ember")
+                {
+                    parentTemp = GetComponent<Combustable>().temperature * intensity;
+                    heatSource = gameObject;
+                }
+            }
+            else
+            {
+                parentTemp = parent.GetComponent<Combustable>().temperature * intensity;
+                heatSource = parent;
+            }
+            
+            var expr = (parentTemp /
+                        (go.GetComponent<Combustable>().heatTransfer)) / 1000;
+
+            go.GetComponent<Combustable>().temperature += expr;
+    
+            go.GetComponent<Combustable>().heatedBy = heatSource;
+        }
     }
 
     void burn(GameObject parentObj)
@@ -74,7 +100,8 @@ public class HeatSource : MonoBehaviour
 
             if (parentObj.GetComponent<Combustable>().temperature < maximumTemp)
             {
-                parentObj.GetComponent<Combustable>().temperature += (heat * (objHeatTransfer / 10)) / 1000;
+                var alg = (heat * (objHeatTransfer / 10)) / 1000;
+                parentObj.GetComponent<Combustable>().temperature += alg;
             }
             else
             {

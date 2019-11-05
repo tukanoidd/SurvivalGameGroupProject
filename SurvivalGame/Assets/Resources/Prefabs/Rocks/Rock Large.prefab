@@ -156,5 +156,11 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
   hardness: 0
   breakForce: 0
+  brokenPrefabs:
+  - {fileID: 657705998050976320, guid: cda6e321695dfe942b0e4e201794e29c, type: 3}
+  - {fileID: 657705998050976320, guid: cda6e321695dfe942b0e4e201794e29c, type: 3}

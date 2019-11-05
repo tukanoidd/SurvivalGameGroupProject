@@ -10,7 +10,6 @@ public class Berry : Food
     void Start()
     {
         base.Start();
-        poisonous = true;
         burnt = false;
         energy = -5;
         cookedPoint = 100;

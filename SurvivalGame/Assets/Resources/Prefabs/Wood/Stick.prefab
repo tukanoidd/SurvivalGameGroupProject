@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6347721359221696303}
   - component: {fileID: 952902235690593144}
   - component: {fileID: 6753970791371832247}
-  - component: {fileID: 3256092726029338371}
   m_Layer: 0
   m_Name: Stick
   m_TagString: Untagged
@@ -96,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stick
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -130,6 +129,10 @@ MonoBehaviour:
   hasBeenHitByAxe: 0
   isPlayer: 0
   isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  connectedObjects: []
+  isSnappingPointParent: 0
 --- !u!54 &952902235690593144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -160,19 +163,6 @@ CapsuleCollider:
   m_Height: 0.06
   m_Direction: 1
   m_Center: {x: 0.0001597345, y: 0.01523218, z: -0.02035469}
---- !u!114 &3256092726029338371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8398560840442085940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4241f8cd2c63eb648b73e4ecc46cc651, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  snappingPoints: []
 --- !u!1001 &5921154628259005226
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -180,11 +170,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4816308769398485031}
     m_Modifications:
-    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
-        type: 3}
-      propertyPath: m_Name
-      value: SnappingPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -240,6 +225,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Name
+      value: SnappingPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Axis.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 6.7338166
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.114373505
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 10.076991
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Axis.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8590643416869718019, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: parent
@@ -260,11 +275,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4816308769398485031}
     m_Modifications:
-    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
-        type: 3}
-      propertyPath: m_Name
-      value: SnappingPoint
-      objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -283,22 +293,22 @@ PrefabInstance:
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.67312527
+      value: -0.66359735
       objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.21656947
+      value: 0.21959214
       objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.21656944
+      value: 0.21350397
       objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.6731253
+      value: 0.6825202
       objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
@@ -308,16 +318,46 @@ PrefabInstance:
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -88.38901
       objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 35.670002
       objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Name
+      value: SnappingPoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Axis.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.x
+      value: 6.733202
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.y
+      value: -0.11481488
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_ConnectedAnchor.z
+      value: 8.546808
+      objectReference: {fileID: 0}
+    - target: {fileID: 6658906741226541996, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Axis.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

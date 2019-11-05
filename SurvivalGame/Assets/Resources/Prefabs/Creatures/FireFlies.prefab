@@ -41,7 +41,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 9
   m_Type: 2
-  m_Color: {r: 0.9339623, g: 0.066082224, b: 0.075341016, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -4032,11 +4032,11 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     minVertexDistance: 0
-    textureMode: 0
+    textureMode: 2
     ribbonCount: 1
     shadowBias: 0.5
     worldSpace: 1
-    dieWithParticles: 1
+    dieWithParticles: 0
     sizeAffectsWidth: 1
     sizeAffectsLifetime: 0
     inheritParticleColor: 1
@@ -4806,7 +4806,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 84038438fd6742c4abbfa6368321437d, type: 2}
+  - {fileID: 2100000, guid: 1a7cbfb1fbaa45c478a606acbd06e7dd, type: 2}
   - {fileID: 2100000, guid: 1a7cbfb1fbaa45c478a606acbd06e7dd, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
@@ -4948,6 +4948,7 @@ MonoBehaviour:
   settings: {fileID: 11400000, guid: 3233ef5a87413a94dac269cbd3ee07b6, type: 2}
   position: {x: 0, y: 0, z: 0}
   forward: {x: 0, y: 0, z: 0}
+  particleForceField: {fileID: 0}
 --- !u!330 &6800240022295004804
 ParticleSystemForceField:
   m_ObjectHideFlags: 0

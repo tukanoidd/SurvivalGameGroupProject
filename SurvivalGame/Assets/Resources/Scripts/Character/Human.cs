@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Human : Combustable
@@ -14,6 +16,8 @@ public class Human : Combustable
 
     public GameObject tempBar;
     public GameObject tempFill;
+    
+    [SerializeField] private float minimapScale;
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +36,7 @@ public class Human : Combustable
         burnRate = 4;
         isPlayer = true;
 
-        objectPlacer.PlaceMinimapSphere(transform, 40);
+        objectPlacer.PlaceMinimapSphere(transform, minimapScale);
     }
 
     // Update is called once per frame
@@ -72,13 +76,18 @@ public class Human : Combustable
 
     public void Eat(Food food)
     {
-        if (food.poisonous)
-        {
-            health -= food.poisonDamage;
-        }
+        health += food.energy;
 
         hunger = Mathf.Clamp(hunger -= food.hungerRefill, 0, 100);
         
         Destroy(food.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Portal"))
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }

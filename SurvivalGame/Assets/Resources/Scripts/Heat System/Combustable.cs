@@ -63,7 +63,7 @@ public class Combustable : MonoBehaviour
             color = renderer.material.color;
         }
 
-        maxTemp = (heatResistance * 200) + (GetObjectVolume() * 50);
+        maxTemp = (heatResistance * 1000) + (GetObjectVolume() * 50);
 
         smokeObj = Resources.Load<GameObject>("Prefabs/Effects/TorchSmoke");
         flameObj = Resources.Load<GameObject>("Prefabs/Effects/FlameMain");
@@ -92,7 +92,7 @@ public class Combustable : MonoBehaviour
                     }
                     else
                     {
-                        vaporize();
+                        //vaporize();
                     }
                 }
             }
@@ -162,7 +162,18 @@ public class Combustable : MonoBehaviour
         {
             Vector3 thisObjectSizeVector = renderer.bounds.size;
             //Vector3 flameCenter = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + (thisObjectSizeVector.y/2),gameObject.transform.position.z);
-            Vector3 closestPointToFlame = collider.ClosestPointOnBounds(heatedBy.transform.GetChild(0).position);
+
+            Vector3 closestPointToFlame;
+            
+            if (heatedBy.transform.childCount > 0)
+            {
+                closestPointToFlame = collider.ClosestPointOnBounds(heatedBy.transform.GetChild(0).position);
+            }
+            else
+            {
+                closestPointToFlame = collider.ClosestPointOnBounds(heatedBy.transform.position);
+            }
+            
             Vector3 flameCenter = closestPointToFlame;
 
             GameObject flame = Instantiate(flameObj, flameCenter, Quaternion.identity);

@@ -20,7 +20,7 @@ MonoBehaviour:
       chance: 0.84
       prefabs:
       - {fileID: 2014225656627745115, guid: 2fb6786cc25d2454ea06047f374da4a8, type: 3}
-      - {fileID: 4653429078422814110, guid: 74cedef3a93d6e04492b5a19eca86967, type: 3}
+      - {fileID: 8398560840442085940, guid: 68365243d573a7a4c9d7b856c75eda29, type: 3}
       - {fileID: 6823923043788589472, guid: 3c57813befe13e446b4ff5018b77f448, type: 3}
       - {fileID: 3772479132241492687, guid: 57cccdbf12279b244beeacf8dabf765e, type: 3}
       - {fileID: 3772479132241492687, guid: 57cccdbf12279b244beeacf8dabf765e, type: 3}
@@ -44,6 +44,7 @@ MonoBehaviour:
       - {fileID: 6823923043788589472, guid: 3c57813befe13e446b4ff5018b77f448, type: 3}
       - {fileID: 3772479132241492687, guid: 57cccdbf12279b244beeacf8dabf765e, type: 3}
       - {fileID: 3772479132241492687, guid: 57cccdbf12279b244beeacf8dabf765e, type: 3}
+      - {fileID: 8398560840442085940, guid: 68365243d573a7a4c9d7b856c75eda29, type: 3}
     - name: Tools
       chance: 1
       prefabs:

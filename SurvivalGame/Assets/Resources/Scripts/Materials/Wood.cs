@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public class Wood : Combustable
+public class Wood : Craftable
 {
     private float fuelInitial;
 
@@ -11,7 +11,11 @@ public class Wood : Combustable
     protected override void Start()
     {
         base.Start();
-        name = "Wood";
+        if (name == null)
+        {
+            name = "Wood";
+        }
+        
         temperature = 25f; //Object temperature
         tempInitial = 25f; //Needed for referencing
         flashpoint = 150; //At what temperature will the object burst into flames
