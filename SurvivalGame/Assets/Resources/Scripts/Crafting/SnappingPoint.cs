@@ -42,6 +42,7 @@ public class SnappingPoint : MonoBehaviour
 
                         transform.parent.GetComponent<Combustable>().isConnected = true;
                         other.transform.parent.GetComponent<Combustable>().isConnected = true;
+                        parent.GetComponent<Craftable>().connectedObjects.Add(other.gameObject.GetComponent<SnappingPoint>().parent);
                     }
                 }
             }
