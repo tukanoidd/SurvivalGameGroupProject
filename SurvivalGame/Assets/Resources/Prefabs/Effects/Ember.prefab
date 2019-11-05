@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2676670129397035963}
   - component: {fileID: 8094826819072896519}
   - component: {fileID: 9194005500104044454}
-  - component: {fileID: 7473390563329791664}
+  - component: {fileID: 5403433985831626981}
   m_Layer: 0
   m_Name: Ember
   m_TagString: Untagged
@@ -172,7 +172,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.49999997
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7473390563329791664
+--- !u!114 &5403433985831626981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

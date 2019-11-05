@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,6 @@ public class BoomBugs : Creature
 {
     //public Light boidGlow;
     public float energyThreshold;
-
 
     // Start is called before the first frame update
     protected override void Start()
@@ -19,8 +19,9 @@ public class BoomBugs : Creature
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (alive)
         {
             if (!recharging)

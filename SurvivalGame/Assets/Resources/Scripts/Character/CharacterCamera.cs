@@ -9,6 +9,8 @@ public class CharacterCamera : MonoBehaviour
 
     [SerializeField] private Camera _camera;
 
+    [SerializeField] private GameObject[] campfireTutorialTexts;
+
     private float xAxisClamp;
 
     private void Awake()
@@ -39,6 +41,14 @@ public class CharacterCamera : MonoBehaviour
 
         _camera.transform.Rotate(Vector3.left * mouseY);
         transform.Rotate(Vector3.up * mouseX);
+
+        if (campfireTutorialTexts != null)
+        {
+            for (int i = 0; i < campfireTutorialTexts.Length; i++)
+            {
+                campfireTutorialTexts[i].transform.rotation = _camera.transform.rotation;
+            }
+        }
     }
 
     private void ClampXAxisRotationToValue(float value)

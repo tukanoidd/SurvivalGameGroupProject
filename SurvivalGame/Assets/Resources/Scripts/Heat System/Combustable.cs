@@ -63,7 +63,7 @@ public class Combustable : MonoBehaviour
             color = renderer.material.color;
         }
 
-        maxTemp = (heatResistance * 200) + (GetObjectVolume() * 50);
+        maxTemp = (heatResistance * 1000) + (GetObjectVolume() * 50);
 
         smokeObj = Resources.Load<GameObject>("Prefabs/Effects/TorchSmoke");
         flameObj = Resources.Load<GameObject>("Prefabs/Effects/FlameMain");
@@ -92,7 +92,7 @@ public class Combustable : MonoBehaviour
                     }
                     else
                     {
-                        vaporize();
+                        //vaporize();
                     }
                 }
             }

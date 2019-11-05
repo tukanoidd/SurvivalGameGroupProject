@@ -9,6 +9,7 @@ public class Ember : Ash
     {
         base.Start();
         temperature = glowTemp + 50;
+        heatTransfer = 10;
         maxTemp = 200;
         name = "Ember";
     }
@@ -17,6 +18,18 @@ public class Ember : Ash
     void Update()
     {
         base.Update();
+        if (temperature > 200)
+        {
+            Debug.Log(temperature);
+        }
         temperature = Mathf.Clamp(temperature, 0, maxTemp - 1);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.CompareTag("Grass"))
+        {
+            fuel = 100;
+        }
     }
 }

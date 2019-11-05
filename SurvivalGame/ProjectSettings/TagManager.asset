@@ -21,6 +21,7 @@ TagManager:
   - Branch
   - Bush
   - Grass
+  - Portal
   layers:
   - Default
   - TransparentFX

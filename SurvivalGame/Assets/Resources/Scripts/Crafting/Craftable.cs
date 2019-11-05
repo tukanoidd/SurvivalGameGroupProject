@@ -30,6 +30,7 @@ public class Craftable : Combustable
     protected override void Update()
     {
         base.Update();
+        
         if (name == "Stick" && connectedObjects.Count > 0)
         {
             if (CheckForConnection("Stone"))
@@ -58,6 +59,7 @@ public class Craftable : Combustable
 
     bool CheckForConnection(String name)
     {
+        connectedObjects = connectedObjects.Where(connectedObject => connectedObject.Key != null).ToList();
         return connectedObjects.Any((connectedObject) =>
         {
             obj = connectedObject;
