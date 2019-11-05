@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 1018763803753219973}
   - component: {fileID: 8590643416869718019}
   - component: {fileID: 4717377054658824530}
-  - component: {fileID: 6658906741226541996}
+  - component: {fileID: 243892071122482671}
   m_Layer: 0
   m_Name: SnappingPoint
   m_TagString: Untagged
@@ -79,7 +79,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!59 &6658906741226541996
+--- !u!59 &243892071122482671
 HingeJoint:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,12 +88,12 @@ HingeJoint:
   m_GameObject: {fileID: 6091420953834883254}
   m_ConnectedBody: {fileID: 0}
   m_Anchor: {x: 0, y: 0, z: 0}
-  m_Axis: {x: 1, y: 1, z: 1}
+  m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
   m_ConnectedAnchor: {x: -0.00017, y: -0.01517, z: -0.021}
-  m_UseSpring: 1
+  m_UseSpring: 0
   m_Spring:
-    spring: 6000
+    spring: 0
     damper: 0
     targetPosition: 0
   m_UseMotor: 0
@@ -104,7 +104,7 @@ HingeJoint:
   m_UseLimits: 0
   m_Limits:
     min: 0
-    max: 5
+    max: 0
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0

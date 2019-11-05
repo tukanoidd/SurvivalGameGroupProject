@@ -49,11 +49,31 @@ public class HeatSource : MonoBehaviour
     void heatOther(Collider other)
     {
         GameObject go = other.gameObject;
+        float parentTemp = 0f;
+        GameObject heatSource = parent;
+        
         float distance = Vector3.Distance(go.transform.position, transform.position);
         float intensity = 1 / (Mathf.Pow(distance, 2f));
-        go.GetComponent<Combustable>().temperature += ((parent.GetComponent<Combustable>().temperature * intensity) /
+
+        if (GetComponent<Combustable>() != null)
+        {
+            if (GetComponent<Combustable>().name == "Ember")
+            {
+                parentTemp = GetComponent<Combustable>().temperature * intensity;
+                heatSource = gameObject;
+            }
+        }
+        else
+        {
+            parentTemp = parent.GetComponent<Combustable>().temperature * intensity;
+            heatSource = parent;
+        }
+        
+                
+        go.GetComponent<Combustable>().temperature += (parentTemp /
                                                        (go.GetComponent<Combustable>().heatTransfer)) / 100;
-        go.GetComponent<Combustable>().heatedBy = parent;
+    
+        go.GetComponent<Combustable>().heatedBy = heatSource;
     }
 
     void burn(GameObject parentObj)

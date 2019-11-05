@@ -72,10 +72,7 @@ public class Human : Combustable
 
     public void Eat(Food food)
     {
-        if (food.poisonous)
-        {
-            health -= food.poisonDamage;
-        }
+        health += food.energy;
 
         hunger = Mathf.Clamp(hunger -= food.hungerRefill, 0, 100);
         

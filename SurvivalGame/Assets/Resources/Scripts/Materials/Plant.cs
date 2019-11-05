@@ -20,9 +20,14 @@ public class Plant : Combustable
         color = renderer.material.color;
     }
 
-    // Update is called once per frame
-    protected override void Update()
+    void OnTriggerEnter(Collider other)
     {
-        base.Update();
+        if(other.transform.CompareTag("terrain"))
+        {
+            if (transform.CompareTag("Grass"))
+            {
+                GetComponent<Rigidbody>().isKinematic = true;
+            }
+        }
     }
 }

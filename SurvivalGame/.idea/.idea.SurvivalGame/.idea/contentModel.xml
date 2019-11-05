@@ -84,6 +84,7 @@
               <e p="CombustableGroup.cs" t="Include" />
               <e p="Flame.cs" t="Include" />
               <e p="HeatSource.cs" t="Include" />
+              <e p="Radiator.cs" t="Include" />
             </e>
             <e p="Materials" t="Include">
               <e p="Ash.cs" t="Include" />

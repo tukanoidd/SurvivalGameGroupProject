@@ -1,33 +1,83 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
 public class Craftable : Combustable
 {
-    public List<GameObject> snappingPoints;
-    public List<GameObject> connectedObjects;
+    public List<KeyValuePair<GameObject, SnappingPoint>> connectedObjects;
     public bool isSnappingPointParent;
 
+    private GameObject hammerPrefab;
+    private GameObject axePrefab;
+
+    private KeyValuePair<GameObject, SnappingPoint> obj;
+
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        snappingPoints = GetComponentsInChildren<SnappingPoint>().Select(snp => snp.gameObject).ToList();
+        base.Start();
+        connectedObjects = new List<KeyValuePair<GameObject, SnappingPoint>>();
         isSnappingPointParent = false;
+        
+        obj = new KeyValuePair<GameObject, SnappingPoint>();
+
+        hammerPrefab = Resources.Load<GameObject>("Prefabs/Tools/Hammer");
+        axePrefab = Resources.Load<GameObject>("Prefabs/Tools/Axe");
     }
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (name == "Stick" && connectedObjects.Count > 0)
         {
-            Debug.Log("STICK");
-            if (connectedObjects.Any((connectedObject) => connectedObject.GetComponent<Combustable>().name == "Stone"))
+            if (CheckForConnection("Stone"))
             {
-                Debug.Log("Hammer");
-            } else if (connectedObjects.Any((connectedObject) => connectedObject.GetComponent<Combustable>().name == "Flint"))
+                var craftableConnectedObj = obj.Key.GetComponent<Craftable>();
+                if (craftableConnectedObj.CheckForConnection("Stick"))
+                {
+                    craftableConnectedObj.UnjoinObjects();
+                }
+                
+                UnjoinObjects();
+                Instantiate(hammerPrefab, transform.position, transform.rotation);
+            } else if (CheckForConnection("Flint"))
             {
-                Debug.Log("Axe");
+                var craftableConnectedObj = obj.Key.GetComponent<Craftable>();
+                if (craftableConnectedObj.CheckForConnection("Stick"))
+                {
+                    craftableConnectedObj.UnjoinObjects();
+                }
+                
+                UnjoinObjects();
+                Instantiate(axePrefab, transform.position, transform.rotation);
             }
         }
+    }
+
+    bool CheckForConnection(String name)
+    {
+        return connectedObjects.Any((connectedObject) =>
+        {
+            obj = connectedObject;
+            return connectedObject.Key.GetComponent<Combustable>().name == name;
+        });
+    }
+    void UnjoinObjects()
+    {
+        foreach (var connectedObject in connectedObjects)
+        {
+            if (!connectedObject.Equals(obj))
+            {
+                connectedObject.Value.isAvailable = true;
+                connectedObject.Value.parent.GetComponent<Craftable>().isSnappingPointParent = false;
+                connectedObject.Value.joint.connectedBody = null;
+
+                connectedObject.Key.GetComponent<Craftable>().connectedObjects.Remove(obj);
+            }
+        }
+        
+        Destroy(gameObject);
     }
 }

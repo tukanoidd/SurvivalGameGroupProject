@@ -162,7 +162,18 @@ public class Combustable : MonoBehaviour
         {
             Vector3 thisObjectSizeVector = renderer.bounds.size;
             //Vector3 flameCenter = new Vector3(gameObject.transform.position.x,gameObject.transform.position.y + (thisObjectSizeVector.y/2),gameObject.transform.position.z);
-            Vector3 closestPointToFlame = collider.ClosestPointOnBounds(heatedBy.transform.GetChild(0).position);
+
+            Vector3 closestPointToFlame;
+            
+            if (heatedBy.transform.childCount > 0)
+            {
+                closestPointToFlame = collider.ClosestPointOnBounds(heatedBy.transform.GetChild(0).position);
+            }
+            else
+            {
+                closestPointToFlame = collider.ClosestPointOnBounds(heatedBy.transform.position);
+            }
+            
             Vector3 flameCenter = closestPointToFlame;
 
             GameObject flame = Instantiate(flameObj, flameCenter, Quaternion.identity);

@@ -141,6 +141,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &5704254634874711808
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -298,6 +303,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &5692235427183168591
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -515,6 +525,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &1450805608047578280
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -672,6 +687,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &7522434652957747404
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -829,6 +849,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &4063155297672127206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -986,6 +1011,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &781706631187590805
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1143,6 +1173,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &6781939799494534848
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1300,6 +1335,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &8904938685811728172
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1358,7 +1398,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5494577138314243737}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -7387706064836869012, guid: 57763df7fef69a543abe4453fe82ef6c, type: 3}
 --- !u!23 &5494577138314243429
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1457,6 +1497,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &7035852843158832192
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1614,6 +1659,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &5431960001713307663
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1771,6 +1821,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &4094568012291058319
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1928,6 +1983,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &7375434953219009343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2085,6 +2145,11 @@ MonoBehaviour:
   hasBeenMovedAfterThrow: 0
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  snappingPoints: []
+  isSnappingPointParent: 0
 --- !u!54 &7437540303057267509
 Rigidbody:
   m_ObjectHideFlags: 0

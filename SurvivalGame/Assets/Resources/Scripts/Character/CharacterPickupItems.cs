@@ -491,70 +491,10 @@ public class CharacterPickupItems : MonoBehaviour
                     {
                         if (hitObj.GetComponent<Combustable>().hasBeenHitByHammer && pickedHammer)
                         {
-                            if (hitObj.CompareTag("Rock Large"))
+                            if (hitObj.GetComponent<Stone>() != null)
                             {
-                                hitObj.SetActive(false);
-
-                                for (int i = 0; i < numMedRocksPerLargeRock; i++)
-                                {
-                                    var medRockPrefab =
-                                        mediumRocksPrefabs[Random.Range(0, mediumRocksPrefabs.Length - 1)];
-                                    var yOffset = GetYOffset(medRockPrefab);
-
-                                    var medRock = Instantiate(medRockPrefab,
-                                        hitObj.transform.position + yOffset, hitObj.transform.rotation);
-                                    medRock.GetComponent<Rigidbody>().isKinematic = false;
-                                }
-
-                                Destroy(hitObj);
+                                hitObj.GetComponent<Stone>().Break();
                             }
-                            else if (hitObj.CompareTag("Rock Medium"))
-                            {
-                                hitObj.SetActive(false);
-
-                                for (int i = 0; i < numSmallRocksPerMedRock; i++)
-                                {
-                                    var smallRockPrefab =
-                                        smallRocksPrefabs[Random.Range(0, smallRocksPrefabs.Length - 1)];
-                                    var yOffset = GetYOffset(smallRockPrefab);
-
-                                    var smallRock = Instantiate(smallRockPrefab, hitObj.transform.position + yOffset,
-                                        hitObj.transform.rotation);
-                                    smallRock.GetComponent<Rigidbody>().isKinematic = false;
-                                }
-
-                                Destroy(hitObj);
-                            }
-                            else if (hitObj.CompareTag("Red Rock Large"))
-                            {
-                                hitObj.SetActive(false);
-
-                                for (int i = 0; i < numMedRocksPerLargeRock; i++)
-                                {
-                                    var medRedRockPrefab =
-                                        mediumRedRocksPrefabs[Random.Range(0, mediumRedRocksPrefabs.Length - 1)];
-
-                                    var yOffset = GetYOffset(medRedRockPrefab);
-
-                                    var medRedRock = Instantiate(medRedRockPrefab, hitObj.transform.position + yOffset,
-                                        hitObj.transform.rotation);
-                                    medRedRock.GetComponent<Rigidbody>().isKinematic = false;
-                                }
-
-                                Destroy(hitObj);
-                            }
-                            /*else if (hitObj.CompareTag("Red Rock Medium"))
-                            {
-                                hitObj.SetActive(false);
-    
-                                for (int i = 0; i < numSmallRocksPerMedRock; i++)
-                                {
-                                    Instantiate(smallRedRocksPrefabs[Random.Range(0, smallRedRocksPrefabs.Length - 1)],
-                                        hitObj.transform.position, hitObj.transform.rotation);
-                                }
-    
-                                Destroy(hitObj);
-                            } */
                             else if (hitObj.CompareTag("Flint"))
                             {
                                 SparksAndAmber(rayHitObjectHit.point);

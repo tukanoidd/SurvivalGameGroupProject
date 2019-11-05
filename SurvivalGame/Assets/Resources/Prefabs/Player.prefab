@@ -188,8 +188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -711.11, y: -244}
-  m_SizeDelta: {x: 429.68, y: 39.8}
+  m_AnchoredPosition: {x: -582.34, y: -244}
+  m_SizeDelta: {x: 687.22, y: 39.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &424850540
 CanvasRenderer:
@@ -391,7 +391,7 @@ MonoBehaviour:
   SnappingPointParentUI: {fileID: 4986238338862726003}
   snappingPoint: {fileID: 0}
   snappingPointParent: {fileID: 0}
-  camera: {fileID: 0}
+  camera: {fileID: 5194478965943706222}
 --- !u!1 &664628216
 GameObject:
   m_ObjectHideFlags: 0
@@ -1664,7 +1664,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 1847
+    m_Bits: 10039
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1902,7 +1902,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   _camera: {fileID: 5194478965943706222}
-  head: {fileID: 5194478966842633747}
 --- !u!143 &5194478966582594377
 CharacterController:
   m_ObjectHideFlags: 0
@@ -2292,7 +2291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8197437608119162011
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2472,16 +2471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7268916785335869671}
     m_Modifications:
-    - target: {fileID: 3065562694406596139, guid: 2a42334b4e049b44696527b4d5219183,
-        type: 3}
-      propertyPath: m_Name
-      value: SnappingPointGUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3065562694406596139, guid: 2a42334b4e049b44696527b4d5219183,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4028123390425570771, guid: 2a42334b4e049b44696527b4d5219183,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2586,6 +2575,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065562694406596139, guid: 2a42334b4e049b44696527b4d5219183,
+        type: 3}
+      propertyPath: m_Name
+      value: SnappingPointGUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065562694406596139, guid: 2a42334b4e049b44696527b4d5219183,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a42334b4e049b44696527b4d5219183, type: 3}
@@ -2728,16 +2727,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7268916785335869671}
     m_Modifications:
-    - target: {fileID: 3065562694406596139, guid: e3c80f9f426bdf04baf2876c85a0496d,
-        type: 3}
-      propertyPath: m_Name
-      value: SnappingPointParentGUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 3065562694406596139, guid: e3c80f9f426bdf04baf2876c85a0496d,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4028123390425570771, guid: e3c80f9f426bdf04baf2876c85a0496d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2842,6 +2831,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065562694406596139, guid: e3c80f9f426bdf04baf2876c85a0496d,
+        type: 3}
+      propertyPath: m_Name
+      value: SnappingPointParentGUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 3065562694406596139, guid: e3c80f9f426bdf04baf2876c85a0496d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e3c80f9f426bdf04baf2876c85a0496d, type: 3}
