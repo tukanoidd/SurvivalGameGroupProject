@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90f9041c1d9825408e95a898a0bc5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Grass
   temperature: 25
   tempInitial: 0
   tempExternal: 0

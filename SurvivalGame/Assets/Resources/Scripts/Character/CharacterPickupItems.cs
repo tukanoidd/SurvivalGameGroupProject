@@ -724,5 +724,11 @@ public class CharacterPickupItems : MonoBehaviour
                 }
             }
         }
+
+        if (!lookingAtObj)
+        {
+            canvas.GetComponent<WorldToCanvasPlacer>().snappingPointParent = null;
+            canvas.GetComponent<WorldToCanvasPlacer>().SnappingPointParentUI.gameObject.SetActive(false);
+        }
     }
 }
