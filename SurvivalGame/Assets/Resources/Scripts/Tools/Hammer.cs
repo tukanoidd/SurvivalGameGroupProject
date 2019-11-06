@@ -2,18 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hammer : Combustable
+public class Hammer : Tool
 {
     // Start is called before the first frame update
     void Start()
     {
         base.Start();
         name = "Hammer";
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        base.Update();
     }
 }

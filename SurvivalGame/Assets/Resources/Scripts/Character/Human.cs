@@ -16,8 +16,12 @@ public class Human : Combustable
 
     public GameObject tempBar;
     public GameObject tempFill;
-    
+    public Text tempText;
+
+    [SerializeField] private GameObject minimapSphere;
     [SerializeField] private float minimapScale;
+
+    public AudioSource musicAudioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -36,13 +40,16 @@ public class Human : Combustable
         burnRate = 4;
         isPlayer = true;
 
-        objectPlacer.PlaceMinimapSphere(transform, minimapScale);
+        minimapSphere.transform.localScale *= minimapScale;
     }
 
     // Update is called once per frame
     void Update()
     {
         base.Update();
+
+        musicAudioSource.mute = !GetComponentInChildren<MenuManager>().music;
+        
         if (hunger < 100)
         {
             hunger += hungerRate;
@@ -72,6 +79,7 @@ public class Human : Combustable
         healthBar.GetComponent<Slider>().value = Mathf.Clamp(health, 0, 100) / 100;
         hungerBar.GetComponent<Slider>().value = (100 - Mathf.Clamp(hunger, 0, 100)) / 100;
         tempBar.GetComponent<Slider>().value = Mathf.Clamp(temperature, 0, 200);
+        tempText.text = "Temperature\n" + temperature.ToString("0.00");
     }
 
     public void Eat(Food food)

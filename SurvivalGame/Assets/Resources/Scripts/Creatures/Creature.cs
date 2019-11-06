@@ -46,7 +46,7 @@ public class Creature : MonoBehaviour
 
     [SerializeField] private GameObject tutorialText;
     [SerializeField] private GameObject playerCam;
-    private float minimapScale;
+    [SerializeField] private GameObject minimapSphere;
 
     void Awake()
     {
@@ -76,17 +76,8 @@ public class Creature : MonoBehaviour
         {
             GarbageMan.creatures.Add(gameObject);
         }
-
-        if (tutorialText != null && playerCam != null)
-        {
-            minimapScale = 5;
-        }
-        else
-        {
-            minimapScale = 20f;
-        }
         
-        objectPlacer.PlaceMinimapSphere(transform, minimapScale);
+        minimapSphere.transform.localScale *= (tutorialText != null && playerCam != null) ? 5 : 20;
     }
 
     private void OnTriggerEnter(Collider other)

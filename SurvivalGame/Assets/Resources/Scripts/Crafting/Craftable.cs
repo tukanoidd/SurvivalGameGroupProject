@@ -12,6 +12,9 @@ public class Craftable : Combustable
     private GameObject hammerPrefab;
     private GameObject axePrefab;
 
+    public AudioClip craftingSound;
+    public AudioClip stoneHit;
+
     private KeyValuePair<GameObject, SnappingPoint> obj;
 
     // Start is called before the first frame update
@@ -42,7 +45,8 @@ public class Craftable : Combustable
                 }
                 
                 UnjoinObjects();
-                Instantiate(hammerPrefab, transform.position, transform.rotation);
+                var tool = Instantiate(hammerPrefab, transform.position, transform.rotation);
+                tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<AudioSource>().clip, 0.8f);
             } else if (CheckForConnection("Flint"))
             {
                 var craftableConnectedObj = obj.Key.GetComponent<Craftable>();
@@ -52,7 +56,8 @@ public class Craftable : Combustable
                 }
                 
                 UnjoinObjects();
-                Instantiate(axePrefab, transform.position, transform.rotation);
+                var tool = Instantiate(axePrefab, transform.position, transform.rotation);
+                tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<AudioSource>().clip, 1f);
             }
         }
     }

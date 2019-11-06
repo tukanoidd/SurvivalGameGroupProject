@@ -297,7 +297,7 @@ GameObject:
   - component: {fileID: -4765276433665542962}
   m_Layer: 0
   m_Name: Bush
-  m_TagString: Untagged
+  m_TagString: Bush
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -556,6 +556,8 @@ MonoBehaviour:
   isPicked: 0
   isConnected: 0
   isSnappingPointParent: 0
+  craftingSound: {fileID: 0}
+  stoneHit: {fileID: 0}
 --- !u!54 &2237907765787695182
 Rigidbody:
   m_ObjectHideFlags: 0
