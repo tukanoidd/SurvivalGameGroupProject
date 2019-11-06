@@ -61,6 +61,11 @@ public class Human : Combustable
             temperature -= hungerRate;
         }
 
+        if (temperature > 100)
+        {
+            health -= 0.1f;
+        }
+
         if (temperature > 70)
         {
             health -= 0.05f;

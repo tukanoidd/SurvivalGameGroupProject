@@ -103,10 +103,6 @@ public class HeatSource : MonoBehaviour
                 var alg = (heat * (objHeatTransfer / 10)) / 1000;
                 parentObj.GetComponent<Combustable>().temperature += alg;
             }
-            else
-            {
-                parentObj.GetComponent<Combustable>().vaporize();
-            }
         }
         else
         {
