@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c368346a2944bee488bea530bb9c337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Branch
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -196,6 +196,8 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -322,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c368346a2944bee488bea530bb9c337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Branch
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -357,6 +359,8 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}
@@ -603,7 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Trunk
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -638,6 +642,9 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!1 &8975036368881689608
 GameObject:
   m_ObjectHideFlags: 0
@@ -748,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c368346a2944bee488bea530bb9c337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Branch
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -783,6 +790,8 @@ MonoBehaviour:
   hasBeenHitByHammer: 0
   hasBeenHitByAxe: 0
   isPlayer: 0
+  isPicked: 0
+  isConnected: 0
   branchStrength: 100
   joint: {fileID: 0}
   trunk: {fileID: 8418066523517373416}

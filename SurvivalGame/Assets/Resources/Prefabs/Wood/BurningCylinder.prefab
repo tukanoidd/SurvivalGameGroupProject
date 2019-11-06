@@ -32,7 +32,7 @@ Transform:
   m_LocalPosition: {x: 6.59, y: 1.3805745, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2427115619140463662}
+  - {fileID: 4653429078839796806}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Burning Cylinder
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -156,6 +156,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!1001 &4653429078839796832
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,7 +238,7 @@ PrefabInstance:
         type: 3}
       propertyPath: particleSystemMain
       value: 
-      objectReference: {fileID: 8740392574079227021}
+      objectReference: {fileID: 4653429078839796810}
     - target: {fileID: 6240686623527470669, guid: 0f3e7ca37a5252d478087b09fac6e968,
         type: 3}
       propertyPath: parentObj
@@ -251,13 +257,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f3e7ca37a5252d478087b09fac6e968, type: 3}
---- !u!4 &2427115619140463662 stripped
+--- !u!4 &4653429078839796806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7006076943729903694, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}
   m_PrefabInstance: {fileID: 4653429078839796832}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &8740392574079227021 stripped
+--- !u!198 &4653429078839796810 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4168171251368227053, guid: 0f3e7ca37a5252d478087b09fac6e968,
     type: 3}

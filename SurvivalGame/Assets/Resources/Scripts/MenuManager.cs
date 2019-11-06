@@ -14,6 +14,9 @@ public class MenuManager : MonoBehaviour
         {
             pausePanel.SetActive(false);
             GameGUI.SetActive(true);
+            
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 
@@ -22,6 +25,7 @@ public class MenuManager : MonoBehaviour
         pausePanel.SetActive(!pausePanel.activeSelf);
         GameGUI.SetActive(!GameGUI.activeSelf);
         Cursor.lockState = Cursor.lockState == CursorLockMode.None ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = Cursor.lockState == CursorLockMode.None;
     }
 
     public void Game()
