@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    [SerializeField] private GameObject pausePanel;
+    public GameObject pausePanel;
     [SerializeField] private GameObject GameGUI;
 
     public bool music;
