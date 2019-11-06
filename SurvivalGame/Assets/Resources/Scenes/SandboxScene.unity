@@ -185,6 +185,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!54 &29189556
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -448,6 +454,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!54 &324532953
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -604,6 +616,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!54 &390590961
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -852,6 +870,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!54 &594006186
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1016,7 +1040,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 3.894e-42, w: 1.05e-43}
+  m_BoundingSphereOverride: {x: 1.5863221e+10, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -1213,6 +1237,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!4 &1149539896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7006076943729903694, guid: 0f3e7ca37a5252d478087b09fac6e968,
@@ -1385,7 +1415,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 14135
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1462,6 +1492,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!54 &1258452131
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1691,6 +1727,12 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
+  isSnappingPointParent: 0
 --- !u!1 &1492630464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2020,10 +2062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   _camera: {fileID: 1189498440}
-  head: {fileID: 458408501}
-  crosshairBlack: {fileID: 0}
-  crosshairWhite: {fileID: 0}
-  crosshairSize: 30
+  campfireTutorialTexts: []
 --- !u!114 &1825744750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2037,6 +2076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stars: {fileID: 0}
+  minimapCamera: {fileID: 0}
   normalSpeed: 200
   boostedSpeed: 400
   jumpFallOff:
@@ -2095,7 +2135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a41542a4dd15e44f95a185668aa93b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!114 &1825744753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2109,11 +2148,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   head: {fileID: 458408501}
-  palm: {fileID: 0}
+  shoulder: {fileID: 0}
+  hand: {fileID: 0}
+  hammer: {fileID: 0}
+  axe: {fileID: 0}
   _camera: {fileID: 1189498440}
+  hammerPrefab: {fileID: 0}
+  axePrefab: {fileID: 0}
+  pickedHammer: 0
+  pickedAxe: 0
   rayLength: 10
   throwForce: 1000
+  hitRayLength: 0
+  hitForce: 0
   hitGameObject: {fileID: 0}
+  pickedObject: {fileID: 0}
+  logsPrefabs: []
+  numLogsPerTrunk: 2
+  numSticksPerBranchOrBush: 4
+  numPlanksPerLog: 2
+  largeRocksPrefabs: []
+  largeRedRocksPrefabs: []
+  mediumRocksPrefabs: []
+  mediumRedRocksPrefabs: []
+  smallRocksPrefabs: []
+  smallRedRocksPrefabs: []
+  numMedRocksPerLargeRock: 2
+  numSmallRocksPerMedRock: 2
+  lookingAtObjectUIText: {fileID: 0}
+  lookingAtFoodUIText: {fileID: 0}
+  pickUpItemUIText: {fileID: 0}
+  pickedUpItemUIText: {fileID: 0}
+  pickedUpToolUIText: {fileID: 0}
+  canvas: {fileID: 0}
 --- !u!114 &1825744754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2296,6 +2363,11 @@ MonoBehaviour:
   isGrounded: 0
   isThrown: 0
   hasBeenMovedAfterThrow: 0
+  hasBeenHitByHammer: 0
+  hasBeenHitByAxe: 0
+  isPlayer: 0
+  isPicked: 0
+  isConnected: 0
 --- !u!198 &1972807066 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 4168171251368227053, guid: 0f3e7ca37a5252d478087b09fac6e968,

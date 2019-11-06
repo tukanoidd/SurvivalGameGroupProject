@@ -25,7 +25,7 @@ MonoBehaviour:
       - {fileID: 3772479132241492687, guid: 57cccdbf12279b244beeacf8dabf765e, type: 3}
       - {fileID: 3772479132241492687, guid: 57cccdbf12279b244beeacf8dabf765e, type: 3}
     - name: Rocks
-      chance: 0.957
+      chance: 0.95
       prefabs:
       - {fileID: 6916432013266103933, guid: c05d6aff854884242a9279de4c1a5fa2, type: 3}
       - {fileID: 5328718303718885015, guid: 0f1aaca64e3dec746bcece33f285175a, type: 3}
@@ -36,6 +36,10 @@ MonoBehaviour:
       - {fileID: 657705998050976320, guid: cda6e321695dfe942b0e4e201794e29c, type: 3}
       - {fileID: 6365196010681266399, guid: 707c31eb11e720e479335aeafe4c7a40, type: 3}
       - {fileID: 704925163847726216, guid: a57e31ff0aedf334c9c59c48b198b984, type: 3}
+      - {fileID: 5738903602179719247, guid: 2dd4dce7d1cd5a14c8358331b2891b65, type: 3}
+      - {fileID: 3479935813746440520, guid: eade4ce7e2dcf6a44bb29d2c2ade6455, type: 3}
+      - {fileID: 3479935813746440520, guid: eade4ce7e2dcf6a44bb29d2c2ade6455, type: 3}
+      - {fileID: 5886532776714404248, guid: 0e60e4422a87c9f46a087470b9c43414, type: 3}
     - name: Vegetation
       chance: 0.648
       prefabs:
@@ -48,8 +52,7 @@ MonoBehaviour:
     - name: Tools
       chance: 1
       prefabs:
-      - {fileID: 6866171068424727323, guid: 28c581f9d176a4d478b3254133ed4935, type: 3}
-      - {fileID: 296279758293829307, guid: fcfcb4035a6911248ba62fcbced3ed88, type: 3}
+      - {fileID: 8398560840442085940, guid: 68365243d573a7a4c9d7b856c75eda29, type: 3}
     texture: {fileID: 2800000, guid: a354f4f27b4145143b4221de9648f18f, type: 3}
     tint: {r: 0.047782928, g: 0.1509434, b: 0.03488786, a: 0}
     tintStrength: 0.51

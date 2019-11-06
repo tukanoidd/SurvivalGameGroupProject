@@ -8,6 +8,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject GameGUI;
 
+    public bool music;
+
     void Start()
     {
         if (pausePanel != null && GameGUI != null)
@@ -18,6 +20,8 @@ public class MenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
+
+        music = true;
     }
 
     public void TogglePause()
@@ -50,5 +54,10 @@ public class MenuManager : MonoBehaviour
         #else
         Application.Quit();
         #endif
+    }
+
+    public void ToggleMusic()
+    {
+        music = !music;
     }
 }

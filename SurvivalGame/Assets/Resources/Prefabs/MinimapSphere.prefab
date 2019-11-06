@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 3867443668736760045}
   - component: {fileID: 5302012964767085393}
   - component: {fileID: 6154196251370395282}
-  m_Layer: 0
-  m_Name: MiniMapSphere
+  m_Layer: 11
+  m_Name: MinimapSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -57,7 +57,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9ae7e698a5f875441a896dabaa15c21f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

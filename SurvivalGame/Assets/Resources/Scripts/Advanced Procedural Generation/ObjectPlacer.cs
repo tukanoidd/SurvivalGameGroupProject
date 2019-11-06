@@ -8,7 +8,7 @@ public class ObjectPlacer : MonoBehaviour
 {
     private Dictionary<Vector3, GameObject> occupiedVertices;
     TextureData.Layer[] terrainLayers;
-    private int skipIncrement = 250;
+    private int skipIncrement = 100;
     private bool hasSpawned = false;
 
     void Start()
@@ -67,36 +67,6 @@ public class ObjectPlacer : MonoBehaviour
             }
 
             hasSpawned = true;
-        }
-    }
-
-    public void PlaceMinimapSphere(Transform parent, float scale)
-    {
-        var minimapSpherePrefab = Resources.Load<GameObject>("Prefabs/MinimapSphere");
-
-        var minimapSphere =
-            Instantiate(minimapSpherePrefab, parent);
-        minimapSphere.layer = 11;
-
-        minimapSphere.transform.localScale *= scale;
-
-        if (parent.GetComponent<Creature>() != null)
-        {
-            switch (parent.GetComponent<Creature>().name)
-            {
-                case "BoomBug":
-                    minimapSphere.GetComponent<Renderer>().material.color =
-                        Color.red;
-                    break;
-                case "FireFly":
-                    minimapSphere.GetComponent<Renderer>().material.color =
-                        Color.blue;
-                    break;
-            }
-        }
-        else if (parent.GetComponent<Human>() != null)
-        {
-            minimapSphere.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }

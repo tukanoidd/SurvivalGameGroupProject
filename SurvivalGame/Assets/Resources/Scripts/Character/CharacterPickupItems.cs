@@ -433,6 +433,15 @@ public class CharacterPickupItems : MonoBehaviour
 
                 if (hitObj.GetComponent<Combustable>() != null && !hitObj.GetComponent<Human>())
                 {
+                    if (pickedHammer)
+                    {
+                        PlayHitSounds(hammer, hitObj);
+                    }
+                    else if (pickedAxe)
+                    {
+                        PlayHitSounds(axe, hitObj);
+                    }
+
                     if (!hitObj.GetComponent<Combustable>().hasBeenHitByHammer ||
                         !hitObj.GetComponent<Combustable>().hasBeenHitByAxe)
                     {
@@ -494,10 +503,11 @@ public class CharacterPickupItems : MonoBehaviour
                             if (hitObj.GetComponent<Stone>() != null)
                             {
                                 hitObj.GetComponent<Stone>().Break();
-                            }
-                            else if (hitObj.CompareTag("Flint"))
-                            {
-                                SparksAndAmber(rayHitObjectHit.point);
+                                
+                                if (hitObj.CompareTag("Flint"))
+                                {
+                                    SparksAndAmber(rayHitObjectHit.point);
+                                }
                             }
                         }
                         else if (hitObj.GetComponent<Combustable>().hasBeenHitByAxe && pickedAxe)
@@ -565,6 +575,32 @@ public class CharacterPickupItems : MonoBehaviour
         counter++;
     }
 
+    void PlayHitSounds(GameObject tool, GameObject hitObj)
+    {
+        if (hitObj.GetComponent<Stone>() != null && !hitObj.CompareTag("Flint"))
+        {
+            tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<Tool>().stoneHit, 0.1f);
+        }
+        else if (hitObj.GetComponent<Wood>() != null)
+        {
+            tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<Tool>().woodHit, 0.1f);
+        }
+        else if (hitObj.GetComponent<Flint>() != null)
+        {
+            tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<Tool>().flintHit, 0.1f);
+        } 
+        
+        if (pickedAxe && hitObj.GetComponent<Plant>() && (hitObj.CompareTag("Bush") || hitObj.CompareTag("Branch")))
+        {
+            tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<Tool>().plantHit, 0.1f);
+        }
+
+        if (pickedAxe && hitObj.CompareTag("Trunk"))
+        {
+            tool.GetComponent<AudioSource>().PlayOneShot(tool.GetComponent<Tool>().treeFall, 0.1f);
+        }
+    }
+
     void DetachChildren(Transform parent, Vector3 playerForwardDirection)
     {
         if (parent.childCount > 0)
@@ -590,7 +626,7 @@ public class CharacterPickupItems : MonoBehaviour
                 if (child != null)
                 {
                     child.isKinematic = false;
-                    child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);   
+                    child.AddForce(playerForwardDirection * hitForce, ForceMode.Impulse);
                 }
             }
         }
