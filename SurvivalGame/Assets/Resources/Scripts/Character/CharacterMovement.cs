@@ -43,9 +43,9 @@ public class CharacterMovement : MonoBehaviour
                 transform.position.z);
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
         {
-            Application.LoadLevel(Application.loadedLevel);
+            GetComponentInChildren<MenuManager>().TogglePause();
         }
 
         PlayerMovement();
