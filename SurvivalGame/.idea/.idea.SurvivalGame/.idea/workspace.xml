@@ -25,40 +25,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4131256f-929b-4b0d-a2fc-dfbfc285eabf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SurvivalGame/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Skybox.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Skybox.mat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/PP.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/PP.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Creatures/BoomBugs.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Creatures/BoomBugs.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Creatures/FireFlies.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Creatures/FireFlies.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Effects/FlameMain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Effects/FlameMain.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Effects/Portal.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Effects/Portal.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/MinimapSphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/MinimapSphere.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Player.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tools/Axe.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tools/Axe.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tools/Hammer.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Tools/Hammer.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Wood/Bush.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Wood/Bush.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/SandboxScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/SandboxScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Test Advanced World Generation_Profiles/PP Profile 2.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Test Advanced World Generation_Profiles/PP Profile 2.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scenes/Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scenes/Tutorial.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Crafting/Craftable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Crafting/Craftable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/Creature.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/MenuManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/MenuManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Axe.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Axe.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Hammer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Hammer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/CurrentLayout-default.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/EditorUserBuildSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/InspectorExpandedItems.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Library/LastSceneManagerSetup.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Library/SceneVisibilityState.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Library/assetDatabase3" beforeDir="false" afterPath="$PROJECT_DIR$/Library/assetDatabase3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/expandedItems" beforeDir="false" afterPath="$PROJECT_DIR$/Library/expandedItems" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" beforeDir="false" afterPath="$PROJECT_DIR$/Library/shadercompiler-UnityShaderCompiler.exe0.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -151,8 +128,6 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Stone.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ash.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Materials/Ember.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Creatures/BoomBugs.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterCamera.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterMovement.cs" />
@@ -162,11 +137,13 @@
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Axe.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Hammer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Tools/Tool.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/MenuManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/CharacterPickupItems.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Advanced Procedural Generation/ObjectPlacer.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Character/Human.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/MenuManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/Combustable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/Scripts/Heat System/HeatSource.cs" />
       </list>
     </option>
   </component>
@@ -276,7 +253,7 @@
       <workItem from="1572985438634" duration="3938000" />
       <workItem from="1572997992565" duration="4423000" />
       <workItem from="1573003623652" duration="864000" />
-      <workItem from="1573046716596" duration="9664000" />
+      <workItem from="1573046716596" duration="12146000" />
     </task>
     <servers />
   </component>

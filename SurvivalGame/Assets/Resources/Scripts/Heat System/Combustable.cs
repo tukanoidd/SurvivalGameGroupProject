@@ -79,7 +79,7 @@ public class Combustable : MonoBehaviour
     {
         radiate();
         tempExternal = temperature - tempInitial;
-
+        
         if (maxTemp > 0)
         {
             if (temperature >= maxTemp)
@@ -88,12 +88,26 @@ public class Combustable : MonoBehaviour
                 {
                     if (isPlayer)
                     {
-                        Application.LoadLevel(Application.loadedLevel);
+                        if (GetComponent<Human>().health <= 0)
+                        {
+                            if (GetComponentInChildren<MenuManager>().pausePanel.name.Contains("Tutorial"))
+                            {
+                                GetComponentInChildren<MenuManager>().Tutorial();
+                            }
+                            else
+                            {
+                                GetComponentInChildren<MenuManager>().Game();
+                            }
+                        }
+                        
+                        GetComponent<Human>().health -= 3;
                     }
                     else
                     {
-                        //vaporize();
+                        vaporize();
                     }
+                    
+         
                 }
             }
         }
