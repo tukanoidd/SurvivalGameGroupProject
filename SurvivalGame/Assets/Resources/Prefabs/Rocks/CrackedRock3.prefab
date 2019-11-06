@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d1d5f77c2249e4185bde1f69d76388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Cracked Stone
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -161,6 +161,7 @@ MonoBehaviour:
   isSnappingPointParent: 0
   hardness: 0
   breakForce: 0
+  brokenPrefabs: []
 --- !u!1 &7492592191889643269
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09d1d5f77c2249e4185bde1f69d76388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Cracked Stone
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -322,6 +323,7 @@ MonoBehaviour:
   isSnappingPointParent: 0
   hardness: 0
   breakForce: 0
+  brokenPrefabs: []
 --- !u!1 &9221935175009238027
 GameObject:
   m_ObjectHideFlags: 0

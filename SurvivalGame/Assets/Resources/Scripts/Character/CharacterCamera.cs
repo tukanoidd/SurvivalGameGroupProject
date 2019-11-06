@@ -9,7 +9,7 @@ public class CharacterCamera : MonoBehaviour
 
     [SerializeField] private Camera _camera;
 
-    [SerializeField] private GameObject[] campfireTutorialTexts;
+    [SerializeField] private List<GameObject> campfireTutorialTexts = null;
 
     private float xAxisClamp;
 
@@ -41,13 +41,13 @@ public class CharacterCamera : MonoBehaviour
 
         _camera.transform.Rotate(Vector3.left * mouseY);
         transform.Rotate(Vector3.up * mouseX);
-
-        if (campfireTutorialTexts != null)
+        
+        if (campfireTutorialTexts.Count > 0)
         {
-            for (int i = 0; i < campfireTutorialTexts.Length; i++)
+            for (int i = 0; i < campfireTutorialTexts.Count; i++)
             {
                 campfireTutorialTexts[i].transform.rotation = _camera.transform.rotation;
-            }
+            }   
         }
     }
 

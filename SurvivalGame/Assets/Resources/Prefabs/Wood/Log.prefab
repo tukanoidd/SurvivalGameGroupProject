@@ -63,8 +63,8 @@ Transform:
   m_LocalPosition: {x: -2.3021889, y: 0.9753116, z: -0.00000013104173}
   m_LocalScale: {x: 100, y: 100, z: 350}
   m_Children:
-  - {fileID: 1347257128947067943}
-  - {fileID: 8764313028851823005}
+  - {fileID: 5668112514616791289}
+  - {fileID: 2718587812212690243}
   m_Father: {fileID: 2009761852263146182}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Log
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -176,7 +176,6 @@ MonoBehaviour:
   isPlayer: 0
   isPicked: 0
   isConnected: 0
-  snappingPoints: []
   isSnappingPointParent: 0
 --- !u!54 &2133324691010407303
 Rigidbody:
@@ -201,6 +200,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3649197670249250162}
     m_Modifications:
+    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Name
+      value: SnappingPoint (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -271,16 +275,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.00011368733
       objectReference: {fileID: 0}
-    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
-        type: 3}
-      propertyPath: m_Name
-      value: SnappingPoint (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018763803753219973, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.94
-      objectReference: {fileID: 0}
     - target: {fileID: 243892071122482671, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -296,9 +290,14 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 13.679091
       objectReference: {fileID: 0}
+    - target: {fileID: 1018763803753219973, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.94
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4, type: 3}
---- !u!4 &8764313028851823005 stripped
+--- !u!4 &2718587812212690243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
     type: 3}
@@ -311,6 +310,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3649197670249250162}
     m_Modifications:
+    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Name
+      value: SnappingPoint
+      objectReference: {fileID: 0}
     - target: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -381,16 +385,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.00011374394
       objectReference: {fileID: 0}
-    - target: {fileID: 6091420953834883254, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
-        type: 3}
-      propertyPath: m_Name
-      value: SnappingPoint
-      objectReference: {fileID: 0}
-    - target: {fileID: 1018763803753219973, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.94
-      objectReference: {fileID: 0}
     - target: {fileID: 243892071122482671, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
         type: 3}
       propertyPath: m_ConnectedAnchor.x
@@ -406,9 +400,14 @@ PrefabInstance:
       propertyPath: m_ConnectedAnchor.z
       value: 10.216592
       objectReference: {fileID: 0}
+    - target: {fileID: 1018763803753219973, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.94
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4, type: 3}
---- !u!4 &1347257128947067943 stripped
+--- !u!4 &5668112514616791289 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6636974847168527982, guid: 53e454b57f3cc6a4d9e60d7ea9a53ad4,
     type: 3}

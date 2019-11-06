@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d90f9041c1d9825408e95a898a0bc5fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Bush
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -520,7 +520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5533d55b84d28248b3ae50c60eb8de4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: 
+  name: Stem
   temperature: 25
   tempInitial: 0
   tempExternal: 0
@@ -555,6 +555,7 @@ MonoBehaviour:
   isPlayer: 0
   isPicked: 0
   isConnected: 0
+  isSnappingPointParent: 0
 --- !u!54 &2237907765787695182
 Rigidbody:
   m_ObjectHideFlags: 0
